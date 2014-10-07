@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using DataLayer;
 
 namespace DataLayer	
 {
@@ -49,6 +50,14 @@ namespace DataLayer
 			:base(connection, backendConfiguration, metadataSource)
 		{ }
 			
+		public IQueryable<Consultazione> Consultaziones 
+		{
+			get
+			{
+				return this.GetAll<Consultazione>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -70,6 +79,10 @@ namespace DataLayer
 	
 	public interface IEntitiesModelUnitOfWork : IUnitOfWork
 	{
+		IQueryable<Consultazione> Consultaziones
+		{
+			get;
+		}
 	}
 }
 #pragma warning restore 1591

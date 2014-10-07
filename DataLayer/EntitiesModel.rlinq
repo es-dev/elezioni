@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
   <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
-    <orm:namespace name="DataLayer" default="true" />
+    <orm:namespace name="DataLayer" default="true">
+      <orm:class name="Consultazione" uniqueId="5dba285d-9168-4b25-86fb-ce3d7f19f599">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="5824344a-f3df-42e9-a531-332e6ee227a1" type="Int" />
+      </orm:class>
+    </orm:namespace>
     <orm:schema schema="" />
     <orm:relational-naming-settings>
       <orm:source-strategy>Property</orm:source-strategy>
@@ -35,9 +42,16 @@
       </BackendConfiguration>
     </BackendConfigurationSettings>
   </ModelSettings>
+  <Types>
+    <DomainClass Id="5dba285d-9168-4b25-86fb-ce3d7f19f599" name="Consultazione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="5824344a-f3df-42e9-a531-332e6ee227a1" name="Id" type="Int" label="Id : Int" identity="true" fieldName="_id" />
+    </DomainClass>
+  </Types>
   <domainContext>
     <domainModelHasDomainContext Id="f019e2a8-6a1a-4960-8528-51b502dc9ee9">
-      <domainContainer name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true" />
+      <domainContainer name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true">
+        <entitySetProperty name="Consultaziones" namespace="DataLayer" type="Consultazione" label="Consultaziones : IQueryable&lt;DataLayer.Consultazione&gt;" />
+      </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>
 </DomainModel>
