@@ -18,10 +18,11 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Consultazione
+	public partial class CandidatoPresidente
 	{
 		private Int _id;
 		public virtual Int Id
@@ -62,16 +63,25 @@ namespace DataLayer
 			}
 		}
 		
-		private string _tipo;
-		public virtual string Tipo
+		private string _simbolo;
+		public virtual string Simbolo
 		{
 			get
 			{
-				return this._tipo;
+				return this._simbolo;
 			}
 			set
 			{
-				this._tipo = value;
+				this._simbolo = value;
+			}
+		}
+		
+		private IList<Lista> _listas = new List<Lista>();
+		public virtual IList<Lista> Listas
+		{
+			get
+			{
+				return this._listas;
 			}
 		}
 		

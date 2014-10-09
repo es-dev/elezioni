@@ -21,7 +21,7 @@ using Telerik.OpenAccess.Metadata.Fluent.Advanced;
 
 namespace DataLayer	
 {
-	public partial class Consultazione
+	public partial class Sezione
 	{
 		private Int _id;
 		public virtual Int Id
@@ -36,42 +36,16 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _numero;
-		public virtual Int Numero
+		private Int _sedeElettoraleId;
+		public virtual Int SedeElettoraleId
 		{
 			get
 			{
-				return this._numero;
+				return this._sedeElettoraleId;
 			}
 			set
 			{
-				this._numero = value;
-			}
-		}
-		
-		private string _descrizione;
-		public virtual string Descrizione
-		{
-			get
-			{
-				return this._descrizione;
-			}
-			set
-			{
-				this._descrizione = value;
-			}
-		}
-		
-		private string _tipo;
-		public virtual string Tipo
-		{
-			get
-			{
-				return this._tipo;
-			}
-			set
-			{
-				this._tipo = value;
+				this._sedeElettoraleId = value;
 			}
 		}
 		

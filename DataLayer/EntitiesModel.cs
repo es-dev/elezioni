@@ -58,6 +58,46 @@ namespace DataLayer
 			}
 		}
 		
+		public IQueryable<CandidatoPresidente> CandidatoPresidentes 
+		{
+			get
+			{
+				return this.GetAll<CandidatoPresidente>();
+			}
+		}
+		
+		public IQueryable<Lista> Listas 
+		{
+			get
+			{
+				return this.GetAll<Lista>();
+			}
+		}
+		
+		public IQueryable<Candidato> Candidatos 
+		{
+			get
+			{
+				return this.GetAll<Candidato>();
+			}
+		}
+		
+		public IQueryable<SedeElettorale> SedeElettorales 
+		{
+			get
+			{
+				return this.GetAll<SedeElettorale>();
+			}
+		}
+		
+		public IQueryable<Sezione> Seziones 
+		{
+			get
+			{
+				return this.GetAll<Sezione>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -80,6 +120,26 @@ namespace DataLayer
 	public interface IEntitiesModelUnitOfWork : IUnitOfWork
 	{
 		IQueryable<Consultazione> Consultaziones
+		{
+			get;
+		}
+		IQueryable<CandidatoPresidente> CandidatoPresidentes
+		{
+			get;
+		}
+		IQueryable<Lista> Listas
+		{
+			get;
+		}
+		IQueryable<Candidato> Candidatos
+		{
+			get;
+		}
+		IQueryable<SedeElettorale> SedeElettorales
+		{
+			get;
+		}
+		IQueryable<Sezione> Seziones
 		{
 			get;
 		}
