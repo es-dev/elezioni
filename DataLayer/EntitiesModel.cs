@@ -58,11 +58,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<CandidatoPresidente> CandidatoPresidentes 
+		public IQueryable<Capolista> Capolistas 
 		{
 			get
 			{
-				return this.GetAll<CandidatoPresidente>();
+				return this.GetAll<Capolista>();
 			}
 		}
 		
@@ -98,6 +98,38 @@ namespace DataLayer
 			}
 		}
 		
+		public IQueryable<Affluenza> Affluenzas 
+		{
+			get
+			{
+				return this.GetAll<Affluenza>();
+			}
+		}
+		
+		public IQueryable<Scrutinio> Scrutinios 
+		{
+			get
+			{
+				return this.GetAll<Scrutinio>();
+			}
+		}
+		
+		public IQueryable<Comune> Comunes 
+		{
+			get
+			{
+				return this.GetAll<Comune>();
+			}
+		}
+		
+		public IQueryable<Circoscrizione> Circoscriziones 
+		{
+			get
+			{
+				return this.GetAll<Circoscrizione>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -123,7 +155,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<CandidatoPresidente> CandidatoPresidentes
+		IQueryable<Capolista> Capolistas
 		{
 			get;
 		}
@@ -140,6 +172,22 @@ namespace DataLayer
 			get;
 		}
 		IQueryable<Sezione> Seziones
+		{
+			get;
+		}
+		IQueryable<Affluenza> Affluenzas
+		{
+			get;
+		}
+		IQueryable<Scrutinio> Scrutinios
+		{
+			get;
+		}
+		IQueryable<Comune> Comunes
+		{
+			get;
+		}
+		IQueryable<Circoscrizione> Circoscriziones
 		{
 			get;
 		}

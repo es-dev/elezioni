@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using DataLayer;
 
 namespace DataLayer	
 {
@@ -72,6 +73,41 @@ namespace DataLayer
 			set
 			{
 				this._tipo = value;
+			}
+		}
+		
+		private Int _comuneId;
+		public virtual Int ComuneId
+		{
+			get
+			{
+				return this._comuneId;
+			}
+			set
+			{
+				this._comuneId = value;
+			}
+		}
+		
+		private Comune _comune;
+		public virtual Comune Comune
+		{
+			get
+			{
+				return this._comune;
+			}
+			set
+			{
+				this._comune = value;
+			}
+		}
+		
+		private IList<Capolista> _capolistas = new List<Capolista>();
+		public virtual IList<Capolista> Capolistas
+		{
+			get
+			{
+				return this._capolistas;
 			}
 		}
 		

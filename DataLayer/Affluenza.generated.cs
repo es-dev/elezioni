@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class CandidatoPresidente
+	public partial class Affluenza
 	{
 		private Int _id;
 		public virtual Int Id
@@ -37,51 +37,94 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _numero;
-		public virtual Int Numero
+		private Int _sezioneID;
+		public virtual Int SezioneID
 		{
 			get
 			{
-				return this._numero;
+				return this._sezioneID;
 			}
 			set
 			{
-				this._numero = value;
+				this._sezioneID = value;
 			}
 		}
 		
-		private string _descrizione;
-		public virtual string Descrizione
+		private DateTime _orario;
+		public virtual DateTime Orario
 		{
 			get
 			{
-				return this._descrizione;
+				return this._orario;
 			}
 			set
 			{
-				this._descrizione = value;
+				this._orario = value;
 			}
 		}
 		
-		private string _simbolo;
-		public virtual string Simbolo
+		private string _stato;
+		public virtual string Stato
 		{
 			get
 			{
-				return this._simbolo;
+				return this._stato;
 			}
 			set
 			{
-				this._simbolo = value;
+				this._stato = value;
 			}
 		}
 		
-		private IList<Lista> _listas = new List<Lista>();
-		public virtual IList<Lista> Listas
+		private Int _uomini;
+		public virtual Int Uomini
 		{
 			get
 			{
-				return this._listas;
+				return this._uomini;
+			}
+			set
+			{
+				this._uomini = value;
+			}
+		}
+		
+		private Int _donne;
+		public virtual Int Donne
+		{
+			get
+			{
+				return this._donne;
+			}
+			set
+			{
+				this._donne = value;
+			}
+		}
+		
+		private Int _totale;
+		public virtual Int Totale
+		{
+			get
+			{
+				return this._totale;
+			}
+			set
+			{
+				this._totale = value;
+			}
+		}
+		
+		private Sezione _sezione;
+		public virtual Sezione Sezione
+		{
+			get
+			{
+				return this._sezione;
+			}
+			set
+			{
+				this._sezione = value;
 			}
 		}
 		

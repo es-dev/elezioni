@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using DataLayer;
 
 namespace DataLayer	
 {
@@ -36,6 +37,45 @@ namespace DataLayer
 			}
 		}
 		
+		private Int _votantiMaschi;
+		public virtual Int VotantiMaschi
+		{
+			get
+			{
+				return this._votantiMaschi;
+			}
+			set
+			{
+				this._votantiMaschi = value;
+			}
+		}
+		
+		private Int _votantiFemmine;
+		public virtual Int VotantiFemmine
+		{
+			get
+			{
+				return this._votantiFemmine;
+			}
+			set
+			{
+				this._votantiFemmine = value;
+			}
+		}
+		
+		private Int _totaleVotanti;
+		public virtual Int TotaleVotanti
+		{
+			get
+			{
+				return this._totaleVotanti;
+			}
+			set
+			{
+				this._totaleVotanti = value;
+			}
+		}
+		
 		private Int _sedeElettoraleId;
 		public virtual Int SedeElettoraleId
 		{
@@ -46,6 +86,41 @@ namespace DataLayer
 			set
 			{
 				this._sedeElettoraleId = value;
+			}
+		}
+		
+		private SedeElettorale _sedeElettorale;
+		public virtual SedeElettorale SedeElettorale
+		{
+			get
+			{
+				return this._sedeElettorale;
+			}
+			set
+			{
+				this._sedeElettorale = value;
+			}
+		}
+		
+		private Scrutinio _scrutinio;
+		public virtual Scrutinio Scrutinio
+		{
+			get
+			{
+				return this._scrutinio;
+			}
+			set
+			{
+				this._scrutinio = value;
+			}
+		}
+		
+		private IList<Affluenza> _affluenzas = new List<Affluenza>();
+		public virtual IList<Affluenza> Affluenzas
+		{
+			get
+			{
+				return this._affluenzas;
 			}
 		}
 		

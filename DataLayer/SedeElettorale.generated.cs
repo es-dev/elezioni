@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using DataLayer;
 
 namespace DataLayer	
 {
@@ -98,6 +99,41 @@ namespace DataLayer
 			set
 			{
 				this._responsabile = value;
+			}
+		}
+		
+		private Int _circoscrizioneId;
+		public virtual Int CircoscrizioneId
+		{
+			get
+			{
+				return this._circoscrizioneId;
+			}
+			set
+			{
+				this._circoscrizioneId = value;
+			}
+		}
+		
+		private Circoscrizione _circoscrizione;
+		public virtual Circoscrizione Circoscrizione
+		{
+			get
+			{
+				return this._circoscrizione;
+			}
+			set
+			{
+				this._circoscrizione = value;
+			}
+		}
+		
+		private IList<Sezione> _seziones = new List<Sezione>();
+		public virtual IList<Sezione> Seziones
+		{
+			get
+			{
+				return this._seziones;
 			}
 		}
 		

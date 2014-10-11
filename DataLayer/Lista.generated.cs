@@ -89,8 +89,8 @@ namespace DataLayer
 			}
 		}
 		
-		private CandidatoPresidente _candidatoPresidente1;
-		public virtual CandidatoPresidente CandidatoPresidente1
+		private Capolista _candidatoPresidente1;
+		public virtual Capolista CandidatoPresidente1
 		{
 			get
 			{
