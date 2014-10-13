@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Capolista
+	public partial class Collegio
 	{
 		private int _id;
 		public virtual int Id
@@ -34,6 +34,19 @@ namespace DataLayer
 			set
 			{
 				this._id = value;
+			}
+		}
+		
+		private int _consultazioneId;
+		public virtual int ConsultazioneId
+		{
+			get
+			{
+				return this._consultazioneId;
+			}
+			set
+			{
+				this._consultazioneId = value;
 			}
 		}
 		
@@ -63,32 +76,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _simbolo;
-		public virtual string Simbolo
-		{
-			get
-			{
-				return this._simbolo;
-			}
-			set
-			{
-				this._simbolo = value;
-			}
-		}
-		
-		private int _consultazioneId;
-		public virtual int ConsultazioneId
-		{
-			get
-			{
-				return this._consultazioneId;
-			}
-			set
-			{
-				this._consultazioneId = value;
-			}
-		}
-		
 		private Consultazione _consultazione;
 		public virtual Consultazione Consultazione
 		{
@@ -102,21 +89,12 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Lista> _listas = new List<Lista>();
-		public virtual IList<Lista> Listas
+		private IList<SezioneCollegio> _sezioneCollegios = new List<SezioneCollegio>();
+		public virtual IList<SezioneCollegio> SezioneCollegios
 		{
 			get
 			{
-				return this._listas;
-			}
-		}
-		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
-		{
-			get
-			{
-				return this._scrutinioCapolistas;
+				return this._sezioneCollegios;
 			}
 		}
 		

@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Capolista
+	public partial class Rilevamento
 	{
 		private int _id;
 		public virtual int Id
@@ -37,86 +37,94 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int _uomini;
+		public virtual int Uomini
 		{
 			get
 			{
-				return this._numero;
+				return this._uomini;
 			}
 			set
 			{
-				this._numero = value;
+				this._uomini = value;
 			}
 		}
 		
-		private string _descrizione;
-		public virtual string Descrizione
+		private int _donne;
+		public virtual int Donne
 		{
 			get
 			{
-				return this._descrizione;
+				return this._donne;
 			}
 			set
 			{
-				this._descrizione = value;
+				this._donne = value;
 			}
 		}
 		
-		private string _simbolo;
-		public virtual string Simbolo
+		private int _totale;
+		public virtual int Totale
 		{
 			get
 			{
-				return this._simbolo;
+				return this._totale;
 			}
 			set
 			{
-				this._simbolo = value;
+				this._totale = value;
 			}
 		}
 		
-		private int _consultazioneId;
-		public virtual int ConsultazioneId
+		private int _affluenzaId;
+		public virtual int AffluenzaId
 		{
 			get
 			{
-				return this._consultazioneId;
+				return this._affluenzaId;
 			}
 			set
 			{
-				this._consultazioneId = value;
+				this._affluenzaId = value;
 			}
 		}
 		
-		private Consultazione _consultazione;
-		public virtual Consultazione Consultazione
+		private int _sezioneId;
+		public virtual int SezioneId
 		{
 			get
 			{
-				return this._consultazione;
+				return this._sezioneId;
 			}
 			set
 			{
-				this._consultazione = value;
+				this._sezioneId = value;
 			}
 		}
 		
-		private IList<Lista> _listas = new List<Lista>();
-		public virtual IList<Lista> Listas
+		private Sezione _sezione;
+		public virtual Sezione Sezione
 		{
 			get
 			{
-				return this._listas;
+				return this._sezione;
+			}
+			set
+			{
+				this._sezione = value;
 			}
 		}
 		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
+		private Affluenza _affluenza;
+		public virtual Affluenza Affluenza
 		{
 			get
 			{
-				return this._scrutinioCapolistas;
+				return this._affluenza;
+			}
+			set
+			{
+				this._affluenza = value;
 			}
 		}
 		

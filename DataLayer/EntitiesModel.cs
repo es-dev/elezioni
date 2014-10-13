@@ -114,11 +114,43 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Circoscrizione> Circoscriziones 
+		public IQueryable<Collegio> Collegios 
 		{
 			get
 			{
-				return this.GetAll<Circoscrizione>();
+				return this.GetAll<Collegio>();
+			}
+		}
+		
+		public IQueryable<SezioneCollegio> SezioneCollegios 
+		{
+			get
+			{
+				return this.GetAll<SezioneCollegio>();
+			}
+		}
+		
+		public IQueryable<Rilevamento> Rilevamentos 
+		{
+			get
+			{
+				return this.GetAll<Rilevamento>();
+			}
+		}
+		
+		public IQueryable<ScrutinioCapolista> ScrutinioCapolistas 
+		{
+			get
+			{
+				return this.GetAll<ScrutinioCapolista>();
+			}
+		}
+		
+		public IQueryable<Scrutinio> Scrutinios 
+		{
+			get
+			{
+				return this.GetAll<Scrutinio>();
 			}
 		}
 		
@@ -175,7 +207,23 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Circoscrizione> Circoscriziones
+		IQueryable<Collegio> Collegios
+		{
+			get;
+		}
+		IQueryable<SezioneCollegio> SezioneCollegios
+		{
+			get;
+		}
+		IQueryable<Rilevamento> Rilevamentos
+		{
+			get;
+		}
+		IQueryable<ScrutinioCapolista> ScrutinioCapolistas
+		{
+			get;
+		}
+		IQueryable<Scrutinio> Scrutinios
 		{
 			get;
 		}

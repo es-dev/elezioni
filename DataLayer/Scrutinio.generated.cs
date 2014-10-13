@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Capolista
+	public partial class Scrutinio
 	{
 		private int _id;
 		public virtual int Id
@@ -37,42 +37,68 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int _validi;
+		public virtual int Validi
 		{
 			get
 			{
-				return this._numero;
+				return this._validi;
 			}
 			set
 			{
-				this._numero = value;
+				this._validi = value;
 			}
 		}
 		
-		private string _descrizione;
-		public virtual string Descrizione
+		private int _nulle;
+		public virtual int Nulle
 		{
 			get
 			{
-				return this._descrizione;
+				return this._nulle;
 			}
 			set
 			{
-				this._descrizione = value;
+				this._nulle = value;
 			}
 		}
 		
-		private string _simbolo;
-		public virtual string Simbolo
+		private int _bianche;
+		public virtual int Bianche
 		{
 			get
 			{
-				return this._simbolo;
+				return this._bianche;
 			}
 			set
 			{
-				this._simbolo = value;
+				this._bianche = value;
+			}
+		}
+		
+		private int _contestate;
+		public virtual int Contestate
+		{
+			get
+			{
+				return this._contestate;
+			}
+			set
+			{
+				this._contestate = value;
+			}
+		}
+		
+		private int _sezioneId;
+		public virtual int SezioneId
+		{
+			get
+			{
+				return this._sezioneId;
+			}
+			set
+			{
+				this._sezioneId = value;
 			}
 		}
 		
@@ -89,6 +115,19 @@ namespace DataLayer
 			}
 		}
 		
+		private Sezione _sezione;
+		public virtual Sezione Sezione
+		{
+			get
+			{
+				return this._sezione;
+			}
+			set
+			{
+				this._sezione = value;
+			}
+		}
+		
 		private Consultazione _consultazione;
 		public virtual Consultazione Consultazione
 		{
@@ -99,24 +138,6 @@ namespace DataLayer
 			set
 			{
 				this._consultazione = value;
-			}
-		}
-		
-		private IList<Lista> _listas = new List<Lista>();
-		public virtual IList<Lista> Listas
-		{
-			get
-			{
-				return this._listas;
-			}
-		}
-		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
-		{
-			get
-			{
-				return this._scrutinioCapolistas;
 			}
 		}
 		

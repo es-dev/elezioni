@@ -56,7 +56,7 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Circoscrizione.generated.cs">
+    <Compile Include="Collegio.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -79,11 +79,27 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rilevamento.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scrutinio.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrutinioCapolista.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SedeElettorale.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Sezione.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SezioneCollegio.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

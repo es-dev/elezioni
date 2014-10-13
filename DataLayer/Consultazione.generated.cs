@@ -111,6 +111,33 @@ namespace DataLayer
 			}
 		}
 		
+		private IList<Collegio> _collegios = new List<Collegio>();
+		public virtual IList<Collegio> Collegios
+		{
+			get
+			{
+				return this._collegios;
+			}
+		}
+		
+		private IList<Affluenza> _affluenzas = new List<Affluenza>();
+		public virtual IList<Affluenza> Affluenzas
+		{
+			get
+			{
+				return this._affluenzas;
+			}
+		}
+		
+		private IList<Scrutinio> _scrutinios = new List<Scrutinio>();
+		public virtual IList<Scrutinio> Scrutinios
+		{
+			get
+			{
+				return this._scrutinios;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

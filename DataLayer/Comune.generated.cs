@@ -98,12 +98,12 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Circoscrizione> _circoscriziones = new List<Circoscrizione>();
-		public virtual IList<Circoscrizione> Circoscriziones
+		private IList<SedeElettorale> _sedeElettorales = new List<SedeElettorale>();
+		public virtual IList<SedeElettorale> SedeElettorales
 		{
 			get
 			{
-				return this._circoscriziones;
+				return this._sedeElettorales;
 			}
 		}
 		

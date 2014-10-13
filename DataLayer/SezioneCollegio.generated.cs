@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Circoscrizione
+	public partial class SezioneCollegio
 	{
 		private int _id;
 		public virtual int Id
@@ -37,64 +37,55 @@ namespace DataLayer
 			}
 		}
 		
-		private int _comuneId;
-		public virtual int ComuneId
+		private int _sezioneId;
+		public virtual int SezioneId
 		{
 			get
 			{
-				return this._comuneId;
+				return this._sezioneId;
 			}
 			set
 			{
-				this._comuneId = value;
+				this._sezioneId = value;
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int _collegioId;
+		public virtual int CollegioId
 		{
 			get
 			{
-				return this._numero;
+				return this._collegioId;
 			}
 			set
 			{
-				this._numero = value;
+				this._collegioId = value;
 			}
 		}
 		
-		private string _descrizione;
-		public virtual string Descrizione
+		private Sezione _sezione;
+		public virtual Sezione Sezione
 		{
 			get
 			{
-				return this._descrizione;
+				return this._sezione;
 			}
 			set
 			{
-				this._descrizione = value;
+				this._sezione = value;
 			}
 		}
 		
-		private Comune _comune;
-		public virtual Comune Comune
+		private Collegio _collegio;
+		public virtual Collegio Collegio
 		{
 			get
 			{
-				return this._comune;
+				return this._collegio;
 			}
 			set
 			{
-				this._comune = value;
-			}
-		}
-		
-		private IList<SedeElettorale> _sedeElettorales = new List<SedeElettorale>();
-		public virtual IList<SedeElettorale> SedeElettorales
-		{
-			get
-			{
-				return this._sedeElettorales;
+				this._collegio = value;
 			}
 		}
 		

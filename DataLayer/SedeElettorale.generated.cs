@@ -102,29 +102,29 @@ namespace DataLayer
 			}
 		}
 		
-		private int _circoscrizioneId;
-		public virtual int CircoscrizioneId
+		private int _comuneId;
+		public virtual int ComuneId
 		{
 			get
 			{
-				return this._circoscrizioneId;
+				return this._comuneId;
 			}
 			set
 			{
-				this._circoscrizioneId = value;
+				this._comuneId = value;
 			}
 		}
 		
-		private Circoscrizione _circoscrizione;
-		public virtual Circoscrizione Circoscrizione
+		private Comune _comune;
+		public virtual Comune Comune
 		{
 			get
 			{
-				return this._circoscrizione;
+				return this._comune;
 			}
 			set
 			{
-				this._circoscrizione = value;
+				this._comune = value;
 			}
 		}
 		

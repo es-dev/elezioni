@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Capolista
+	public partial class ScrutinioCapolista
 	{
 		private int _id;
 		public virtual int Id
@@ -37,86 +37,68 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int _capolistaId;
+		public virtual int CapolistaId
 		{
 			get
 			{
-				return this._numero;
+				return this._capolistaId;
 			}
 			set
 			{
-				this._numero = value;
+				this._capolistaId = value;
 			}
 		}
 		
-		private string _descrizione;
-		public virtual string Descrizione
+		private int _sezioneId;
+		public virtual int SezioneId
 		{
 			get
 			{
-				return this._descrizione;
+				return this._sezioneId;
 			}
 			set
 			{
-				this._descrizione = value;
+				this._sezioneId = value;
 			}
 		}
 		
-		private string _simbolo;
-		public virtual string Simbolo
+		private int _voti;
+		public virtual int Voti
 		{
 			get
 			{
-				return this._simbolo;
+				return this._voti;
 			}
 			set
 			{
-				this._simbolo = value;
+				this._voti = value;
 			}
 		}
 		
-		private int _consultazioneId;
-		public virtual int ConsultazioneId
+		private Capolista _capolista;
+		public virtual Capolista Capolista
 		{
 			get
 			{
-				return this._consultazioneId;
+				return this._capolista;
 			}
 			set
 			{
-				this._consultazioneId = value;
+				this._capolista = value;
 			}
 		}
 		
-		private Consultazione _consultazione;
-		public virtual Consultazione Consultazione
+		private Sezione _sezione;
+		public virtual Sezione Sezione
 		{
 			get
 			{
-				return this._consultazione;
+				return this._sezione;
 			}
 			set
 			{
-				this._consultazione = value;
-			}
-		}
-		
-		private IList<Lista> _listas = new List<Lista>();
-		public virtual IList<Lista> Listas
-		{
-			get
-			{
-				return this._listas;
-			}
-		}
-		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
-		{
-			get
-			{
-				return this._scrutinioCapolistas;
+				this._sezione = value;
 			}
 		}
 		

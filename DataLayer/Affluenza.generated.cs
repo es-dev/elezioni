@@ -37,16 +37,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _sezioneID;
-		public virtual int SezioneID
+		private int _consultazioneId;
+		public virtual int ConsultazioneId
 		{
 			get
 			{
-				return this._sezioneID;
+				return this._consultazioneId;
 			}
 			set
 			{
-				this._sezioneID = value;
+				this._consultazioneId = value;
 			}
 		}
 		
@@ -63,68 +63,25 @@ namespace DataLayer
 			}
 		}
 		
-		private string _stato;
-		public virtual string Stato
+		private Consultazione _consultazione;
+		public virtual Consultazione Consultazione
 		{
 			get
 			{
-				return this._stato;
+				return this._consultazione;
 			}
 			set
 			{
-				this._stato = value;
+				this._consultazione = value;
 			}
 		}
 		
-		private int _uomini;
-		public virtual int Uomini
+		private IList<Rilevamento> _rilevamentos = new List<Rilevamento>();
+		public virtual IList<Rilevamento> Rilevamentos
 		{
 			get
 			{
-				return this._uomini;
-			}
-			set
-			{
-				this._uomini = value;
-			}
-		}
-		
-		private int _donne;
-		public virtual int Donne
-		{
-			get
-			{
-				return this._donne;
-			}
-			set
-			{
-				this._donne = value;
-			}
-		}
-		
-		private int _totale;
-		public virtual int Totale
-		{
-			get
-			{
-				return this._totale;
-			}
-			set
-			{
-				this._totale = value;
-			}
-		}
-		
-		private Sezione _sezione;
-		public virtual Sezione Sezione
-		{
-			get
-			{
-				return this._sezione;
-			}
-			set
-			{
-				this._sezione = value;
+				return this._rilevamentos;
 			}
 		}
 		

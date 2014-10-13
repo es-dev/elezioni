@@ -102,12 +102,39 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Affluenza> _affluenzas = new List<Affluenza>();
-		public virtual IList<Affluenza> Affluenzas
+		private IList<SezioneCollegio> _sezioneCollegios = new List<SezioneCollegio>();
+		public virtual IList<SezioneCollegio> SezioneCollegios
 		{
 			get
 			{
-				return this._affluenzas;
+				return this._sezioneCollegios;
+			}
+		}
+		
+		private IList<Rilevamento> _rilevamentos = new List<Rilevamento>();
+		public virtual IList<Rilevamento> Rilevamentos
+		{
+			get
+			{
+				return this._rilevamentos;
+			}
+		}
+		
+		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
+		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
+		{
+			get
+			{
+				return this._scrutinioCapolistas;
+			}
+		}
+		
+		private IList<Scrutinio> _scrutinios = new List<Scrutinio>();
+		public virtual IList<Scrutinio> Scrutinios
+		{
+			get
+			{
+				return this._scrutinios;
 			}
 		}
 		
