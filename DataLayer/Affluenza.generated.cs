@@ -24,8 +24,8 @@ namespace DataLayer
 {
 	public partial class Affluenza
 	{
-		private Int _id;
-		public virtual Int Id
+		private int _id;
+		public virtual int Id
 		{
 			get
 			{
@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _sezioneID;
-		public virtual Int SezioneID
+		private int _sezioneID;
+		public virtual int SezioneID
 		{
 			get
 			{
@@ -76,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _uomini;
-		public virtual Int Uomini
+		private int _uomini;
+		public virtual int Uomini
 		{
 			get
 			{
@@ -89,8 +89,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _donne;
-		public virtual Int Donne
+		private int _donne;
+		public virtual int Donne
 		{
 			get
 			{
@@ -102,8 +102,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _totale;
-		public virtual Int Totale
+		private int _totale;
+		public virtual int Totale
 		{
 			get
 			{

@@ -106,14 +106,6 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Scrutinio> Scrutinios 
-		{
-			get
-			{
-				return this.GetAll<Scrutinio>();
-			}
-		}
-		
 		public IQueryable<Comune> Comunes 
 		{
 			get
@@ -176,10 +168,6 @@ namespace DataLayer
 			get;
 		}
 		IQueryable<Affluenza> Affluenzas
-		{
-			get;
-		}
-		IQueryable<Scrutinio> Scrutinios
 		{
 			get;
 		}

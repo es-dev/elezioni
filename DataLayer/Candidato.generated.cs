@@ -24,8 +24,8 @@ namespace DataLayer
 {
 	public partial class Candidato
 	{
-		private Int _id;
-		public virtual Int Id
+		private int _id;
+		public virtual int Id
 		{
 			get
 			{
@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _listaId;
-		public virtual Int ListaId
+		private int _listaId;
+		public virtual int ListaId
 		{
 			get
 			{
@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _numero;
-		public virtual Int Numero
+		private int _numero;
+		public virtual int Numero
 		{
 			get
 			{

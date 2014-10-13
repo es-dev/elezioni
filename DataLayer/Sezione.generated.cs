@@ -24,8 +24,8 @@ namespace DataLayer
 {
 	public partial class Sezione
 	{
-		private Int _id;
-		public virtual Int Id
+		private int _id;
+		public virtual int Id
 		{
 			get
 			{
@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _votantiMaschi;
-		public virtual Int VotantiMaschi
+		private int _votantiMaschi;
+		public virtual int VotantiMaschi
 		{
 			get
 			{
@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _votantiFemmine;
-		public virtual Int VotantiFemmine
+		private int _votantiFemmine;
+		public virtual int VotantiFemmine
 		{
 			get
 			{
@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _totaleVotanti;
-		public virtual Int TotaleVotanti
+		private int _totaleVotanti;
+		public virtual int TotaleVotanti
 		{
 			get
 			{
@@ -76,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _sedeElettoraleId;
-		public virtual Int SedeElettoraleId
+		private int _sedeElettoraleId;
+		public virtual int SedeElettoraleId
 		{
 			get
 			{
@@ -99,19 +99,6 @@ namespace DataLayer
 			set
 			{
 				this._sedeElettorale = value;
-			}
-		}
-		
-		private Scrutinio _scrutinio;
-		public virtual Scrutinio Scrutinio
-		{
-			get
-			{
-				return this._scrutinio;
-			}
-			set
-			{
-				this._scrutinio = value;
 			}
 		}
 		

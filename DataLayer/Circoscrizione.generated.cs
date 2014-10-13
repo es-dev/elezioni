@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class SedeElettorale
+	public partial class Circoscrizione
 	{
 		private int _id;
 		public virtual int Id
@@ -37,103 +37,64 @@ namespace DataLayer
 			}
 		}
 		
-		private string _indirizzo;
-		public virtual string Indirizzo
+		private int _comuneId;
+		public virtual int ComuneId
 		{
 			get
 			{
-				return this._indirizzo;
+				return this._comuneId;
 			}
 			set
 			{
-				this._indirizzo = value;
+				this._comuneId = value;
 			}
 		}
 		
-		private string _mappa;
-		public virtual string Mappa
+		private int _numero;
+		public virtual int Numero
 		{
 			get
 			{
-				return this._mappa;
+				return this._numero;
 			}
 			set
 			{
-				this._mappa = value;
+				this._numero = value;
 			}
 		}
 		
-		private string _telefono;
-		public virtual string Telefono
+		private string _descrizione;
+		public virtual string Descrizione
 		{
 			get
 			{
-				return this._telefono;
+				return this._descrizione;
 			}
 			set
 			{
-				this._telefono = value;
+				this._descrizione = value;
 			}
 		}
 		
-		private string _fax;
-		public virtual string Fax
+		private Comune _comune;
+		public virtual Comune Comune
 		{
 			get
 			{
-				return this._fax;
+				return this._comune;
 			}
 			set
 			{
-				this._fax = value;
+				this._comune = value;
 			}
 		}
 		
-		private string _responsabile;
-		public virtual string Responsabile
+		private IList<SedeElettorale> _sedeElettorales = new List<SedeElettorale>();
+		public virtual IList<SedeElettorale> SedeElettorales
 		{
 			get
 			{
-				return this._responsabile;
-			}
-			set
-			{
-				this._responsabile = value;
-			}
-		}
-		
-		private int _circoscrizioneId;
-		public virtual int CircoscrizioneId
-		{
-			get
-			{
-				return this._circoscrizioneId;
-			}
-			set
-			{
-				this._circoscrizioneId = value;
-			}
-		}
-		
-		private Circoscrizione _circoscrizione;
-		public virtual Circoscrizione Circoscrizione
-		{
-			get
-			{
-				return this._circoscrizione;
-			}
-			set
-			{
-				this._circoscrizione = value;
-			}
-		}
-		
-		private IList<Sezione> _seziones = new List<Sezione>();
-		public virtual IList<Sezione> Seziones
-		{
-			get
-			{
-				return this._seziones;
+				return this._sedeElettorales;
 			}
 		}
 		

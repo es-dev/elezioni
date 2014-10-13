@@ -24,8 +24,8 @@ namespace DataLayer
 {
 	public partial class Consultazione
 	{
-		private Int _id;
-		public virtual Int Id
+		private int _id;
+		public virtual int Id
 		{
 			get
 			{
@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _numero;
-		public virtual Int Numero
+		private int _numero;
+		public virtual int Numero
 		{
 			get
 			{
@@ -76,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private Int _comuneId;
-		public virtual Int ComuneId
+		private int _comuneId;
+		public virtual int ComuneId
 		{
 			get
 			{

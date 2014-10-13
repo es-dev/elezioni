@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class SedeElettorale
+	public partial class Comune
 	{
 		private int _id;
 		public virtual int Id
@@ -37,103 +37,73 @@ namespace DataLayer
 			}
 		}
 		
-		private string _indirizzo;
-		public virtual string Indirizzo
+		private string _descrizione;
+		public virtual string Descrizione
 		{
 			get
 			{
-				return this._indirizzo;
+				return this._descrizione;
 			}
 			set
 			{
-				this._indirizzo = value;
+				this._descrizione = value;
 			}
 		}
 		
-		private string _mappa;
-		public virtual string Mappa
+		private string _nome;
+		public virtual string Nome
 		{
 			get
 			{
-				return this._mappa;
+				return this._nome;
 			}
 			set
 			{
-				this._mappa = value;
+				this._nome = value;
 			}
 		}
 		
-		private string _telefono;
-		public virtual string Telefono
+		private string _provincia;
+		public virtual string Provincia
 		{
 			get
 			{
-				return this._telefono;
+				return this._provincia;
 			}
 			set
 			{
-				this._telefono = value;
+				this._provincia = value;
 			}
 		}
 		
-		private string _fax;
-		public virtual string Fax
+		private string _codiceISTAT;
+		public virtual string CodiceISTAT
 		{
 			get
 			{
-				return this._fax;
+				return this._codiceISTAT;
 			}
 			set
 			{
-				this._fax = value;
+				this._codiceISTAT = value;
 			}
 		}
 		
-		private string _responsabile;
-		public virtual string Responsabile
+		private IList<Consultazione> _consultaziones = new List<Consultazione>();
+		public virtual IList<Consultazione> Consultaziones
 		{
 			get
 			{
-				return this._responsabile;
-			}
-			set
-			{
-				this._responsabile = value;
+				return this._consultaziones;
 			}
 		}
 		
-		private int _circoscrizioneId;
-		public virtual int CircoscrizioneId
+		private IList<Circoscrizione> _circoscriziones = new List<Circoscrizione>();
+		public virtual IList<Circoscrizione> Circoscriziones
 		{
 			get
 			{
-				return this._circoscrizioneId;
-			}
-			set
-			{
-				this._circoscrizioneId = value;
-			}
-		}
-		
-		private Circoscrizione _circoscrizione;
-		public virtual Circoscrizione Circoscrizione
-		{
-			get
-			{
-				return this._circoscrizione;
-			}
-			set
-			{
-				this._circoscrizione = value;
-			}
-		}
-		
-		private IList<Sezione> _seziones = new List<Sezione>();
-		public virtual IList<Sezione> Seziones
-		{
-			get
-			{
-				return this._seziones;
+				return this._circoscriziones;
 			}
 		}
 		
