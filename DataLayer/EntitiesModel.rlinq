@@ -67,6 +67,9 @@
         <orm:field name="_candidatos" property="Candidatos" behavior="readwrite" uniqueId="186a861b-ac4f-4e8c-8554-940b64695970" type="DataLayer.Candidato">
           <orm:collection element-class="DataLayer.Candidato" inverse-field="_lista" order-by="" uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" />
         </orm:field>
+        <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
+          <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
+        </orm:field>
       </orm:class>
       <orm:class name="Candidato" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
         <orm:identity>
@@ -81,6 +84,9 @@
           <orm:reference uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" association-name="CandidatoHasLista">
             <orm:sharedfield name="_listaId" target-class="DataLayer.Lista" target-field="_id" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="_scrutinioCandidatos" property="ScrutinioCandidatos" behavior="readwrite" uniqueId="1770be54-8e03-4b77-a679-70f864ac485d" type="DataLayer.ScrutinioCandidato">
+          <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_candidato" order-by="" uniqueId="66822446-3889-46bc-9276-f9deb2f8dabb" />
         </orm:field>
       </orm:class>
       <orm:class name="SedeElettorale" uniqueId="b44b289f-f74c-4b78-a651-0112ed4d0b73">
@@ -128,6 +134,12 @@
         </orm:field>
         <orm:field name="_scrutinios" property="Scrutinios" behavior="readwrite" uniqueId="3739b10b-39f6-4046-bda2-202031db4bd8" type="DataLayer.Scrutinio">
           <orm:collection element-class="DataLayer.Scrutinio" inverse-field="_sezione" order-by="" uniqueId="83be3018-c589-41ff-8dc4-e79460529a48" />
+        </orm:field>
+        <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="e9f70247-1a7a-4ab3-8fdd-910e271b77b3" type="DataLayer.ScrutinioLista">
+          <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_sezione" order-by="" uniqueId="cd8eee56-cff3-4547-8053-cdd59eee6431" />
+        </orm:field>
+        <orm:field name="_scrutinioCandidatos" property="ScrutinioCandidatos" behavior="readwrite" uniqueId="46298f0d-c1d0-476f-8a66-1ffad6529d51" type="DataLayer.ScrutinioCandidato">
+          <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_sezione" order-by="" uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" />
         </orm:field>
       </orm:class>
       <orm:class name="Affluenza" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
@@ -256,6 +268,44 @@
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="bd76974b-6148-467a-96c9-7793c8d2741e" type="DataLayer.Consultazione">
           <orm:reference uniqueId="70927d2d-9ad8-4ce6-b8f1-2a43b2cdeafc" association-name="ScrutinioHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="ScrutinioLista" uniqueId="87b1ad79-b425-4da6-8877-cac88fe79cea">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" type="System.Int32" />
+        <orm:field name="_voti" property="Voti" uniqueId="c002b333-135b-4ce9-ba03-57000c720c90" type="System.Int32" />
+        <orm:field name="_listaId" property="ListaId" uniqueId="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" type="System.Int32" />
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="ec59bd77-4f42-46c7-9d64-02e16f064a05" type="System.Int32" />
+        <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="c5f79551-47fc-4dc7-a9d5-07ee26d383d6" type="DataLayer.Sezione">
+          <orm:reference uniqueId="cd8eee56-cff3-4547-8053-cdd59eee6431" association-name="ScrutinioListaHasSezione">
+            <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_lista" property="Lista" behavior="readwrite" uniqueId="0401fb41-3ab6-410a-8b4b-64051fe94979" type="DataLayer.Lista">
+          <orm:reference uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" association-name="ScrutinioListaHasLista">
+            <orm:sharedfield name="_listaId" target-class="DataLayer.Lista" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="ScrutinioCandidato" uniqueId="9fddce83-c8ee-4330-aa60-24ccce44652c">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="33c43df3-52d0-40c1-89af-bb3308859249" type="System.Int32" />
+        <orm:field name="_voti" property="Voti" uniqueId="e1acbbec-d37c-4166-a535-a227b9b277ef" type="System.Int32" />
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="c415c05c-c305-415b-b4a1-5e627a879922" type="System.Int32" />
+        <orm:field name="_candidatoId" property="CandidatoId" uniqueId="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" type="System.Int32" />
+        <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="542f232b-8b6d-4727-8aab-9b099ca78fb8" type="DataLayer.Sezione">
+          <orm:reference uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" association-name="ScrutinioCandidatoHasSezione">
+            <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_candidato" property="Candidato" behavior="readwrite" uniqueId="e4494697-17c6-4cb4-aa9a-17a5caa2f77c" type="DataLayer.Candidato">
+          <orm:reference uniqueId="66822446-3889-46bc-9276-f9deb2f8dabb" association-name="ScrutinioCandidatoHasCandidato">
+            <orm:sharedfield name="_candidatoId" target-class="DataLayer.Candidato" target-field="_id" />
           </orm:reference>
         </orm:field>
       </orm:class>
@@ -394,6 +444,9 @@
         <classHasNavigationalProperties Id="5725bb44-3e9a-4209-b1af-b7b54adef255">
           <NavigationalProperty Id="186a861b-ac4f-4e8c-8554-940b64695970" name="Candidatos" type="IList&lt;Candidato&gt;" label="Candidatos : IList&lt;Candidato&gt;" nullable="true" kind="Persistent" fieldName="_candidatos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="624fab48-4ed4-4f0a-a530-1d3dcd4c8ef9">
+          <NavigationalProperty Id="a7258b30-782c-49c4-98fd-1c1a524a8859" name="ScrutinioListas" type="IList&lt;ScrutinioLista&gt;" label="ScrutinioListas : IList&lt;ScrutinioLista&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioListas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
     <DomainClass Id="2cc8dd6f-2997-44e5-95a4-016f7834dc2d" name="Candidato" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
@@ -420,6 +473,9 @@
       <navigationalProperties>
         <classHasNavigationalProperties Id="6b2c5311-fd9a-4cb5-bc05-25ca23c731a9">
           <NavigationalProperty Id="2ffaedf3-83ed-4537-a3c2-a64a5b9df2e7" name="Lista" type="Lista" label="Lista : Lista" nullable="true" kind="Persistent" fieldName="_lista" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="5c8d6dc0-0f56-4bfe-9a10-b07ff4f29e70">
+          <NavigationalProperty Id="1770be54-8e03-4b77-a679-70f864ac485d" name="ScrutinioCandidatos" type="IList&lt;ScrutinioCandidato&gt;" label="ScrutinioCandidatos : IList&lt;ScrutinioCandidato&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioCandidatos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -491,6 +547,12 @@
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="1953384a-a381-47ff-a395-97a31f50fe8d">
           <NavigationalProperty Id="3739b10b-39f6-4046-bda2-202031db4bd8" name="Scrutinios" type="IList&lt;Scrutinio&gt;" label="Scrutinios : IList&lt;Scrutinio&gt;" nullable="true" kind="Persistent" fieldName="_scrutinios" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="035a6fc2-bef9-4e81-8f37-bd6d76d1727d">
+          <NavigationalProperty Id="e9f70247-1a7a-4ab3-8fdd-910e271b77b3" name="ScrutinioListas" type="IList&lt;ScrutinioLista&gt;" label="ScrutinioListas : IList&lt;ScrutinioLista&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioListas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="8e918485-3cd1-4d65-ad2c-e46f5d4ff850">
+          <NavigationalProperty Id="46298f0d-c1d0-476f-8a66-1ffad6529d51" name="ScrutinioCandidatos" type="IList&lt;ScrutinioCandidato&gt;" label="ScrutinioCandidatos : IList&lt;ScrutinioCandidato&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioCandidatos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -738,6 +800,90 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
+    <DomainClass Id="87b1ad79-b425-4da6-8877-cac88fe79cea" name="ScrutinioLista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="c002b333-135b-4ce9-ba03-57000c720c90" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
+      <Property Id="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" name="ListaId" type="Int32" label="ListaId : Int32" fieldName="_listaId" />
+      <Property Id="ec59bd77-4f42-46c7-9d64-02e16f064a05" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
+      <AssociationTargets>
+        <Association Id="cd8eee56-cff3-4547-8053-cdd59eee6431" SourceMultiplicity="ZeroOne" name="ScrutinioListaHasSezione">
+          <DomainClassMoniker name="/EntitiesModel/Sezione" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="1678aaf3-24e5-4bee-98bc-455b8f744d53">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Sezione/ScrutinioListas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="ee5a4f5b-7f1c-4bd9-a699-aaed4fb88216">
+              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioLista/Sezione" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="bba09d76-1a9e-4416-9a88-518c0072f9c3" SourceMultiplicity="ZeroOne" name="ScrutinioListaHasLista">
+          <DomainClassMoniker name="/EntitiesModel/Lista" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="06eb1009-f01d-4df2-93eb-f7babb0962df">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Lista/ScrutinioListas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0429bcb0-dd17-4e68-ba23-aff1a26a317f">
+              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioLista/Lista" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="99388b3a-ef4d-4898-b89d-62f1a14a10d8">
+          <NavigationalProperty Id="c5f79551-47fc-4dc7-a9d5-07ee26d383d6" name="Sezione" type="Sezione" label="Sezione : Sezione" nullable="true" kind="Persistent" fieldName="_sezione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="7696511f-9af0-48de-a8d2-4e5253a269eb">
+          <NavigationalProperty Id="0401fb41-3ab6-410a-8b4b-64051fe94979" name="Lista" type="Lista" label="Lista : Lista" nullable="true" kind="Persistent" fieldName="_lista" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="9fddce83-c8ee-4330-aa60-24ccce44652c" name="ScrutinioCandidato" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="33c43df3-52d0-40c1-89af-bb3308859249" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="e1acbbec-d37c-4166-a535-a227b9b277ef" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
+      <Property Id="c415c05c-c305-415b-b4a1-5e627a879922" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
+      <Property Id="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" name="CandidatoId" type="Int32" label="CandidatoId : Int32" fieldName="_candidatoId" />
+      <AssociationTargets>
+        <Association Id="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" SourceMultiplicity="ZeroOne" name="ScrutinioCandidatoHasSezione">
+          <DomainClassMoniker name="/EntitiesModel/Sezione" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="b7fd1f57-3243-4f4d-b87a-55091d3e0543">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Sezione/ScrutinioCandidatos" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e8ed270f-ad80-4cd3-8de2-9396696ccc28">
+              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioCandidato/Sezione" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="66822446-3889-46bc-9276-f9deb2f8dabb" SourceMultiplicity="ZeroOne" name="ScrutinioCandidatoHasCandidato">
+          <DomainClassMoniker name="/EntitiesModel/Candidato" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="8d3a2f60-2c8c-48aa-9d0b-7696ffb5fbd6">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Candidato/ScrutinioCandidatos" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="6bfe0feb-c6f1-474d-a44c-ff9fb4c88fa3">
+              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioCandidato/Candidato" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="33945d5c-4706-48ff-a5d3-5b7008b13525">
+          <NavigationalProperty Id="542f232b-8b6d-4727-8aab-9b099ca78fb8" name="Sezione" type="Sezione" label="Sezione : Sezione" nullable="true" kind="Persistent" fieldName="_sezione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="7b7f3029-4fd6-40dd-95db-d862d9dce651">
+          <NavigationalProperty Id="e4494697-17c6-4cb4-aa9a-17a5caa2f77c" name="Candidato" type="Candidato" label="Candidato : Candidato" nullable="true" kind="Persistent" fieldName="_candidato" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
   </Types>
   <domainContext>
     <domainModelHasDomainContext Id="f019e2a8-6a1a-4960-8528-51b502dc9ee9">
@@ -755,6 +901,8 @@
         <entitySetProperty name="Rilevamentos" namespace="DataLayer" type="Rilevamento" label="Rilevamentos : IQueryable&lt;DataLayer.Rilevamento&gt;" />
         <entitySetProperty name="ScrutinioCapolistas" namespace="DataLayer" type="ScrutinioCapolista" label="ScrutinioCapolistas : IQueryable&lt;DataLayer.ScrutinioCapolista&gt;" />
         <entitySetProperty name="Scrutinios" namespace="DataLayer" type="Scrutinio" label="Scrutinios : IQueryable&lt;DataLayer.Scrutinio&gt;" />
+        <entitySetProperty name="ScrutinioListas" namespace="DataLayer" type="ScrutinioLista" label="ScrutinioListas : IQueryable&lt;DataLayer.ScrutinioLista&gt;" />
+        <entitySetProperty name="ScrutinioCandidatos" namespace="DataLayer" type="ScrutinioCandidato" label="ScrutinioCandidatos : IQueryable&lt;DataLayer.ScrutinioCandidato&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>

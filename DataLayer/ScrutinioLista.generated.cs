@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Candidato
+	public partial class ScrutinioLista
 	{
 		private int _id;
 		public virtual int Id
@@ -34,6 +34,19 @@ namespace DataLayer
 			set
 			{
 				this._id = value;
+			}
+		}
+		
+		private int _voti;
+		public virtual int Voti
+		{
+			get
+			{
+				return this._voti;
+			}
+			set
+			{
+				this._voti = value;
 			}
 		}
 		
@@ -50,42 +63,29 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int _sezioneId;
+		public virtual int SezioneId
 		{
 			get
 			{
-				return this._numero;
+				return this._sezioneId;
 			}
 			set
 			{
-				this._numero = value;
+				this._sezioneId = value;
 			}
 		}
 		
-		private string _cognome;
-		public virtual string Cognome
+		private Sezione _sezione;
+		public virtual Sezione Sezione
 		{
 			get
 			{
-				return this._cognome;
+				return this._sezione;
 			}
 			set
 			{
-				this._cognome = value;
-			}
-		}
-		
-		private string _nome;
-		public virtual string Nome
-		{
-			get
-			{
-				return this._nome;
-			}
-			set
-			{
-				this._nome = value;
+				this._sezione = value;
 			}
 		}
 		
@@ -99,15 +99,6 @@ namespace DataLayer
 			set
 			{
 				this._lista = value;
-			}
-		}
-		
-		private IList<ScrutinioCandidato> _scrutinioCandidatos = new List<ScrutinioCandidato>();
-		public virtual IList<ScrutinioCandidato> ScrutinioCandidatos
-		{
-			get
-			{
-				return this._scrutinioCandidatos;
 			}
 		}
 		

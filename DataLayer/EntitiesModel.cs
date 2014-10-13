@@ -154,6 +154,22 @@ namespace DataLayer
 			}
 		}
 		
+		public IQueryable<ScrutinioLista> ScrutinioListas 
+		{
+			get
+			{
+				return this.GetAll<ScrutinioLista>();
+			}
+		}
+		
+		public IQueryable<ScrutinioCandidato> ScrutinioCandidatos 
+		{
+			get
+			{
+				return this.GetAll<ScrutinioCandidato>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -224,6 +240,14 @@ namespace DataLayer
 			get;
 		}
 		IQueryable<Scrutinio> Scrutinios
+		{
+			get;
+		}
+		IQueryable<ScrutinioLista> ScrutinioListas
+		{
+			get;
+		}
+		IQueryable<ScrutinioCandidato> ScrutinioCandidatos
 		{
 			get;
 		}

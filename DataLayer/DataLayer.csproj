@@ -103,9 +103,15 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ScrutinioCandidato.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
     <Compile Include="ScrutinioCapolista.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrutinioLista.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="SedeElettorale.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>

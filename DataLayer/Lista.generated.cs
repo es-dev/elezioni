@@ -111,6 +111,15 @@ namespace DataLayer
 			}
 		}
 		
+		private IList<ScrutinioLista> _scrutinioListas = new List<ScrutinioLista>();
+		public virtual IList<ScrutinioLista> ScrutinioListas
+		{
+			get
+			{
+				return this._scrutinioListas;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591
