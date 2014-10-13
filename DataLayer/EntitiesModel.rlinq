@@ -183,7 +183,7 @@
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" type="System.System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" type="System.Int32" />
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="3ee55f05-cad2-4765-9e62-c259a71045b9" type="System.Int32" />
         <orm:field name="_collegioId" property="CollegioId" uniqueId="070259a4-5536-432e-9373-0ec832665e11" type="System.Int32" />
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="a026a2f2-837b-4c0b-8d62-cc84644ccc64" type="DataLayer.Sezione">
