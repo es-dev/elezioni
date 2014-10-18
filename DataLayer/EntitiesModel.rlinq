@@ -65,16 +65,16 @@
         <orm:field name="_numero" property="Numero" uniqueId="6095da69-afe5-4602-bec3-3f34cffdeaa1" type="System.Int32" />
         <orm:field name="_descrizione" property="Descrizione" uniqueId="573886cc-6390-4204-842f-1dfbdce22727" type="System.String" />
         <orm:field name="_simbolo" property="Simbolo" uniqueId="bbd93e3d-7204-4fa8-9ea5-6412d75f91f7" type="System.String" />
+        <orm:field name="_presidente" property="Presidente" behavior="readwrite" uniqueId="d986b415-d2eb-4d8b-8d19-f557a5b8bbd7" type="DataLayer.Presidente">
+          <orm:reference uniqueId="541253b0-558c-4b85-87b6-b102601ee2ac" association-name="ListaHasPresidente">
+            <orm:sharedfield name="_presidenteId" target-class="DataLayer.Presidente" target-field="_id" />
+          </orm:reference>
+        </orm:field>
         <orm:field name="_candidatos" property="Candidatos" behavior="readwrite" uniqueId="186a861b-ac4f-4e8c-8554-940b64695970" type="DataLayer.Candidato">
           <orm:collection element-class="DataLayer.Candidato" inverse-field="_lista" order-by="" uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" />
         </orm:field>
         <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
           <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
-        </orm:field>
-        <orm:field name="_presidente" property="Presidente" behavior="readwrite" uniqueId="d986b415-d2eb-4d8b-8d19-f557a5b8bbd7" type="DataLayer.Presidente">
-          <orm:reference uniqueId="541253b0-558c-4b85-87b6-b102601ee2ac" association-name="ListaHasPresidente">
-            <orm:sharedfield name="_presidenteId" target-class="DataLayer.Presidente" target-field="_id" />
-          </orm:reference>
         </orm:field>
       </orm:class>
       <orm:class name="Candidato" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
@@ -106,13 +106,13 @@
         <orm:field name="_fax" property="Fax" uniqueId="8b62b3ae-da43-4ef3-a60e-2a447935ea2a" type="System.String" />
         <orm:field name="_responsabile" property="Responsabile" uniqueId="090bfbc0-436f-4940-b4ee-47887935b72f" type="System.String" />
         <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="78cee2aa-affc-4427-9ba7-3882a3d2c50a" type="System.Int32" />
-        <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="b4f3bbeb-b03a-4c26-aeec-6411129da6a7" type="DataLayer.Sezione">
-          <orm:collection element-class="DataLayer.Sezione" inverse-field="_sedeElettorale" order-by="" uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" />
-        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="67a435f7-a792-4e75-a38f-edad1137527f" type="DataLayer.Consultazione">
           <orm:reference uniqueId="2124b898-b392-473e-bfb2-9be7fd4a80b8" association-name="SedeElettoraleHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="b4f3bbeb-b03a-4c26-aeec-6411129da6a7" type="DataLayer.Sezione">
+          <orm:collection element-class="DataLayer.Sezione" inverse-field="_sedeElettorale" order-by="" uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" />
         </orm:field>
       </orm:class>
       <orm:class name="Sezione" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
@@ -128,6 +128,11 @@
         <orm:field name="_sedeElettorale" property="SedeElettorale" behavior="readwrite" uniqueId="bfacdc58-b38e-4a83-97fe-65a595f6cd9c" type="DataLayer.SedeElettorale">
           <orm:reference uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" association-name="SezioneHasSedeElettorale">
             <orm:sharedfield name="_sedeElettoraleId" target-class="DataLayer.SedeElettorale" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_operatore" property="Operatore" behavior="readwrite" uniqueId="27896a12-f4b7-4168-809e-d47936d32340" type="DataLayer.Operatore">
+          <orm:reference uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" association-name="SezioneHasOperatore">
+            <orm:sharedfield name="_operatoreId" target-class="DataLayer.Operatore" target-field="_id" />
           </orm:reference>
         </orm:field>
         <orm:field name="_sezioneCollegios" property="SezioneCollegios" behavior="readwrite" uniqueId="d79e791e-0b8f-47e5-8f39-bd8cd63305e0" type="DataLayer.SezioneCollegio">
@@ -147,11 +152,6 @@
         </orm:field>
         <orm:field name="_scrutinioCandidatos" property="ScrutinioCandidatos" behavior="readwrite" uniqueId="46298f0d-c1d0-476f-8a66-1ffad6529d51" type="DataLayer.ScrutinioCandidato">
           <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_sezione" order-by="" uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" />
-        </orm:field>
-        <orm:field name="_operatore" property="Operatore" behavior="readwrite" uniqueId="27896a12-f4b7-4168-809e-d47936d32340" type="DataLayer.Operatore">
-          <orm:reference uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" association-name="SezioneHasOperatore">
-            <orm:sharedfield name="_operatoreId" target-class="DataLayer.Operatore" target-field="_id" />
-          </orm:reference>
         </orm:field>
       </orm:class>
       <orm:class name="Affluenza" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
@@ -338,13 +338,13 @@
         <orm:field name="_supervisor" property="Supervisor" uniqueId="8711fb76-0f70-42e2-9733-d5958b900887" type="System.Boolean" />
         <orm:field name="_amministratore" property="Amministratore" uniqueId="7589122c-360d-4cff-b647-cfb0fbfc41ae" type="System.Boolean" />
         <orm:field name="_utente" property="Utente" uniqueId="96806377-aae2-4098-92f4-6dcb94e245f7" type="System.Boolean" />
-        <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="cd8366e9-b8c7-4862-bf70-c71aee8371ba" type="DataLayer.Sezione">
-          <orm:collection element-class="DataLayer.Sezione" inverse-field="_operatore" order-by="" uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" />
-        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="d472e4ad-1014-4afb-a326-db49f6e1623f" type="DataLayer.Consultazione">
           <orm:reference uniqueId="e3b9a1b7-9d81-496b-8299-516fb2dac60d" association-name="OperatoreHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="cd8366e9-b8c7-4862-bf70-c71aee8371ba" type="DataLayer.Sezione">
+          <orm:collection element-class="DataLayer.Sezione" inverse-field="_operatore" order-by="" uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" />
         </orm:field>
       </orm:class>
     </orm:namespace>
