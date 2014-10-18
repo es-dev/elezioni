@@ -16,8 +16,8 @@
             <orm:sharedfield name="_comuneId" target-class="DataLayer.Comune" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:field name="_capolistas" property="Capolistas" behavior="readwrite" uniqueId="8bf2fc28-9470-4c2e-b7bd-6a0a653590ab" type="DataLayer.Capolista">
-          <orm:collection element-class="DataLayer.Capolista" inverse-field="_consultazione" order-by="" uniqueId="3b30b939-70df-4c0c-ad3f-7ff5bbe27751" />
+        <orm:field name="_capolistas" property="Capolistas" behavior="readwrite" uniqueId="8bf2fc28-9470-4c2e-b7bd-6a0a653590ab" type="DataLayer.Presidente">
+          <orm:collection element-class="DataLayer.Presidente" inverse-field="_consultazione" order-by="" uniqueId="3b30b939-70df-4c0c-ad3f-7ff5bbe27751" />
         </orm:field>
         <orm:field name="_collegios" property="Collegios" behavior="readwrite" uniqueId="5de1857a-cfab-438b-a146-a393ebf3c073" type="DataLayer.Collegio">
           <orm:collection element-class="DataLayer.Collegio" inverse-field="_consultazione" order-by="" uniqueId="c7018e70-3d08-4780-83e1-e96dd1085273" />
@@ -28,8 +28,14 @@
         <orm:field name="_scrutinios" property="Scrutinios" behavior="readwrite" uniqueId="028c41c7-8b3b-4419-9655-0a5519417cb1" type="DataLayer.Scrutinio">
           <orm:collection element-class="DataLayer.Scrutinio" inverse-field="_consultazione" order-by="" uniqueId="70927d2d-9ad8-4ce6-b8f1-2a43b2cdeafc" />
         </orm:field>
+        <orm:field name="_sedeElettorales" property="SedeElettorales" behavior="readwrite" uniqueId="84ce4703-68eb-45cd-9494-ba5d31b29c9b" type="DataLayer.SedeElettorale">
+          <orm:collection element-class="DataLayer.SedeElettorale" inverse-field="_consultazione" order-by="" uniqueId="2124b898-b392-473e-bfb2-9be7fd4a80b8" />
+        </orm:field>
+        <orm:field name="_operatores" property="Operatores" behavior="readwrite" uniqueId="98381185-7fb5-4dfc-b3f2-b2936d171bcc" type="DataLayer.Operatore">
+          <orm:collection element-class="DataLayer.Operatore" inverse-field="_consultazione" order-by="" uniqueId="e3b9a1b7-9d81-496b-8299-516fb2dac60d" />
+        </orm:field>
       </orm:class>
-      <orm:class name="Capolista" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
+      <orm:class name="Presidente" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
@@ -43,11 +49,11 @@
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:field name="_listas" property="Listas" behavior="readwrite" uniqueId="b622a1ba-8e85-40f2-85b0-ced8ca0c9341" type="DataLayer.Lista">
-          <orm:collection element-class="DataLayer.Lista" inverse-field="_candidatoPresidente1" order-by="" uniqueId="d91a0452-a9b6-4c5f-9604-a8e3fcca3286" />
+        <orm:field name="_listas" property="Listas" behavior="readwrite" uniqueId="8bc222d0-9ede-4ba6-80c4-16d553d94363" type="DataLayer.Lista">
+          <orm:collection element-class="DataLayer.Lista" inverse-field="_presidente" order-by="" uniqueId="541253b0-558c-4b85-87b6-b102601ee2ac" />
         </orm:field>
-        <orm:field name="_scrutinioCapolistas" property="ScrutinioCapolistas" behavior="readwrite" uniqueId="0463967f-ec40-4a55-a2fb-b0eea96cbe53" type="DataLayer.ScrutinioCapolista">
-          <orm:collection element-class="DataLayer.ScrutinioCapolista" inverse-field="_capolista" order-by="" uniqueId="3f6acdf2-cb3f-4182-a325-df4af46aa0c9" />
+        <orm:field name="_scrutinioCapolistas" property="ScrutinioCapolistas" behavior="readwrite" uniqueId="c29941bd-0d8b-47fe-9358-a2caaec1ecca" type="DataLayer.ScrutinioCapolista">
+          <orm:collection element-class="DataLayer.ScrutinioCapolista" inverse-field="_presidente" order-by="" uniqueId="31773953-0bfb-4958-8027-5175e2af90a7" />
         </orm:field>
       </orm:class>
       <orm:class name="Lista" uniqueId="89eee56e-8fff-482f-809e-8ab849bf8d08">
@@ -55,20 +61,20 @@
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="473c3b42-9c0a-4f8b-a274-63e81960fae9" type="System.Int32" />
-        <orm:field name="_candidatoPresidenteId" property="CandidatoPresidenteId" uniqueId="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" type="System.Int32" />
+        <orm:field name="_presidenteId" property="PresidenteId" uniqueId="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" type="System.Int32" />
         <orm:field name="_numero" property="Numero" uniqueId="6095da69-afe5-4602-bec3-3f34cffdeaa1" type="System.Int32" />
         <orm:field name="_descrizione" property="Descrizione" uniqueId="573886cc-6390-4204-842f-1dfbdce22727" type="System.String" />
         <orm:field name="_simbolo" property="Simbolo" uniqueId="bbd93e3d-7204-4fa8-9ea5-6412d75f91f7" type="System.String" />
-        <orm:field name="_candidatoPresidente1" property="CandidatoPresidente1" behavior="readwrite" uniqueId="7c902224-b19b-4c3d-bca1-0f0455c3be94" type="DataLayer.Capolista">
-          <orm:reference uniqueId="d91a0452-a9b6-4c5f-9604-a8e3fcca3286" association-name="ListaHasCandidatoPresidente">
-            <orm:sharedfield name="_candidatoPresidenteId" target-class="DataLayer.Capolista" target-field="_id" />
-          </orm:reference>
-        </orm:field>
         <orm:field name="_candidatos" property="Candidatos" behavior="readwrite" uniqueId="186a861b-ac4f-4e8c-8554-940b64695970" type="DataLayer.Candidato">
           <orm:collection element-class="DataLayer.Candidato" inverse-field="_lista" order-by="" uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" />
         </orm:field>
         <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
           <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
+        </orm:field>
+        <orm:field name="_presidente" property="Presidente" behavior="readwrite" uniqueId="d986b415-d2eb-4d8b-8d19-f557a5b8bbd7" type="DataLayer.Presidente">
+          <orm:reference uniqueId="541253b0-558c-4b85-87b6-b102601ee2ac" association-name="ListaHasPresidente">
+            <orm:sharedfield name="_presidenteId" target-class="DataLayer.Presidente" target-field="_id" />
+          </orm:reference>
         </orm:field>
       </orm:class>
       <orm:class name="Candidato" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
@@ -99,14 +105,14 @@
         <orm:field name="_telefono" property="Telefono" uniqueId="1d1a9e10-c6f6-4ab8-b6c9-f2f97b8227d0" type="System.String" />
         <orm:field name="_fax" property="Fax" uniqueId="8b62b3ae-da43-4ef3-a60e-2a447935ea2a" type="System.String" />
         <orm:field name="_responsabile" property="Responsabile" uniqueId="090bfbc0-436f-4940-b4ee-47887935b72f" type="System.String" />
-        <orm:field name="_comuneId" property="ComuneId" uniqueId="78cee2aa-affc-4427-9ba7-3882a3d2c50a" type="System.Int32" />
-        <orm:field name="_comune" property="Comune" behavior="readwrite" uniqueId="ffb7d308-996b-4101-a16d-081cd3e0e191" type="DataLayer.Comune">
-          <orm:reference uniqueId="be472c01-f70a-4537-9704-5b84573b95c8" association-name="SedeElettoraleHasComune">
-            <orm:sharedfield name="_comuneId" target-class="DataLayer.Comune" target-field="_id" />
-          </orm:reference>
-        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="78cee2aa-affc-4427-9ba7-3882a3d2c50a" type="System.Int32" />
         <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="b4f3bbeb-b03a-4c26-aeec-6411129da6a7" type="DataLayer.Sezione">
           <orm:collection element-class="DataLayer.Sezione" inverse-field="_sedeElettorale" order-by="" uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" />
+        </orm:field>
+        <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="67a435f7-a792-4e75-a38f-edad1137527f" type="DataLayer.Consultazione">
+          <orm:reference uniqueId="2124b898-b392-473e-bfb2-9be7fd4a80b8" association-name="SedeElettoraleHasConsultazione">
+            <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
+          </orm:reference>
         </orm:field>
       </orm:class>
       <orm:class name="Sezione" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
@@ -118,6 +124,7 @@
         <orm:field name="_votantiFemmine" property="VotantiFemmine" uniqueId="d890653d-546a-4d31-81a6-30a7ae20fcee" type="System.Int32" />
         <orm:field name="_totaleVotanti" property="TotaleVotanti" uniqueId="d0b718fd-847a-456d-9a0e-a93ab3504c2c" type="System.Int32" />
         <orm:field name="_sedeElettoraleId" property="SedeElettoraleId" uniqueId="ac59e4a2-66e2-41f1-97a0-d6f1cfe0d7d2" type="System.Int32" />
+        <orm:field name="_operatoreId" property="OperatoreId" uniqueId="0a123d78-efe7-4f70-b2e9-7b91cbaa065f" type="System.Int32" />
         <orm:field name="_sedeElettorale" property="SedeElettorale" behavior="readwrite" uniqueId="bfacdc58-b38e-4a83-97fe-65a595f6cd9c" type="DataLayer.SedeElettorale">
           <orm:reference uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" association-name="SezioneHasSedeElettorale">
             <orm:sharedfield name="_sedeElettoraleId" target-class="DataLayer.SedeElettorale" target-field="_id" />
@@ -140,6 +147,11 @@
         </orm:field>
         <orm:field name="_scrutinioCandidatos" property="ScrutinioCandidatos" behavior="readwrite" uniqueId="46298f0d-c1d0-476f-8a66-1ffad6529d51" type="DataLayer.ScrutinioCandidato">
           <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_sezione" order-by="" uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" />
+        </orm:field>
+        <orm:field name="_operatore" property="Operatore" behavior="readwrite" uniqueId="27896a12-f4b7-4168-809e-d47936d32340" type="DataLayer.Operatore">
+          <orm:reference uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" association-name="SezioneHasOperatore">
+            <orm:sharedfield name="_operatoreId" target-class="DataLayer.Operatore" target-field="_id" />
+          </orm:reference>
         </orm:field>
       </orm:class>
       <orm:class name="Affluenza" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
@@ -167,11 +179,9 @@
         <orm:field name="_nome" property="Nome" uniqueId="7747255d-51cb-40fb-9dee-ef294fa7fd61" type="System.String" />
         <orm:field name="_provincia" property="Provincia" uniqueId="b1b28bd2-950b-4dec-8f88-a97dd136e7a3" type="System.String" />
         <orm:field name="_codiceISTAT" property="CodiceISTAT" uniqueId="3b25906c-d704-4c8f-b3d2-c8c8eba342bd" type="System.String" />
+        <orm:field name="_numeroSezioni" property="NumeroSezioni" uniqueId="f4d48900-a9d8-4cb7-bda6-8864b0c945a2" type="System.Int32" />
         <orm:field name="_consultaziones" property="Consultaziones" behavior="readwrite" uniqueId="96a2bdfd-7c79-48f9-a3e0-822344c8c09b" type="DataLayer.Consultazione">
           <orm:collection element-class="DataLayer.Consultazione" inverse-field="_comune" order-by="" uniqueId="480d0edd-9ae6-4ebe-8771-06aad6ffe7f3" />
-        </orm:field>
-        <orm:field name="_sedeElettorales" property="SedeElettorales" behavior="readwrite" uniqueId="25bd54ea-4af3-4b66-bbed-60550a1f838a" type="DataLayer.SedeElettorale">
-          <orm:collection element-class="DataLayer.SedeElettorale" inverse-field="_comune" order-by="" uniqueId="be472c01-f70a-4537-9704-5b84573b95c8" />
         </orm:field>
       </orm:class>
       <orm:class name="Collegio" uniqueId="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279">
@@ -235,17 +245,17 @@
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="2eee3233-5544-47b5-a839-b6c9793a9dc3" type="System.Int32" />
-        <orm:field name="_capolistaId" property="CapolistaId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32" />
+        <orm:field name="_presidenteId" property="PresidenteId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32" />
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="eeb7782c-49ed-4fdc-87ba-d0be598066f5" type="System.Int32" />
         <orm:field name="_voti" property="Voti" uniqueId="0f51affd-9b55-428d-b0fc-1beb0314b57a" type="System.Int32" />
-        <orm:field name="_capolista" property="Capolista" behavior="readwrite" uniqueId="4e91208f-da5e-4b03-a24a-6e4873823fc8" type="DataLayer.Capolista">
-          <orm:reference uniqueId="3f6acdf2-cb3f-4182-a325-df4af46aa0c9" association-name="ScrutinioCapolistaHasCapolista">
-            <orm:sharedfield name="_capolistaId" target-class="DataLayer.Capolista" target-field="_id" />
-          </orm:reference>
-        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="8f227bf0-3cf0-4dd4-a055-0348443d6b8b" type="DataLayer.Sezione">
           <orm:reference uniqueId="1f6aec8b-3b9c-4a0f-b639-ef5accac4a59" association-name="ScrutinioCapolistaHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_presidente" property="Presidente" behavior="readwrite" uniqueId="2f02b469-cd1a-4772-a0f5-20bdf6174772" type="DataLayer.Presidente">
+          <orm:reference uniqueId="31773953-0bfb-4958-8027-5175e2af90a7" association-name="ScrutinioCapolistaHasPresidente">
+            <orm:sharedfield name="_presidenteId" target-class="DataLayer.Presidente" target-field="_id" />
           </orm:reference>
         </orm:field>
       </orm:class>
@@ -306,6 +316,31 @@
         <orm:field name="_candidato" property="Candidato" behavior="readwrite" uniqueId="e4494697-17c6-4cb4-aa9a-17a5caa2f77c" type="DataLayer.Candidato">
           <orm:reference uniqueId="66822446-3889-46bc-9276-f9deb2f8dabb" association-name="ScrutinioCandidatoHasCandidato">
             <orm:sharedfield name="_candidatoId" target-class="DataLayer.Candidato" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Operatore" uniqueId="dfcfe140-9f9c-4e52-b812-1f3ba39026af">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="159cea98-bf00-45f4-a738-a3c6a7c500b1" type="System.Int32" />
+        <orm:field name="_username" property="Username" uniqueId="c22cdbfc-2595-4536-af3c-20e4566ed4a2" type="System.String" />
+        <orm:field name="_password" property="Password" uniqueId="36e75f85-e60c-4d60-aab2-b670b4a68c2e" type="System.String" />
+        <orm:field name="_confermaPassword" property="ConfermaPassword" uniqueId="1e9c598b-5528-4631-916e-2bfce0b93c1d" type="System.String" />
+        <orm:field name="_email" property="Email" uniqueId="b8d801cb-d986-4546-9ffc-24066908c3ac" type="System.String" />
+        <orm:field name="_telefono" property="Telefono" uniqueId="d925b8bc-f12d-40ae-afad-7b8008563ef1" type="System.String" />
+        <orm:field name="_cognome" property="Cognome" uniqueId="d70bf6c8-3620-4c6b-8df9-efa53793ec67" type="System.String" />
+        <orm:field name="_nome" property="Nome" uniqueId="634e5725-458f-42d7-acdc-a7e19f63686c" type="System.String" />
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="3286b15a-d6cd-40ea-abff-b8ca35d3aaf3" type="System.Int32" />
+        <orm:field name="_supervisor" property="Supervisor" uniqueId="8711fb76-0f70-42e2-9733-d5958b900887" type="System.Boolean" />
+        <orm:field name="_amministratore" property="Amministratore" uniqueId="7589122c-360d-4cff-b647-cfb0fbfc41ae" type="System.Boolean" />
+        <orm:field name="_utente" property="Utente" uniqueId="96806377-aae2-4098-92f4-6dcb94e245f7" type="System.Boolean" />
+        <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="cd8366e9-b8c7-4862-bf70-c71aee8371ba" type="DataLayer.Sezione">
+          <orm:collection element-class="DataLayer.Sezione" inverse-field="_operatore" order-by="" uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" />
+        </orm:field>
+        <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="d472e4ad-1014-4afb-a326-db49f6e1623f" type="DataLayer.Consultazione">
+          <orm:reference uniqueId="e3b9a1b7-9d81-496b-8299-516fb2dac60d" association-name="OperatoreHasConsultazione">
+            <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
           </orm:reference>
         </orm:field>
       </orm:class>
@@ -381,9 +416,15 @@
         <classHasNavigationalProperties Id="0885e9d8-2de8-40d6-b70d-c52cac07d446">
           <NavigationalProperty Id="028c41c7-8b3b-4419-9655-0a5519417cb1" name="Scrutinios" type="IList&lt;Scrutinio&gt;" label="Scrutinios : IList&lt;Scrutinio&gt;" nullable="true" kind="Persistent" fieldName="_scrutinios" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="532c6f70-238c-4140-85bc-3f57c3056635">
+          <NavigationalProperty Id="84ce4703-68eb-45cd-9494-ba5d31b29c9b" name="SedeElettorales" type="IList&lt;SedeElettorale&gt;" label="SedeElettorales : IList&lt;SedeElettorale&gt;" nullable="true" kind="Persistent" fieldName="_sedeElettorales" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="ee77395a-bb8a-460c-a729-28422546681a">
+          <NavigationalProperty Id="98381185-7fb5-4dfc-b3f2-b2936d171bcc" name="Operatores" type="IList&lt;Operatore&gt;" label="Operatores : IList&lt;Operatore&gt;" nullable="true" kind="Persistent" fieldName="_operatores" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="bae68634-ceea-44a4-960e-6d3bd2fabda7" name="Capolista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="bae68634-ceea-44a4-960e-6d3bd2fabda7" name="Presidente" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
       <Property Id="14e3c336-a4e8-4da1-9c84-bd563a19eb19" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="1f1b255b-08d1-4e4b-8b86-28e7e363e15b" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
       <Property Id="ebb05eeb-7f73-49f3-8934-3e39e5ce108e" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
@@ -399,53 +440,53 @@
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
             <associationDefinesSourceProperty Id="c8f1687a-8c45-4094-b433-1793e1d3e54d">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Capolista/Consultazione" />
+              <NavigationalPropertyMoniker name="/EntitiesModel/Presidente/Consultazione" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="f218a6db-7c28-4027-bd51-24d588f8dfa9">
-          <NavigationalProperty Id="b622a1ba-8e85-40f2-85b0-ced8ca0c9341" name="Listas" type="IList&lt;Lista&gt;" label="Listas : IList&lt;Lista&gt;" nullable="true" kind="Persistent" fieldName="_listas" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="42702dea-844a-402a-aa4a-f590eb57011d">
           <NavigationalProperty Id="46f72e96-2622-4fc7-81f3-1038eca5ca5f" name="Consultazione" type="Consultazione" label="Consultazione : Consultazione" nullable="true" kind="Persistent" fieldName="_consultazione" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="6d61d5dd-9dcb-4e22-9e50-b2e4290b4622">
-          <NavigationalProperty Id="0463967f-ec40-4a55-a2fb-b0eea96cbe53" name="ScrutinioCapolistas" type="IList&lt;ScrutinioCapolista&gt;" label="ScrutinioCapolistas : IList&lt;ScrutinioCapolista&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioCapolistas" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="0f1798e9-81b8-46c4-b6cc-cb67082c24bf">
+          <NavigationalProperty Id="8bc222d0-9ede-4ba6-80c4-16d553d94363" name="Listas" type="IList&lt;Lista&gt;" label="Listas : IList&lt;Lista&gt;" nullable="true" kind="Persistent" fieldName="_listas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="ab6825d6-311c-45f6-b6dd-e5c36c70c0da">
+          <NavigationalProperty Id="c29941bd-0d8b-47fe-9358-a2caaec1ecca" name="ScrutinioCapolistas" type="IList&lt;ScrutinioCapolista&gt;" label="ScrutinioCapolistas : IList&lt;ScrutinioCapolista&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioCapolistas" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
     <DomainClass Id="89eee56e-8fff-482f-809e-8ab849bf8d08" name="Lista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
       <Property Id="473c3b42-9c0a-4f8b-a274-63e81960fae9" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
-      <Property Id="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" name="CandidatoPresidenteId" type="System.Int32" label="CandidatoPresidenteId : System.Int32" fieldName="_candidatoPresidenteId" />
+      <Property Id="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" name="PresidenteId" type="System.Int32" label="PresidenteId : System.Int32" fieldName="_presidenteId" />
       <Property Id="6095da69-afe5-4602-bec3-3f34cffdeaa1" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
       <Property Id="573886cc-6390-4204-842f-1dfbdce22727" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
       <Property Id="bbd93e3d-7204-4fa8-9ea5-6412d75f91f7" name="Simbolo" label="Simbolo : String" fieldName="_simbolo" />
       <AssociationTargets>
-        <Association Id="d91a0452-a9b6-4c5f-9604-a8e3fcca3286" SourceMultiplicity="ZeroOne" name="ListaHasCandidatoPresidente">
-          <DomainClassMoniker name="/EntitiesModel/Capolista" />
+        <Association Id="541253b0-558c-4b85-87b6-b102601ee2ac" SourceMultiplicity="ZeroOne" name="ListaHasPresidente">
+          <DomainClassMoniker name="/EntitiesModel/Presidente" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="1f4cb089-ebbb-4f99-a924-acab35ea2534">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Capolista/Listas" />
+            <associationDefinesTargetProperty Id="44a4cea3-8831-4988-bced-666bdf28c3d2">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Presidente/Listas" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="097cfc73-5785-466d-a8d8-e58e7781a83a">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Lista/CandidatoPresidente1" />
+            <associationDefinesSourceProperty Id="dda82e4d-5ff4-4e7a-82f4-656c7b21f4c9">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Lista/Presidente" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="f0f128c0-d941-460f-8124-b92d7a9e7b38">
-          <NavigationalProperty Id="7c902224-b19b-4c3d-bca1-0f0455c3be94" name="CandidatoPresidente1" type="CandidatoPresidente" label="CandidatoPresidente1 : CandidatoPresidente" nullable="true" kind="Persistent" fieldName="_candidatoPresidente1" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="5725bb44-3e9a-4209-b1af-b7b54adef255">
           <NavigationalProperty Id="186a861b-ac4f-4e8c-8554-940b64695970" name="Candidatos" type="IList&lt;Candidato&gt;" label="Candidatos : IList&lt;Candidato&gt;" nullable="true" kind="Persistent" fieldName="_candidatos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="624fab48-4ed4-4f0a-a530-1d3dcd4c8ef9">
           <NavigationalProperty Id="a7258b30-782c-49c4-98fd-1c1a524a8859" name="ScrutinioListas" type="IList&lt;ScrutinioLista&gt;" label="ScrutinioListas : IList&lt;ScrutinioLista&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioListas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="0931b6f8-0ade-4695-83fe-4fde9e9aaef0">
+          <NavigationalProperty Id="d986b415-d2eb-4d8b-8d19-f557a5b8bbd7" name="Presidente" type="Presidente" label="Presidente : Presidente" nullable="true" kind="Persistent" fieldName="_presidente" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -486,18 +527,18 @@
       <Property Id="1d1a9e10-c6f6-4ab8-b6c9-f2f97b8227d0" name="Telefono" label="Telefono : String" fieldName="_telefono" />
       <Property Id="8b62b3ae-da43-4ef3-a60e-2a447935ea2a" name="Fax" label="Fax : String" fieldName="_fax" />
       <Property Id="090bfbc0-436f-4940-b4ee-47887935b72f" name="Responsabile" label="Responsabile : String" fieldName="_responsabile" />
-      <Property Id="78cee2aa-affc-4427-9ba7-3882a3d2c50a" name="ComuneId" type="System.Int32" label="ComuneId : System.Int32" fieldName="_comuneId" />
+      <Property Id="78cee2aa-affc-4427-9ba7-3882a3d2c50a" name="ConsultazioneId" type="System.Int32" label="ConsultazioneId : System.Int32" fieldName="_consultazioneId" />
       <AssociationTargets>
-        <Association Id="be472c01-f70a-4537-9704-5b84573b95c8" SourceMultiplicity="ZeroOne" name="SedeElettoraleHasComune">
-          <DomainClassMoniker name="/EntitiesModel/Comune" />
+        <Association Id="2124b898-b392-473e-bfb2-9be7fd4a80b8" SourceMultiplicity="ZeroOne" name="SedeElettoraleHasConsultazione">
+          <DomainClassMoniker name="/EntitiesModel/Consultazione" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="2dca392f-7bf8-4e9c-8c07-ca5b9f6493b4">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Comune/SedeElettorales" />
+            <associationDefinesTargetProperty Id="fce699e7-52c8-4837-90af-572992c990bf">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Consultazione/SedeElettorales" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="0c42c3c8-8cca-4041-bac1-653f59e601e5">
-              <NavigationalPropertyMoniker name="/EntitiesModel/SedeElettorale/Comune" />
+            <associationDefinesSourceProperty Id="fbcf33a8-4c29-43f3-9e94-549b4a2d4251">
+              <NavigationalPropertyMoniker name="/EntitiesModel/SedeElettorale/Consultazione" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
@@ -506,8 +547,8 @@
         <classHasNavigationalProperties Id="7361c50b-534f-4136-a668-135af99ea64f">
           <NavigationalProperty Id="b4f3bbeb-b03a-4c26-aeec-6411129da6a7" name="Seziones" type="IList&lt;Sezione&gt;" label="Seziones : IList&lt;Sezione&gt;" nullable="true" kind="Persistent" fieldName="_seziones" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="86feeee7-3fe6-4d5c-8242-81a09fe22833">
-          <NavigationalProperty Id="ffb7d308-996b-4101-a16d-081cd3e0e191" name="Comune" type="Comune" label="Comune : Comune" nullable="true" kind="Persistent" fieldName="_comune" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="7141f741-b0d1-4b8c-b257-b9e3933fcf1e">
+          <NavigationalProperty Id="67a435f7-a792-4e75-a38f-edad1137527f" name="Consultazione" type="Consultazione" label="Consultazione : Consultazione" nullable="true" kind="Persistent" fieldName="_consultazione" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -517,6 +558,7 @@
       <Property Id="336c67c7-38eb-4285-a8dd-d9556d497766" name="VotantiMaschi" type="System.Int32" label="VotantiMaschi : System.Int32" fieldName="_votantiMaschi" />
       <Property Id="d890653d-546a-4d31-81a6-30a7ae20fcee" name="VotantiFemmine" type="System.Int32" label="VotantiFemmine : System.Int32" fieldName="_votantiFemmine" />
       <Property Id="d0b718fd-847a-456d-9a0e-a93ab3504c2c" name="TotaleVotanti" type="System.Int32" label="TotaleVotanti : System.Int32" fieldName="_totaleVotanti" />
+      <Property Id="0a123d78-efe7-4f70-b2e9-7b91cbaa065f" name="OperatoreId" type="Int32" label="OperatoreId : Int32" fieldName="_operatoreId" />
       <AssociationTargets>
         <Association Id="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" SourceMultiplicity="ZeroOne" name="SezioneHasSedeElettorale">
           <DomainClassMoniker name="/EntitiesModel/SedeElettorale" />
@@ -528,6 +570,19 @@
           <sourceNavigationalProperty>
             <associationDefinesSourceProperty Id="e055cdc5-ffe1-4804-b10f-4639493792c0">
               <NavigationalPropertyMoniker name="/EntitiesModel/Sezione/SedeElettorale" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="ff3473f8-f2f2-4c8e-845a-443a78a1da63" SourceMultiplicity="ZeroOne" name="SezioneHasOperatore">
+          <DomainClassMoniker name="/EntitiesModel/Operatore" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="9376e861-e11d-4c67-910c-b3e0ff7e1cad">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Operatore/Seziones" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0e12d46c-7cdd-4c39-a7d6-412552d40309">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Sezione/Operatore" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
@@ -553,6 +608,9 @@
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="8e918485-3cd1-4d65-ad2c-e46f5d4ff850">
           <NavigationalProperty Id="46298f0d-c1d0-476f-8a66-1ffad6529d51" name="ScrutinioCandidatos" type="IList&lt;ScrutinioCandidato&gt;" label="ScrutinioCandidatos : IList&lt;ScrutinioCandidato&gt;" nullable="true" kind="Persistent" fieldName="_scrutinioCandidatos" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9f94abfb-00a7-4e79-a3ac-91b3477c6f00">
+          <NavigationalProperty Id="27896a12-f4b7-4168-809e-d47936d32340" name="Operatore" type="Operatore" label="Operatore : Operatore" nullable="true" kind="Persistent" fieldName="_operatore" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -590,12 +648,10 @@
       <Property Id="0983258a-374f-4a81-a6c5-27751ca7eb37" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
       <Property Id="b1b28bd2-950b-4dec-8f88-a97dd136e7a3" name="Provincia" label="Provincia : String" fieldName="_provincia" />
       <Property Id="3b25906c-d704-4c8f-b3d2-c8c8eba342bd" name="CodiceISTAT" label="CodiceISTAT : String" fieldName="_codiceISTAT" />
+      <Property Id="f4d48900-a9d8-4cb7-bda6-8864b0c945a2" name="NumeroSezioni" type="Int32" label="NumeroSezioni : Int32" fieldName="_numeroSezioni" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="58a39ca2-b916-4422-8ec4-93beebd22893">
           <NavigationalProperty Id="96a2bdfd-7c79-48f9-a3e0-822344c8c09b" name="Consultaziones" type="IList&lt;Consultazione&gt;" label="Consultaziones : IList&lt;Consultazione&gt;" nullable="true" kind="Persistent" fieldName="_consultaziones" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="02923cf4-de93-4167-bb15-6f15d598e012">
-          <NavigationalProperty Id="25bd54ea-4af3-4b66-bbed-60550a1f838a" name="SedeElettorales" type="IList&lt;SedeElettorale&gt;" label="SedeElettorales : IList&lt;SedeElettorale&gt;" nullable="true" kind="Persistent" fieldName="_sedeElettorales" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -715,23 +771,10 @@
     </DomainClass>
     <DomainClass Id="dc0a239d-0eaf-4920-ad03-532f6418e9a7" name="ScrutinioCapolista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
       <Property Id="2eee3233-5544-47b5-a839-b6c9793a9dc3" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
-      <Property Id="6b785903-d587-4515-baf9-5dae726e72ba" name="CapolistaId" type="Int32" label="CapolistaId : Int32" fieldName="_capolistaId" />
+      <Property Id="6b785903-d587-4515-baf9-5dae726e72ba" name="PresidenteId" type="Int32" label="PresidenteId : Int32" fieldName="_presidenteId" />
       <Property Id="eeb7782c-49ed-4fdc-87ba-d0be598066f5" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
       <Property Id="0f51affd-9b55-428d-b0fc-1beb0314b57a" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
       <AssociationTargets>
-        <Association Id="3f6acdf2-cb3f-4182-a325-df4af46aa0c9" SourceMultiplicity="ZeroOne" name="ScrutinioCapolistaHasCapolista">
-          <DomainClassMoniker name="/EntitiesModel/Capolista" />
-          <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="d777ab53-5389-4a00-90c9-179ccc374fc9">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Capolista/ScrutinioCapolistas" />
-            </associationDefinesTargetProperty>
-          </targetNavigationalProperty>
-          <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="e6f0ca71-9a1b-4e7e-b468-5d4ec01ce15b">
-              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioCapolista/Capolista" />
-            </associationDefinesSourceProperty>
-          </sourceNavigationalProperty>
-        </Association>
         <Association Id="1f6aec8b-3b9c-4a0f-b639-ef5accac4a59" SourceMultiplicity="ZeroOne" name="ScrutinioCapolistaHasSezione">
           <DomainClassMoniker name="/EntitiesModel/Sezione" />
           <targetNavigationalProperty>
@@ -745,13 +788,26 @@
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
+        <Association Id="31773953-0bfb-4958-8027-5175e2af90a7" SourceMultiplicity="ZeroOne" name="ScrutinioCapolistaHasPresidente">
+          <DomainClassMoniker name="/EntitiesModel/Presidente" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="f8c0765c-4ca3-4e25-be31-0fc53b831290">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Presidente/ScrutinioCapolistas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="9517a061-1efb-4119-a097-a2f8c8b61795">
+              <NavigationalPropertyMoniker name="/EntitiesModel/ScrutinioCapolista/Presidente" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="3349bb2e-349a-4587-811a-05a4c2a0d077">
-          <NavigationalProperty Id="4e91208f-da5e-4b03-a24a-6e4873823fc8" name="Capolista" type="Capolista" label="Capolista : Capolista" nullable="true" kind="Persistent" fieldName="_capolista" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="a9541131-c645-4fc6-a1fb-53e6b9ccfd14">
           <NavigationalProperty Id="8f227bf0-3cf0-4dd4-a055-0348443d6b8b" name="Sezione" type="Sezione" label="Sezione : Sezione" nullable="true" kind="Persistent" fieldName="_sezione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="e3052016-4ebf-4c14-8434-83b4b4107b87">
+          <NavigationalProperty Id="2f02b469-cd1a-4772-a0f5-20bdf6174772" name="Presidente" type="Presidente" label="Presidente : Presidente" nullable="true" kind="Persistent" fieldName="_presidente" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -884,12 +940,49 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
+    <DomainClass Id="dfcfe140-9f9c-4e52-b812-1f3ba39026af" name="Operatore" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="159cea98-bf00-45f4-a738-a3c6a7c500b1" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="c22cdbfc-2595-4536-af3c-20e4566ed4a2" name="Username" label="Username : String" fieldName="_username" />
+      <Property Id="36e75f85-e60c-4d60-aab2-b670b4a68c2e" name="Password" label="Password : String" fieldName="_password" />
+      <Property Id="1e9c598b-5528-4631-916e-2bfce0b93c1d" name="ConfermaPassword" label="ConfermaPassword : String" fieldName="_confermaPassword" />
+      <Property Id="b8d801cb-d986-4546-9ffc-24066908c3ac" name="Email" label="Email : String" fieldName="_email" />
+      <Property Id="d925b8bc-f12d-40ae-afad-7b8008563ef1" name="Telefono" label="Telefono : String" fieldName="_telefono" />
+      <Property Id="d70bf6c8-3620-4c6b-8df9-efa53793ec67" name="Cognome" label="Cognome : String" fieldName="_cognome" />
+      <Property Id="634e5725-458f-42d7-acdc-a7e19f63686c" name="Nome" label="Nome : String" fieldName="_nome" />
+      <Property Id="3286b15a-d6cd-40ea-abff-b8ca35d3aaf3" name="ConsultazioneId" type="Int32" label="ConsultazioneId : Int32" fieldName="_consultazioneId" />
+      <Property Id="8711fb76-0f70-42e2-9733-d5958b900887" name="Supervisor" type="Boolean" label="Supervisor : Boolean" fieldName="_supervisor" />
+      <Property Id="7589122c-360d-4cff-b647-cfb0fbfc41ae" name="Amministratore" type="Boolean" label="Amministratore : Boolean" fieldName="_amministratore" />
+      <Property Id="96806377-aae2-4098-92f4-6dcb94e245f7" name="Utente" type="Boolean" label="Utente : Boolean" fieldName="_utente" />
+      <AssociationTargets>
+        <Association Id="e3b9a1b7-9d81-496b-8299-516fb2dac60d" SourceMultiplicity="ZeroOne" name="OperatoreHasConsultazione">
+          <DomainClassMoniker name="/EntitiesModel/Consultazione" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="fb684737-ed3d-46aa-af45-2672a54dee1a">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Consultazione/Operatores" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="1e617100-e5e8-43ab-8061-0da4f362a600">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Operatore/Consultazione" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="1b09fa4e-7fbc-4ac8-814b-909b34b13a88">
+          <NavigationalProperty Id="cd8366e9-b8c7-4862-bf70-c71aee8371ba" name="Seziones" type="IList&lt;Sezione&gt;" label="Seziones : IList&lt;Sezione&gt;" nullable="true" kind="Persistent" fieldName="_seziones" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="5f4c9ea4-205e-492a-9052-bee49d5cdff4">
+          <NavigationalProperty Id="d472e4ad-1014-4afb-a326-db49f6e1623f" name="Consultazione" type="Consultazione" label="Consultazione : Consultazione" nullable="true" kind="Persistent" fieldName="_consultazione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
   </Types>
   <domainContext>
     <domainModelHasDomainContext Id="f019e2a8-6a1a-4960-8528-51b502dc9ee9">
       <domainContainer name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true">
         <entitySetProperty name="Consultaziones" namespace="DataLayer" type="Consultazione" label="Consultaziones : IQueryable&lt;DataLayer.Consultazione&gt;" />
-        <entitySetProperty name="Capolistas" namespace="DataLayer" type="Capolista" label="Capolistas : IQueryable&lt;DataLayer.Capolista&gt;" />
+        <entitySetProperty name="Presidentes" namespace="DataLayer" type="Presidente" label="Presidentes : IQueryable&lt;DataLayer.Presidente&gt;" />
         <entitySetProperty name="Listas" namespace="DataLayer" type="Lista" label="Listas : IQueryable&lt;DataLayer.Lista&gt;" />
         <entitySetProperty name="Candidatos" namespace="DataLayer" type="Candidato" label="Candidatos : IQueryable&lt;DataLayer.Candidato&gt;" />
         <entitySetProperty name="SedeElettorales" namespace="DataLayer" type="SedeElettorale" label="SedeElettorales : IQueryable&lt;DataLayer.SedeElettorale&gt;" />
@@ -903,6 +996,7 @@
         <entitySetProperty name="Scrutinios" namespace="DataLayer" type="Scrutinio" label="Scrutinios : IQueryable&lt;DataLayer.Scrutinio&gt;" />
         <entitySetProperty name="ScrutinioListas" namespace="DataLayer" type="ScrutinioLista" label="ScrutinioListas : IQueryable&lt;DataLayer.ScrutinioLista&gt;" />
         <entitySetProperty name="ScrutinioCandidatos" namespace="DataLayer" type="ScrutinioCandidato" label="ScrutinioCandidatos : IQueryable&lt;DataLayer.ScrutinioCandidato&gt;" />
+        <entitySetProperty name="Operatores" namespace="DataLayer" type="Operatore" label="Operatores : IQueryable&lt;DataLayer.Operatore&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>

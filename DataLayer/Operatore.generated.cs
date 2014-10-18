@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class SedeElettorale
+	public partial class Operatore
 	{
 		private int _id;
 		public virtual int Id
@@ -37,29 +37,55 @@ namespace DataLayer
 			}
 		}
 		
-		private string _indirizzo;
-		public virtual string Indirizzo
+		private string _username;
+		public virtual string Username
 		{
 			get
 			{
-				return this._indirizzo;
+				return this._username;
 			}
 			set
 			{
-				this._indirizzo = value;
+				this._username = value;
 			}
 		}
 		
-		private string _mappa;
-		public virtual string Mappa
+		private string _password;
+		public virtual string Password
 		{
 			get
 			{
-				return this._mappa;
+				return this._password;
 			}
 			set
 			{
-				this._mappa = value;
+				this._password = value;
+			}
+		}
+		
+		private string _confermaPassword;
+		public virtual string ConfermaPassword
+		{
+			get
+			{
+				return this._confermaPassword;
+			}
+			set
+			{
+				this._confermaPassword = value;
+			}
+		}
+		
+		private string _email;
+		public virtual string Email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				this._email = value;
 			}
 		}
 		
@@ -76,29 +102,29 @@ namespace DataLayer
 			}
 		}
 		
-		private string _fax;
-		public virtual string Fax
+		private string _cognome;
+		public virtual string Cognome
 		{
 			get
 			{
-				return this._fax;
+				return this._cognome;
 			}
 			set
 			{
-				this._fax = value;
+				this._cognome = value;
 			}
 		}
 		
-		private string _responsabile;
-		public virtual string Responsabile
+		private string _nome;
+		public virtual string Nome
 		{
 			get
 			{
-				return this._responsabile;
+				return this._nome;
 			}
 			set
 			{
-				this._responsabile = value;
+				this._nome = value;
 			}
 		}
 		
@@ -112,6 +138,45 @@ namespace DataLayer
 			set
 			{
 				this._consultazioneId = value;
+			}
+		}
+		
+		private bool _supervisor;
+		public virtual bool Supervisor
+		{
+			get
+			{
+				return this._supervisor;
+			}
+			set
+			{
+				this._supervisor = value;
+			}
+		}
+		
+		private bool _amministratore;
+		public virtual bool Amministratore
+		{
+			get
+			{
+				return this._amministratore;
+			}
+			set
+			{
+				this._amministratore = value;
+			}
+		}
+		
+		private bool _utente;
+		public virtual bool Utente
+		{
+			get
+			{
+				return this._utente;
+			}
+			set
+			{
+				this._utente = value;
 			}
 		}
 		

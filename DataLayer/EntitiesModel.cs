@@ -58,11 +58,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Capolista> Capolistas 
+		public IQueryable<Presidente> Presidentes 
 		{
 			get
 			{
-				return this.GetAll<Capolista>();
+				return this.GetAll<Presidente>();
 			}
 		}
 		
@@ -170,6 +170,14 @@ namespace DataLayer
 			}
 		}
 		
+		public IQueryable<Operatore> Operatores 
+		{
+			get
+			{
+				return this.GetAll<Operatore>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -195,7 +203,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Capolista> Capolistas
+		IQueryable<Presidente> Presidentes
 		{
 			get;
 		}
@@ -248,6 +256,10 @@ namespace DataLayer
 			get;
 		}
 		IQueryable<ScrutinioCandidato> ScrutinioCandidatos
+		{
+			get;
+		}
+		IQueryable<Operatore> Operatores
 		{
 			get;
 		}

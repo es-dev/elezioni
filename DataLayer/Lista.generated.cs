@@ -37,16 +37,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _candidatoPresidenteId;
-		public virtual int CandidatoPresidenteId
+		private int _presidenteId;
+		public virtual int PresidenteId
 		{
 			get
 			{
-				return this._candidatoPresidenteId;
+				return this._presidenteId;
 			}
 			set
 			{
-				this._candidatoPresidenteId = value;
+				this._presidenteId = value;
 			}
 		}
 		
@@ -89,16 +89,16 @@ namespace DataLayer
 			}
 		}
 		
-		private Capolista _candidatoPresidente1;
-		public virtual Capolista CandidatoPresidente1
+		private Presidente _presidente;
+		public virtual Presidente Presidente
 		{
 			get
 			{
-				return this._candidatoPresidente1;
+				return this._presidente;
 			}
 			set
 			{
-				this._candidatoPresidente1 = value;
+				this._presidente = value;
 			}
 		}
 		

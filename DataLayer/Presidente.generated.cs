@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Capolista
+	public partial class Presidente
 	{
 		private int _id;
 		public virtual int Id

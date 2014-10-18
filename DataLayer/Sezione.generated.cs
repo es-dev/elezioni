@@ -89,6 +89,19 @@ namespace DataLayer
 			}
 		}
 		
+		private int _operatoreId;
+		public virtual int OperatoreId
+		{
+			get
+			{
+				return this._operatoreId;
+			}
+			set
+			{
+				this._operatoreId = value;
+			}
+		}
+		
 		private SedeElettorale _sedeElettorale;
 		public virtual SedeElettorale SedeElettorale
 		{
@@ -99,6 +112,19 @@ namespace DataLayer
 			set
 			{
 				this._sedeElettorale = value;
+			}
+		}
+		
+		private Operatore _operatore;
+		public virtual Operatore Operatore
+		{
+			get
+			{
+				return this._operatore;
+			}
+			set
+			{
+				this._operatore = value;
 			}
 		}
 		

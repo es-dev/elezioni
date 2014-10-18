@@ -37,16 +37,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _capolistaId;
-		public virtual int CapolistaId
+		private int _presidenteId;
+		public virtual int PresidenteId
 		{
 			get
 			{
-				return this._capolistaId;
+				return this._presidenteId;
 			}
 			set
 			{
-				this._capolistaId = value;
+				this._presidenteId = value;
 			}
 		}
 		
@@ -76,19 +76,6 @@ namespace DataLayer
 			}
 		}
 		
-		private Capolista _capolista;
-		public virtual Capolista Capolista
-		{
-			get
-			{
-				return this._capolista;
-			}
-			set
-			{
-				this._capolista = value;
-			}
-		}
-		
 		private Sezione _sezione;
 		public virtual Sezione Sezione
 		{
@@ -99,6 +86,19 @@ namespace DataLayer
 			set
 			{
 				this._sezione = value;
+			}
+		}
+		
+		private Presidente _presidente;
+		public virtual Presidente Presidente
+		{
+			get
+			{
+				return this._presidente;
+			}
+			set
+			{
+				this._presidente = value;
 			}
 		}
 		

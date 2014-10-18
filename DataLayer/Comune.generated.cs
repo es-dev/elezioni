@@ -89,21 +89,25 @@ namespace DataLayer
 			}
 		}
 		
+		private int _numeroSezioni;
+		public virtual int NumeroSezioni
+		{
+			get
+			{
+				return this._numeroSezioni;
+			}
+			set
+			{
+				this._numeroSezioni = value;
+			}
+		}
+		
 		private IList<Consultazione> _consultaziones = new List<Consultazione>();
 		public virtual IList<Consultazione> Consultaziones
 		{
 			get
 			{
 				return this._consultaziones;
-			}
-		}
-		
-		private IList<SedeElettorale> _sedeElettorales = new List<SedeElettorale>();
-		public virtual IList<SedeElettorale> SedeElettorales
-		{
-			get
-			{
-				return this._sedeElettorales;
 			}
 		}
 		

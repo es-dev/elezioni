@@ -102,8 +102,8 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Capolista> _capolistas = new List<Capolista>();
-		public virtual IList<Capolista> Capolistas
+		private IList<Presidente> _capolistas = new List<Presidente>();
+		public virtual IList<Presidente> Capolistas
 		{
 			get
 			{
@@ -135,6 +135,24 @@ namespace DataLayer
 			get
 			{
 				return this._scrutinios;
+			}
+		}
+		
+		private IList<SedeElettorale> _sedeElettorales = new List<SedeElettorale>();
+		public virtual IList<SedeElettorale> SedeElettorales
+		{
+			get
+			{
+				return this._sedeElettorales;
+			}
+		}
+		
+		private IList<Operatore> _operatores = new List<Operatore>();
+		public virtual IList<Operatore> Operatores
+		{
+			get
+			{
+				return this._operatores;
 			}
 		}
 		
