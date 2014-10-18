@@ -76,6 +76,19 @@ namespace DataLayer
 			}
 		}
 		
+		private int _votiAnnullati;
+		public virtual int VotiAnnullati
+		{
+			get
+			{
+				return this._votiAnnullati;
+			}
+			set
+			{
+				this._votiAnnullati = value;
+			}
+		}
+		
 		private Sezione _sezione;
 		public virtual Sezione Sezione
 		{

@@ -248,6 +248,7 @@
         <orm:field name="_presidenteId" property="PresidenteId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32" />
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="eeb7782c-49ed-4fdc-87ba-d0be598066f5" type="System.Int32" />
         <orm:field name="_voti" property="Voti" uniqueId="0f51affd-9b55-428d-b0fc-1beb0314b57a" type="System.Int32" />
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="857fa517-bdba-4f21-b11c-0b3dbdf1ad12" type="System.Int32" />
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="8f227bf0-3cf0-4dd4-a055-0348443d6b8b" type="DataLayer.Sezione">
           <orm:reference uniqueId="1f6aec8b-3b9c-4a0f-b639-ef5accac4a59" association-name="ScrutinioCapolistaHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -289,6 +290,7 @@
         <orm:field name="_voti" property="Voti" uniqueId="c002b333-135b-4ce9-ba03-57000c720c90" type="System.Int32" />
         <orm:field name="_listaId" property="ListaId" uniqueId="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" type="System.Int32" />
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="ec59bd77-4f42-46c7-9d64-02e16f064a05" type="System.Int32" />
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="a9fc9c4a-aebd-424e-9c2f-cd61e90da8cf" type="System.Int32" />
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="c5f79551-47fc-4dc7-a9d5-07ee26d383d6" type="DataLayer.Sezione">
           <orm:reference uniqueId="cd8eee56-cff3-4547-8053-cdd59eee6431" association-name="ScrutinioListaHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -308,6 +310,7 @@
         <orm:field name="_voti" property="Voti" uniqueId="e1acbbec-d37c-4166-a535-a227b9b277ef" type="System.Int32" />
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="c415c05c-c305-415b-b4a1-5e627a879922" type="System.Int32" />
         <orm:field name="_candidatoId" property="CandidatoId" uniqueId="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" type="System.Int32" />
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="1d8da98f-1391-4b74-8897-6ba9eb8a594d" type="System.Int32" />
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="542f232b-8b6d-4727-8aab-9b099ca78fb8" type="DataLayer.Sezione">
           <orm:reference uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" association-name="ScrutinioCandidatoHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -774,6 +777,7 @@
       <Property Id="6b785903-d587-4515-baf9-5dae726e72ba" name="PresidenteId" type="Int32" label="PresidenteId : Int32" fieldName="_presidenteId" />
       <Property Id="eeb7782c-49ed-4fdc-87ba-d0be598066f5" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
       <Property Id="0f51affd-9b55-428d-b0fc-1beb0314b57a" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
+      <Property Id="857fa517-bdba-4f21-b11c-0b3dbdf1ad12" name="VotiAnnullati" type="Int32" label="VotiAnnullati : Int32" fieldName="_votiAnnullati" />
       <AssociationTargets>
         <Association Id="1f6aec8b-3b9c-4a0f-b639-ef5accac4a59" SourceMultiplicity="ZeroOne" name="ScrutinioCapolistaHasSezione">
           <DomainClassMoniker name="/EntitiesModel/Sezione" />
@@ -861,6 +865,7 @@
       <Property Id="c002b333-135b-4ce9-ba03-57000c720c90" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
       <Property Id="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" name="ListaId" type="Int32" label="ListaId : Int32" fieldName="_listaId" />
       <Property Id="ec59bd77-4f42-46c7-9d64-02e16f064a05" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
+      <Property Id="a9fc9c4a-aebd-424e-9c2f-cd61e90da8cf" name="VotiAnnullati" type="Int32" label="VotiAnnullati : Int32" fieldName="_votiAnnullati" />
       <AssociationTargets>
         <Association Id="cd8eee56-cff3-4547-8053-cdd59eee6431" SourceMultiplicity="ZeroOne" name="ScrutinioListaHasSezione">
           <DomainClassMoniker name="/EntitiesModel/Sezione" />
@@ -903,6 +908,7 @@
       <Property Id="e1acbbec-d37c-4166-a535-a227b9b277ef" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
       <Property Id="c415c05c-c305-415b-b4a1-5e627a879922" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
       <Property Id="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" name="CandidatoId" type="Int32" label="CandidatoId : Int32" fieldName="_candidatoId" />
+      <Property Id="1d8da98f-1391-4b74-8897-6ba9eb8a594d" name="VotiAnnullati" type="Int32" label="VotiAnnullati : Int32" fieldName="_votiAnnullati" />
       <AssociationTargets>
         <Association Id="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" SourceMultiplicity="ZeroOne" name="ScrutinioCandidatoHasSezione">
           <DomainClassMoniker name="/EntitiesModel/Sezione" />
