@@ -2,15 +2,25 @@
 <DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
   <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
     <orm:namespace name="DataLayer" default="true">
-      <orm:class name="Consultazione" uniqueId="5dba285d-9168-4b25-86fb-ce3d7f19f599">
+      <orm:class name="Consultazione" use-default-mapping="true" uniqueId="5dba285d-9168-4b25-86fb-ce3d7f19f599">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="5824344a-f3df-42e9-a531-332e6ee227a1" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="d4bc5582-0393-4b76-90a8-1d742ff91f5b" type="System.Int32" />
-        <orm:field name="_descrizione" property="Descrizione" uniqueId="d28189e4-605c-4017-8bbd-9d91a7fa3e61" type="System.String" />
-        <orm:field name="_tipo" property="Tipo" uniqueId="7ddb7590-7123-4e9c-bf2f-9e337d6b20ba" type="System.String" />
-        <orm:field name="_comuneId" property="ComuneId" uniqueId="4e53df22-719f-4993-8c14-f5913dc63098" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="5824344a-f3df-42e9-a531-332e6ee227a1" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="d4bc5582-0393-4b76-90a8-1d742ff91f5b" type="System.Int32">
+          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_descrizione" property="Descrizione" uniqueId="d28189e4-605c-4017-8bbd-9d91a7fa3e61" type="System.String">
+          <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_tipo" property="Tipo" uniqueId="7ddb7590-7123-4e9c-bf2f-9e337d6b20ba" type="System.String">
+          <orm:column name="Tipo" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_comuneId" property="ComuneId" uniqueId="4e53df22-719f-4993-8c14-f5913dc63098" type="System.Int32">
+          <orm:column name="ComuneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_comune" property="Comune" behavior="readwrite" uniqueId="66ab6c1c-f85c-49bd-8f14-80f366a6df24" type="DataLayer.Comune">
           <orm:reference uniqueId="480d0edd-9ae6-4ebe-8771-06aad6ffe7f3" association-name="ConsultazioneHasComune">
             <orm:sharedfield name="_comuneId" target-class="DataLayer.Comune" target-field="_id" />
@@ -35,15 +45,25 @@
           <orm:collection element-class="DataLayer.CapoCoalizione" inverse-field="_consultazione" order-by="" uniqueId="c8a0bf6a-4f80-46bf-b3b9-e298d1e1cc92" />
         </orm:field>
       </orm:class>
-      <orm:class name="CapoCoalizione" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
+      <orm:class name="CapoCoalizione" use-default-mapping="true" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="14e3c336-a4e8-4da1-9c84-bd563a19eb19" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="1f1b255b-08d1-4e4b-8b86-28e7e363e15b" type="System.Int32" />
-        <orm:field name="_descrizione" property="Descrizione" uniqueId="ebb05eeb-7f73-49f3-8934-3e39e5ce108e" type="System.String" />
-        <orm:field name="_simbolo" property="Simbolo" uniqueId="f863e869-c42b-414c-bd4e-68cef837c312" type="System.String" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="314d676b-912a-483c-b509-b1c7ccf063d7" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="14e3c336-a4e8-4da1-9c84-bd563a19eb19" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="1f1b255b-08d1-4e4b-8b86-28e7e363e15b" type="System.Int32">
+          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_descrizione" property="Descrizione" uniqueId="ebb05eeb-7f73-49f3-8934-3e39e5ce108e" type="System.String">
+          <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_simbolo" property="Simbolo" uniqueId="f863e869-c42b-414c-bd4e-68cef837c312" type="System.String">
+          <orm:column name="Simbolo" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="314d676b-912a-483c-b509-b1c7ccf063d7" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="852158bb-e2cd-46fd-aa5e-4941c569214e" type="DataLayer.Consultazione">
           <orm:reference uniqueId="c8a0bf6a-4f80-46bf-b3b9-e298d1e1cc92" association-name="CapoCoalizioneHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
@@ -56,36 +76,56 @@
           <orm:collection element-class="DataLayer.ScrutinioCapoCoalizione" inverse-field="_capoCoalizione" order-by="" uniqueId="39b0c1f8-81f0-438b-a0c0-a8f9040cf692" />
         </orm:field>
       </orm:class>
-      <orm:class name="Lista" uniqueId="89eee56e-8fff-482f-809e-8ab849bf8d08">
+      <orm:class name="Lista" use-default-mapping="true" uniqueId="89eee56e-8fff-482f-809e-8ab849bf8d08">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="473c3b42-9c0a-4f8b-a274-63e81960fae9" type="System.Int32" />
-        <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="6095da69-afe5-4602-bec3-3f34cffdeaa1" type="System.Int32" />
-        <orm:field name="_descrizione" property="Descrizione" uniqueId="573886cc-6390-4204-842f-1dfbdce22727" type="System.String" />
-        <orm:field name="_simbolo" property="Simbolo" uniqueId="bbd93e3d-7204-4fa8-9ea5-6412d75f91f7" type="System.String" />
-        <orm:field name="_candidatos" property="Candidatos" behavior="readwrite" uniqueId="186a861b-ac4f-4e8c-8554-940b64695970" type="DataLayer.Candidato">
-          <orm:collection element-class="DataLayer.Candidato" inverse-field="_lista" order-by="" uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" />
+        <orm:field name="_id" property="Id" uniqueId="473c3b42-9c0a-4f8b-a274-63e81960fae9" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
-          <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
+        <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" type="System.Int32">
+          <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="6095da69-afe5-4602-bec3-3f34cffdeaa1" type="System.Int32">
+          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_descrizione" property="Descrizione" uniqueId="573886cc-6390-4204-842f-1dfbdce22727" type="System.String">
+          <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_simbolo" property="Simbolo" uniqueId="bbd93e3d-7204-4fa8-9ea5-6412d75f91f7" type="System.String">
+          <orm:column name="Simbolo" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="_capoCoalizione" property="CapoCoalizione" behavior="readwrite" uniqueId="e3890eaa-6adb-4e5e-ab82-aeaa43627804" type="DataLayer.CapoCoalizione">
           <orm:reference uniqueId="ac518a3f-f200-41cc-aa0d-864b96e5dd98" association-name="ListaHasCapoCoalizione">
             <orm:sharedfield name="_capoCoalizioneId" target-class="DataLayer.CapoCoalizione" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:field name="_candidatos" property="Candidatos" behavior="readwrite" uniqueId="186a861b-ac4f-4e8c-8554-940b64695970" type="DataLayer.Candidato">
+          <orm:collection element-class="DataLayer.Candidato" inverse-field="_lista" order-by="" uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" />
+        </orm:field>
+        <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
+          <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
+        </orm:field>
       </orm:class>
-      <orm:class name="Candidato" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
+      <orm:class name="Candidato" use-default-mapping="true" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="0b46f691-bb4a-46e1-9257-87639bf8c5c2" type="System.Int32" />
-        <orm:field name="_listaId" property="ListaId" uniqueId="648875a4-e035-414e-b7f1-a5fa295b6cce" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="f173cd45-40d3-4817-b6c1-81201468491e" type="System.Int32" />
-        <orm:field name="_cognome" property="Cognome" uniqueId="842ea900-938a-4464-9d7f-e4e3a6627e5c" type="System.String" />
-        <orm:field name="_nome" property="Nome" uniqueId="dbc6ce3c-5612-45e9-a4f5-867ef11167a3" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="0b46f691-bb4a-46e1-9257-87639bf8c5c2" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_listaId" property="ListaId" uniqueId="648875a4-e035-414e-b7f1-a5fa295b6cce" type="System.Int32">
+          <orm:column name="ListaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="f173cd45-40d3-4817-b6c1-81201468491e" type="System.Int32">
+          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_cognome" property="Cognome" uniqueId="842ea900-938a-4464-9d7f-e4e3a6627e5c" type="System.String">
+          <orm:column name="Cognome" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_nome" property="Nome" uniqueId="dbc6ce3c-5612-45e9-a4f5-867ef11167a3" type="System.String">
+          <orm:column name="Nome" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_lista" property="Lista" behavior="readwrite" uniqueId="2ffaedf3-83ed-4537-a3c2-a64a5b9df2e7" type="DataLayer.Lista">
           <orm:reference uniqueId="7d4a872b-8187-494c-9c48-d78032481cde" association-name="CandidatoHasLista">
             <orm:sharedfield name="_listaId" target-class="DataLayer.Lista" target-field="_id" />
@@ -95,17 +135,31 @@
           <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_candidato" order-by="" uniqueId="66822446-3889-46bc-9276-f9deb2f8dabb" />
         </orm:field>
       </orm:class>
-      <orm:class name="SedeElettorale" uniqueId="b44b289f-f74c-4b78-a651-0112ed4d0b73">
+      <orm:class name="SedeElettorale" use-default-mapping="true" uniqueId="b44b289f-f74c-4b78-a651-0112ed4d0b73">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="a3d13fa4-82b4-4c53-8115-4e9c4a38108c" type="System.Int32" />
-        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="db063f4f-c5a1-4a22-8ec0-74e0b00b9ae1" type="System.String" />
-        <orm:field name="_mappa" property="Mappa" uniqueId="d5db6eb8-bdb5-466a-99a9-a98d7e8a67f3" type="System.String" />
-        <orm:field name="_telefono" property="Telefono" uniqueId="1d1a9e10-c6f6-4ab8-b6c9-f2f97b8227d0" type="System.String" />
-        <orm:field name="_fax" property="Fax" uniqueId="8b62b3ae-da43-4ef3-a60e-2a447935ea2a" type="System.String" />
-        <orm:field name="_responsabile" property="Responsabile" uniqueId="090bfbc0-436f-4940-b4ee-47887935b72f" type="System.String" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="78cee2aa-affc-4427-9ba7-3882a3d2c50a" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="a3d13fa4-82b4-4c53-8115-4e9c4a38108c" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="db063f4f-c5a1-4a22-8ec0-74e0b00b9ae1" type="System.String">
+          <orm:column name="Indirizzo" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_mappa" property="Mappa" uniqueId="d5db6eb8-bdb5-466a-99a9-a98d7e8a67f3" type="System.String">
+          <orm:column name="Mappa" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefono" property="Telefono" uniqueId="1d1a9e10-c6f6-4ab8-b6c9-f2f97b8227d0" type="System.String">
+          <orm:column name="Telefono" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fax" property="Fax" uniqueId="8b62b3ae-da43-4ef3-a60e-2a447935ea2a" type="System.String">
+          <orm:column name="Fax" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_responsabile" property="Responsabile" uniqueId="090bfbc0-436f-4940-b4ee-47887935b72f" type="System.String">
+          <orm:column name="Responsabile" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="78cee2aa-affc-4427-9ba7-3882a3d2c50a" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="67a435f7-a792-4e75-a38f-edad1137527f" type="DataLayer.Consultazione">
           <orm:reference uniqueId="2124b898-b392-473e-bfb2-9be7fd4a80b8" association-name="SedeElettoraleHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
@@ -115,16 +169,28 @@
           <orm:collection element-class="DataLayer.Sezione" inverse-field="_sedeElettorale" order-by="" uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" />
         </orm:field>
       </orm:class>
-      <orm:class name="Sezione" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
+      <orm:class name="Sezione" use-default-mapping="true" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="a1130688-488b-485b-88ce-e4824a68dd7a" type="System.Int32" />
-        <orm:field name="_votantiMaschi" property="VotantiMaschi" uniqueId="336c67c7-38eb-4285-a8dd-d9556d497766" type="System.Int32" />
-        <orm:field name="_votantiFemmine" property="VotantiFemmine" uniqueId="d890653d-546a-4d31-81a6-30a7ae20fcee" type="System.Int32" />
-        <orm:field name="_totaleVotanti" property="TotaleVotanti" uniqueId="d0b718fd-847a-456d-9a0e-a93ab3504c2c" type="System.Int32" />
-        <orm:field name="_sedeElettoraleId" property="SedeElettoraleId" uniqueId="ac59e4a2-66e2-41f1-97a0-d6f1cfe0d7d2" type="System.Int32" />
-        <orm:field name="_operatoreId" property="OperatoreId" uniqueId="0a123d78-efe7-4f70-b2e9-7b91cbaa065f" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="a1130688-488b-485b-88ce-e4824a68dd7a" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_votantiMaschi" property="VotantiMaschi" uniqueId="336c67c7-38eb-4285-a8dd-d9556d497766" type="System.Int32">
+          <orm:column name="VotantiMaschi" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_votantiFemmine" property="VotantiFemmine" uniqueId="d890653d-546a-4d31-81a6-30a7ae20fcee" type="System.Int32">
+          <orm:column name="VotantiFemmine" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_totaleVotanti" property="TotaleVotanti" uniqueId="d0b718fd-847a-456d-9a0e-a93ab3504c2c" type="System.Int32">
+          <orm:column name="TotaleVotanti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sedeElettoraleId" property="SedeElettoraleId" uniqueId="ac59e4a2-66e2-41f1-97a0-d6f1cfe0d7d2" type="System.Int32">
+          <orm:column name="SedeElettoraleId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_operatoreId" property="OperatoreId" uniqueId="0a123d78-efe7-4f70-b2e9-7b91cbaa065f" type="System.Int32">
+          <orm:column name="OperatoreId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sedeElettorale" property="SedeElettorale" behavior="readwrite" uniqueId="bfacdc58-b38e-4a83-97fe-65a595f6cd9c" type="DataLayer.SedeElettorale">
           <orm:reference uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" association-name="SezioneHasSedeElettorale">
             <orm:sharedfield name="_sedeElettoraleId" target-class="DataLayer.SedeElettorale" target-field="_id" />
@@ -154,13 +220,19 @@
           <orm:collection element-class="DataLayer.ScrutinioCapoCoalizione" inverse-field="_sezione" order-by="" uniqueId="d4d439e8-5c70-42e2-88b3-92734e521eea" />
         </orm:field>
       </orm:class>
-      <orm:class name="Affluenza" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
+      <orm:class name="Affluenza" use-default-mapping="true" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="821035f1-b422-42ec-8bf4-b58f96d7ef6a" type="System.Int32" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="dbbb2cb5-7798-4fa0-8e7b-f79b59dac491" type="System.Int32" />
-        <orm:field name="_orario" property="Orario" uniqueId="8b1de822-f693-45ea-b38e-a00296bbbdac" type="System.DateTime" />
+        <orm:field name="_id" property="Id" uniqueId="821035f1-b422-42ec-8bf4-b58f96d7ef6a" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="dbbb2cb5-7798-4fa0-8e7b-f79b59dac491" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_orario" property="Orario" uniqueId="8b1de822-f693-45ea-b38e-a00296bbbdac" type="System.DateTime">
+          <orm:column name="Orario" sql-type="datetime" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="7b358756-7cfd-465f-be6a-88eb2861c840" type="DataLayer.Consultazione">
           <orm:reference uniqueId="549cf381-b55f-487c-8ca1-2318bb209985" association-name="AffluenzaHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
@@ -170,28 +242,48 @@
           <orm:collection element-class="DataLayer.Rilevamento" inverse-field="_affluenza" order-by="" uniqueId="5608e4e1-4b1b-4b9c-9f9f-505e77115932" />
         </orm:field>
       </orm:class>
-      <orm:class name="Comune" uniqueId="029237c8-5488-4de9-bea0-c5f00a2bd163">
+      <orm:class name="Comune" use-default-mapping="true" uniqueId="029237c8-5488-4de9-bea0-c5f00a2bd163">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="821e3ea6-b8d1-4d78-b408-53551b208287" type="System.Int32" />
-        <orm:field name="_descrizione" property="Descrizione" uniqueId="0983258a-374f-4a81-a6c5-27751ca7eb37" type="System.String" />
-        <orm:field name="_nome" property="Nome" uniqueId="7747255d-51cb-40fb-9dee-ef294fa7fd61" type="System.String" />
-        <orm:field name="_provincia" property="Provincia" uniqueId="b1b28bd2-950b-4dec-8f88-a97dd136e7a3" type="System.String" />
-        <orm:field name="_codiceISTAT" property="CodiceISTAT" uniqueId="3b25906c-d704-4c8f-b3d2-c8c8eba342bd" type="System.String" />
-        <orm:field name="_numeroSezioni" property="NumeroSezioni" uniqueId="f4d48900-a9d8-4cb7-bda6-8864b0c945a2" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="821e3ea6-b8d1-4d78-b408-53551b208287" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_descrizione" property="Descrizione" uniqueId="0983258a-374f-4a81-a6c5-27751ca7eb37" type="System.String">
+          <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_nome" property="Nome" uniqueId="7747255d-51cb-40fb-9dee-ef294fa7fd61" type="System.String">
+          <orm:column name="Nome" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_provincia" property="Provincia" uniqueId="b1b28bd2-950b-4dec-8f88-a97dd136e7a3" type="System.String">
+          <orm:column name="Provincia" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_codiceISTAT" property="CodiceISTAT" uniqueId="3b25906c-d704-4c8f-b3d2-c8c8eba342bd" type="System.String">
+          <orm:column name="CodiceISTAT" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_numeroSezioni" property="NumeroSezioni" uniqueId="f4d48900-a9d8-4cb7-bda6-8864b0c945a2" type="System.Int32">
+          <orm:column name="NumeroSezioni" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_consultaziones" property="Consultaziones" behavior="readwrite" uniqueId="96a2bdfd-7c79-48f9-a3e0-822344c8c09b" type="DataLayer.Consultazione">
           <orm:collection element-class="DataLayer.Consultazione" inverse-field="_comune" order-by="" uniqueId="480d0edd-9ae6-4ebe-8771-06aad6ffe7f3" />
         </orm:field>
       </orm:class>
-      <orm:class name="Collegio" uniqueId="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279">
+      <orm:class name="Collegio" use-default-mapping="true" uniqueId="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="ca2915f3-1629-4f53-bfa4-415c32fdd691" type="System.Int32" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="58b7037a-3071-43b3-a334-3bc28ed3471c" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="45a0f580-1486-48dd-831f-e77c3952c963" type="System.Int32" />
-        <orm:field name="_descrizione" property="Descrizione" uniqueId="565020a3-06d5-49fd-b4c7-31c9a5ee20e9" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="ca2915f3-1629-4f53-bfa4-415c32fdd691" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="58b7037a-3071-43b3-a334-3bc28ed3471c" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="45a0f580-1486-48dd-831f-e77c3952c963" type="System.Int32">
+          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_descrizione" property="Descrizione" uniqueId="565020a3-06d5-49fd-b4c7-31c9a5ee20e9" type="System.String">
+          <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="8670dbb0-bb8e-410b-9bc4-372593c485b3" type="DataLayer.Consultazione">
           <orm:reference uniqueId="c7018e70-3d08-4780-83e1-e96dd1085273" association-name="CollegioHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
@@ -201,13 +293,19 @@
           <orm:collection element-class="DataLayer.SezioneCollegio" inverse-field="_collegio" order-by="" uniqueId="f9853b32-7eef-4080-9300-27993278816a" />
         </orm:field>
       </orm:class>
-      <orm:class name="SezioneCollegio" uniqueId="607fd559-978a-43f9-808f-fb86d4838fc6">
+      <orm:class name="SezioneCollegio" use-default-mapping="true" uniqueId="607fd559-978a-43f9-808f-fb86d4838fc6">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="3ee55f05-cad2-4765-9e62-c259a71045b9" type="System.Int32" />
-        <orm:field name="_collegioId" property="CollegioId" uniqueId="070259a4-5536-432e-9373-0ec832665e11" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="3ee55f05-cad2-4765-9e62-c259a71045b9" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_collegioId" property="CollegioId" uniqueId="070259a4-5536-432e-9373-0ec832665e11" type="System.Int32">
+          <orm:column name="CollegioId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="a026a2f2-837b-4c0b-8d62-cc84644ccc64" type="DataLayer.Sezione">
           <orm:reference uniqueId="5483a3ba-0693-493f-9f27-551d007c656e" association-name="SezioneCollegioHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -219,16 +317,28 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="Rilevamento" uniqueId="177895d1-8561-4b42-bcfc-8d7e34040f37">
+      <orm:class name="Rilevamento" use-default-mapping="true" uniqueId="177895d1-8561-4b42-bcfc-8d7e34040f37">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="eef73701-2805-440b-a859-3d7460e567af" type="System.Int32" />
-        <orm:field name="_uomini" property="Uomini" uniqueId="da4739be-2849-4a86-8ffa-212f5bc4062a" type="System.Int32" />
-        <orm:field name="_donne" property="Donne" uniqueId="a7a766d6-626c-41c7-ab6b-800d08ad7585" type="System.Int32" />
-        <orm:field name="_totale" property="Totale" uniqueId="80e538a1-c6d5-4eab-937c-3e141b2a6822" type="System.Int32" />
-        <orm:field name="_affluenzaId" property="AffluenzaId" uniqueId="a55ac839-0dbf-4a5a-9373-70938b3fc8c9" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="0891912b-54b0-4e05-90e1-5328c9bad74f" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="eef73701-2805-440b-a859-3d7460e567af" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_uomini" property="Uomini" uniqueId="da4739be-2849-4a86-8ffa-212f5bc4062a" type="System.Int32">
+          <orm:column name="Uomini" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_donne" property="Donne" uniqueId="a7a766d6-626c-41c7-ab6b-800d08ad7585" type="System.Int32">
+          <orm:column name="Donne" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_totale" property="Totale" uniqueId="80e538a1-c6d5-4eab-937c-3e141b2a6822" type="System.Int32">
+          <orm:column name="Totale" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_affluenzaId" property="AffluenzaId" uniqueId="a55ac839-0dbf-4a5a-9373-70938b3fc8c9" type="System.Int32">
+          <orm:column name="AffluenzaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="0891912b-54b0-4e05-90e1-5328c9bad74f" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="27b99cc3-3082-4b2e-b1a9-2902580764da" type="DataLayer.Sezione">
           <orm:reference uniqueId="867eeff7-2004-4b95-8b14-2e6b12e12414" association-name="RilevamentoHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -240,15 +350,25 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="ScrutinioCapoCoalizione" uniqueId="dc0a239d-0eaf-4920-ad03-532f6418e9a7">
+      <orm:class name="ScrutinioCapoCoalizione" use-default-mapping="true" uniqueId="dc0a239d-0eaf-4920-ad03-532f6418e9a7">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="2eee3233-5544-47b5-a839-b6c9793a9dc3" type="System.Int32" />
-        <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="eeb7782c-49ed-4fdc-87ba-d0be598066f5" type="System.Int32" />
-        <orm:field name="_voti" property="Voti" uniqueId="0f51affd-9b55-428d-b0fc-1beb0314b57a" type="System.Int32" />
-        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="857fa517-bdba-4f21-b11c-0b3dbdf1ad12" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="2eee3233-5544-47b5-a839-b6c9793a9dc3" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32">
+          <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="eeb7782c-49ed-4fdc-87ba-d0be598066f5" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_voti" property="Voti" uniqueId="0f51affd-9b55-428d-b0fc-1beb0314b57a" type="System.Int32">
+          <orm:column name="Voti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="857fa517-bdba-4f21-b11c-0b3dbdf1ad12" type="System.Int32">
+          <orm:column name="VotiAnnullati" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_capoCoalizione" property="CapoCoalizione" behavior="readwrite" uniqueId="bf36c942-7560-4026-88cf-c28d08aa9f17" type="DataLayer.CapoCoalizione">
           <orm:reference uniqueId="39b0c1f8-81f0-438b-a0c0-a8f9040cf692" association-name="ScrutinioCapoCoalizioneHasCapoCoalizione">
             <orm:sharedfield name="_capoCoalizioneId" target-class="DataLayer.CapoCoalizione" target-field="_id" />
@@ -260,17 +380,31 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="Scrutinio" uniqueId="c588b2a0-b947-4b62-8b0c-98cb52867525">
+      <orm:class name="Scrutinio" use-default-mapping="true" uniqueId="c588b2a0-b947-4b62-8b0c-98cb52867525">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="c60198a6-5855-4c7c-821d-c24f87a68e1f" type="System.Int32" />
-        <orm:field name="_validi" property="Validi" uniqueId="99ccd31b-6502-44bc-97f3-3a9810fd9228" type="System.Int32" />
-        <orm:field name="_nulle" property="Nulle" uniqueId="21b46aa5-73d4-449a-9d69-e7da713c22f7" type="System.Int32" />
-        <orm:field name="_bianche" property="Bianche" uniqueId="ce687a81-81f8-46ce-a0ed-3afa1d8529e6" type="System.Int32" />
-        <orm:field name="_contestate" property="Contestate" uniqueId="7f98423e-fde1-405b-acb9-57289d4be9f3" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="2dafa442-4d8c-48df-bc4c-ff14a98d4083" type="System.Int32" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="c46ae1a8-32e8-4ca1-9fc2-5a075e63d966" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="c60198a6-5855-4c7c-821d-c24f87a68e1f" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_validi" property="Validi" uniqueId="99ccd31b-6502-44bc-97f3-3a9810fd9228" type="System.Int32">
+          <orm:column name="Validi" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_nulle" property="Nulle" uniqueId="21b46aa5-73d4-449a-9d69-e7da713c22f7" type="System.Int32">
+          <orm:column name="Nulle" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_bianche" property="Bianche" uniqueId="ce687a81-81f8-46ce-a0ed-3afa1d8529e6" type="System.Int32">
+          <orm:column name="Bianche" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_contestate" property="Contestate" uniqueId="7f98423e-fde1-405b-acb9-57289d4be9f3" type="System.Int32">
+          <orm:column name="Contestate" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="2dafa442-4d8c-48df-bc4c-ff14a98d4083" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="c46ae1a8-32e8-4ca1-9fc2-5a075e63d966" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="92275aa8-ae93-4645-aca8-25c0fcb47fd6" type="DataLayer.Sezione">
           <orm:reference uniqueId="83be3018-c589-41ff-8dc4-e79460529a48" association-name="ScrutinioHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -282,15 +416,25 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="ScrutinioLista" uniqueId="87b1ad79-b425-4da6-8877-cac88fe79cea">
+      <orm:class name="ScrutinioLista" use-default-mapping="true" uniqueId="87b1ad79-b425-4da6-8877-cac88fe79cea">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" type="System.Int32" />
-        <orm:field name="_voti" property="Voti" uniqueId="c002b333-135b-4ce9-ba03-57000c720c90" type="System.Int32" />
-        <orm:field name="_listaId" property="ListaId" uniqueId="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="ec59bd77-4f42-46c7-9d64-02e16f064a05" type="System.Int32" />
-        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="a9fc9c4a-aebd-424e-9c2f-cd61e90da8cf" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_voti" property="Voti" uniqueId="c002b333-135b-4ce9-ba03-57000c720c90" type="System.Int32">
+          <orm:column name="Voti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_listaId" property="ListaId" uniqueId="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" type="System.Int32">
+          <orm:column name="ListaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="ec59bd77-4f42-46c7-9d64-02e16f064a05" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="a9fc9c4a-aebd-424e-9c2f-cd61e90da8cf" type="System.Int32">
+          <orm:column name="VotiAnnullati" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="c5f79551-47fc-4dc7-a9d5-07ee26d383d6" type="DataLayer.Sezione">
           <orm:reference uniqueId="cd8eee56-cff3-4547-8053-cdd59eee6431" association-name="ScrutinioListaHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -302,15 +446,25 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="ScrutinioCandidato" uniqueId="9fddce83-c8ee-4330-aa60-24ccce44652c">
+      <orm:class name="ScrutinioCandidato" use-default-mapping="true" uniqueId="9fddce83-c8ee-4330-aa60-24ccce44652c">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="33c43df3-52d0-40c1-89af-bb3308859249" type="System.Int32" />
-        <orm:field name="_voti" property="Voti" uniqueId="e1acbbec-d37c-4166-a535-a227b9b277ef" type="System.Int32" />
-        <orm:field name="_sezioneId" property="SezioneId" uniqueId="c415c05c-c305-415b-b4a1-5e627a879922" type="System.Int32" />
-        <orm:field name="_candidatoId" property="CandidatoId" uniqueId="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" type="System.Int32" />
-        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="1d8da98f-1391-4b74-8897-6ba9eb8a594d" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="33c43df3-52d0-40c1-89af-bb3308859249" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_voti" property="Voti" uniqueId="e1acbbec-d37c-4166-a535-a227b9b277ef" type="System.Int32">
+          <orm:column name="Voti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sezioneId" property="SezioneId" uniqueId="c415c05c-c305-415b-b4a1-5e627a879922" type="System.Int32">
+          <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_candidatoId" property="CandidatoId" uniqueId="efdcd5b7-f03d-46d6-95fd-3e86b2ffb681" type="System.Int32">
+          <orm:column name="CandidatoId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_votiAnnullati" property="VotiAnnullati" uniqueId="1d8da98f-1391-4b74-8897-6ba9eb8a594d" type="System.Int32">
+          <orm:column name="VotiAnnullati" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_sezione" property="Sezione" behavior="readwrite" uniqueId="542f232b-8b6d-4727-8aab-9b099ca78fb8" type="DataLayer.Sezione">
           <orm:reference uniqueId="a2e6d59b-da63-4d6a-9a86-7f2da29e106f" association-name="ScrutinioCandidatoHasSezione">
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
@@ -322,22 +476,46 @@
           </orm:reference>
         </orm:field>
       </orm:class>
-      <orm:class name="Operatore" uniqueId="dfcfe140-9f9c-4e52-b812-1f3ba39026af">
+      <orm:class name="Operatore" use-default-mapping="true" uniqueId="dfcfe140-9f9c-4e52-b812-1f3ba39026af">
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="159cea98-bf00-45f4-a738-a3c6a7c500b1" type="System.Int32" />
-        <orm:field name="_username" property="Username" uniqueId="c22cdbfc-2595-4536-af3c-20e4566ed4a2" type="System.String" />
-        <orm:field name="_password" property="Password" uniqueId="36e75f85-e60c-4d60-aab2-b670b4a68c2e" type="System.String" />
-        <orm:field name="_confermaPassword" property="ConfermaPassword" uniqueId="1e9c598b-5528-4631-916e-2bfce0b93c1d" type="System.String" />
-        <orm:field name="_email" property="Email" uniqueId="b8d801cb-d986-4546-9ffc-24066908c3ac" type="System.String" />
-        <orm:field name="_telefono" property="Telefono" uniqueId="d925b8bc-f12d-40ae-afad-7b8008563ef1" type="System.String" />
-        <orm:field name="_cognome" property="Cognome" uniqueId="d70bf6c8-3620-4c6b-8df9-efa53793ec67" type="System.String" />
-        <orm:field name="_nome" property="Nome" uniqueId="634e5725-458f-42d7-acdc-a7e19f63686c" type="System.String" />
-        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="3286b15a-d6cd-40ea-abff-b8ca35d3aaf3" type="System.Int32" />
-        <orm:field name="_supervisor" property="Supervisor" uniqueId="8711fb76-0f70-42e2-9733-d5958b900887" type="System.Boolean" />
-        <orm:field name="_amministratore" property="Amministratore" uniqueId="7589122c-360d-4cff-b647-cfb0fbfc41ae" type="System.Boolean" />
-        <orm:field name="_utente" property="Utente" uniqueId="96806377-aae2-4098-92f4-6dcb94e245f7" type="System.Boolean" />
+        <orm:field name="_id" property="Id" uniqueId="159cea98-bf00-45f4-a738-a3c6a7c500b1" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_username" property="Username" uniqueId="c22cdbfc-2595-4536-af3c-20e4566ed4a2" type="System.String">
+          <orm:column name="Username" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_password" property="Password" uniqueId="36e75f85-e60c-4d60-aab2-b670b4a68c2e" type="System.String">
+          <orm:column name="passwd" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_confermaPassword" property="ConfermaPassword" uniqueId="1e9c598b-5528-4631-916e-2bfce0b93c1d" type="System.String">
+          <orm:column name="ConfermaPassword" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" uniqueId="b8d801cb-d986-4546-9ffc-24066908c3ac" type="System.String">
+          <orm:column name="Email" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefono" property="Telefono" uniqueId="d925b8bc-f12d-40ae-afad-7b8008563ef1" type="System.String">
+          <orm:column name="Telefono" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_cognome" property="Cognome" uniqueId="d70bf6c8-3620-4c6b-8df9-efa53793ec67" type="System.String">
+          <orm:column name="Cognome" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_nome" property="Nome" uniqueId="634e5725-458f-42d7-acdc-a7e19f63686c" type="System.String">
+          <orm:column name="Nome" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="3286b15a-d6cd-40ea-abff-b8ca35d3aaf3" type="System.Int32">
+          <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_supervisor" property="Supervisor" uniqueId="8711fb76-0f70-42e2-9733-d5958b900887" type="System.Boolean">
+          <orm:column name="Supervisor" sql-type="tinyint" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.OneZero2BooleanConverter" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_amministratore" property="Amministratore" uniqueId="7589122c-360d-4cff-b647-cfb0fbfc41ae" type="System.Boolean">
+          <orm:column name="Amministratore" sql-type="tinyint" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.OneZero2BooleanConverter" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_utente" property="Utente" uniqueId="96806377-aae2-4098-92f4-6dcb94e245f7" type="System.Boolean">
+          <orm:column name="Utente" sql-type="tinyint" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.OneZero2BooleanConverter" ado-type="Bit" />
+        </orm:field>
         <orm:field name="_consultazione" property="Consultazione" behavior="readwrite" uniqueId="d472e4ad-1014-4afb-a326-db49f6e1623f" type="DataLayer.Consultazione">
           <orm:reference uniqueId="e3b9a1b7-9d81-496b-8299-516fb2dac60d" association-name="OperatoreHasConsultazione">
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
@@ -350,12 +528,14 @@
     </orm:namespace>
     <orm:schema schema="" />
     <orm:relational-naming-settings>
+      <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
       <orm:source-strategy>Property</orm:source-strategy>
       <orm:remove-camel-case>False</orm:remove-camel-case>
     </orm:relational-naming-settings>
   </orm:orm>
   <ModelSettings xmlns="">
-    <SaveConnectionStringInAppConfig>false</SaveConnectionStringInAppConfig>
+    <AppConfigConnectionPropertyName>ESElezioniConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=ESElezioni;Integrated Security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -373,11 +553,17 @@
     <CodeGenerationSettings>
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
-    <SchemaUpdateSettings />
+    <SchemaUpdateSettings>
+      <ExecuteScript>true</ExecuteScript>
+      <DeploymentProject>DataLayer</DeploymentProject>
+    </SchemaUpdateSettings>
     <BackendConfigurationSettings>
       <BackendConfiguration>
         <Backend>MsSql</Backend>
         <ProviderName>System.Data.SqlClient</ProviderName>
+        <Logging>
+          <MetricStoreSnapshotInterval>0</MetricStoreSnapshotInterval>
+        </Logging>
       </BackendConfiguration>
     </BackendConfigurationSettings>
   </ModelSettings>

@@ -24,7 +24,7 @@ namespace DataLayer
 {
 	public partial class EntitiesModel : OpenAccessContext, IEntitiesModelUnitOfWork
 	{
-		private static string connectionStringName = @"";
+		private static string connectionStringName = @"ESElezioniConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
@@ -183,6 +183,7 @@ namespace DataLayer
 			BackendConfiguration backend = new BackendConfiguration();
 			backend.Backend = "MsSql";
 			backend.ProviderName = "System.Data.SqlClient";
+			backend.Logging.MetricStoreSnapshotInterval = 0;
 		
 			CustomizeBackendConfiguration(ref backend);
 		
