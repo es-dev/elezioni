@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class ScrutinioCapolista
+	public partial class ScrutinioCapoCoalizione
 	{
 		private int _id;
 		public virtual int Id
@@ -37,16 +37,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _presidenteId;
-		public virtual int PresidenteId
+		private int _capoCoalizioneId;
+		public virtual int CapoCoalizioneId
 		{
 			get
 			{
-				return this._presidenteId;
+				return this._capoCoalizioneId;
 			}
 			set
 			{
-				this._presidenteId = value;
+				this._capoCoalizioneId = value;
 			}
 		}
 		
@@ -89,6 +89,19 @@ namespace DataLayer
 			}
 		}
 		
+		private CapoCoalizione _capoCoalizione;
+		public virtual CapoCoalizione CapoCoalizione
+		{
+			get
+			{
+				return this._capoCoalizione;
+			}
+			set
+			{
+				this._capoCoalizione = value;
+			}
+		}
+		
 		private Sezione _sezione;
 		public virtual Sezione Sezione
 		{
@@ -99,19 +112,6 @@ namespace DataLayer
 			set
 			{
 				this._sezione = value;
-			}
-		}
-		
-		private Presidente _presidente;
-		public virtual Presidente Presidente
-		{
-			get
-			{
-				return this._presidente;
-			}
-			set
-			{
-				this._presidente = value;
 			}
 		}
 		

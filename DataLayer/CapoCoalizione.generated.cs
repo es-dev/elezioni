@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Presidente
+	public partial class CapoCoalizione
 	{
 		private int _id;
 		public virtual int Id
@@ -111,12 +111,12 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
+		private IList<ScrutinioCapoCoalizione> _scrutinioCapoCoaliziones = new List<ScrutinioCapoCoalizione>();
+		public virtual IList<ScrutinioCapoCoalizione> ScrutinioCapoCoaliziones
 		{
 			get
 			{
-				return this._scrutinioCapolistas;
+				return this._scrutinioCapoCoaliziones;
 			}
 		}
 		

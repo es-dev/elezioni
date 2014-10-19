@@ -146,15 +146,6 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<ScrutinioCapolista> _scrutinioCapolistas = new List<ScrutinioCapolista>();
-		public virtual IList<ScrutinioCapolista> ScrutinioCapolistas
-		{
-			get
-			{
-				return this._scrutinioCapolistas;
-			}
-		}
-		
 		private IList<Scrutinio> _scrutinios = new List<Scrutinio>();
 		public virtual IList<Scrutinio> Scrutinios
 		{
@@ -179,6 +170,15 @@ namespace DataLayer
 			get
 			{
 				return this._scrutinioCandidatos;
+			}
+		}
+		
+		private IList<ScrutinioCapoCoalizione> _scrutinioCapoCoaliziones = new List<ScrutinioCapoCoalizione>();
+		public virtual IList<ScrutinioCapoCoalizione> ScrutinioCapoCoaliziones
+		{
+			get
+			{
+				return this._scrutinioCapoCoaliziones;
 			}
 		}
 		

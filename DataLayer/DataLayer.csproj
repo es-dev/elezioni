@@ -68,6 +68,9 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CapoCoalizione.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
     <Compile Include="Collegio.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
@@ -93,9 +96,6 @@
     <Compile Include="Operatore.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
-    <Compile Include="Presidente.generated.cs">
-      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rilevamento.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
@@ -108,9 +108,8 @@
     <Compile Include="ScrutinioCandidato.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
-    <Compile Include="ScrutinioCapolista.generated.cs">
+    <Compile Include="ScrutinioCapoCoalizione.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="ScrutinioLista.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>

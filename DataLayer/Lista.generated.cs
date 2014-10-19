@@ -37,16 +37,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _presidenteId;
-		public virtual int PresidenteId
+		private int _capoCoalizioneId;
+		public virtual int CapoCoalizioneId
 		{
 			get
 			{
-				return this._presidenteId;
+				return this._capoCoalizioneId;
 			}
 			set
 			{
-				this._presidenteId = value;
+				this._capoCoalizioneId = value;
 			}
 		}
 		
@@ -89,16 +89,16 @@ namespace DataLayer
 			}
 		}
 		
-		private Presidente _presidente;
-		public virtual Presidente Presidente
+		private CapoCoalizione _capoCoalizione;
+		public virtual CapoCoalizione CapoCoalizione
 		{
 			get
 			{
-				return this._presidente;
+				return this._capoCoalizione;
 			}
 			set
 			{
-				this._presidente = value;
+				this._capoCoalizione = value;
 			}
 		}
 		

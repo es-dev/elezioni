@@ -58,11 +58,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Presidente> Presidentes 
+		public IQueryable<CapoCoalizione> CapoCoaliziones 
 		{
 			get
 			{
-				return this.GetAll<Presidente>();
+				return this.GetAll<CapoCoalizione>();
 			}
 		}
 		
@@ -138,11 +138,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<ScrutinioCapolista> ScrutinioCapolistas 
+		public IQueryable<ScrutinioCapoCoalizione> ScrutinioCapoCoaliziones 
 		{
 			get
 			{
-				return this.GetAll<ScrutinioCapolista>();
+				return this.GetAll<ScrutinioCapoCoalizione>();
 			}
 		}
 		
@@ -203,7 +203,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Presidente> Presidentes
+		IQueryable<CapoCoalizione> CapoCoaliziones
 		{
 			get;
 		}
@@ -243,7 +243,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<ScrutinioCapolista> ScrutinioCapolistas
+		IQueryable<ScrutinioCapoCoalizione> ScrutinioCapoCoaliziones
 		{
 			get;
 		}
