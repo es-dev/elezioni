@@ -47,10 +47,13 @@
       </orm:class>
       <orm:class name="CapoCoalizione" use-default-mapping="true" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="14e3c336-a4e8-4da1-9c84-bd563a19eb19" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_numero" property="Numero" uniqueId="1f1b255b-08d1-4e4b-8b86-28e7e363e15b" type="System.Int32">
           <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -78,10 +81,13 @@
       </orm:class>
       <orm:class name="Lista" use-default-mapping="true" uniqueId="89eee56e-8fff-482f-809e-8ab849bf8d08">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="473c3b42-9c0a-4f8b-a274-63e81960fae9" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" type="System.Int32">
           <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -109,10 +115,13 @@
       </orm:class>
       <orm:class name="Candidato" use-default-mapping="true" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="0b46f691-bb4a-46e1-9257-87639bf8c5c2" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_listaId" property="ListaId" uniqueId="648875a4-e035-414e-b7f1-a5fa295b6cce" type="System.Int32">
           <orm:column name="ListaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -137,10 +146,13 @@
       </orm:class>
       <orm:class name="SedeElettorale" use-default-mapping="true" uniqueId="b44b289f-f74c-4b78-a651-0112ed4d0b73">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="a3d13fa4-82b4-4c53-8115-4e9c4a38108c" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_indirizzo" property="Indirizzo" uniqueId="db063f4f-c5a1-4a22-8ec0-74e0b00b9ae1" type="System.String">
           <orm:column name="Indirizzo" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
@@ -171,10 +183,13 @@
       </orm:class>
       <orm:class name="Sezione" use-default-mapping="true" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="a1130688-488b-485b-88ce-e4824a68dd7a" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_votantiMaschi" property="VotantiMaschi" uniqueId="336c67c7-38eb-4285-a8dd-d9556d497766" type="System.Int32">
           <orm:column name="VotantiMaschi" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -222,10 +237,13 @@
       </orm:class>
       <orm:class name="Affluenza" use-default-mapping="true" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="821035f1-b422-42ec-8bf4-b58f96d7ef6a" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="dbbb2cb5-7798-4fa0-8e7b-f79b59dac491" type="System.Int32">
           <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -244,10 +262,13 @@
       </orm:class>
       <orm:class name="Comune" use-default-mapping="true" uniqueId="029237c8-5488-4de9-bea0-c5f00a2bd163">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="821e3ea6-b8d1-4d78-b408-53551b208287" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_descrizione" property="Descrizione" uniqueId="0983258a-374f-4a81-a6c5-27751ca7eb37" type="System.String">
           <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
@@ -270,10 +291,13 @@
       </orm:class>
       <orm:class name="Collegio" use-default-mapping="true" uniqueId="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="ca2915f3-1629-4f53-bfa4-415c32fdd691" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_consultazioneId" property="ConsultazioneId" uniqueId="58b7037a-3071-43b3-a334-3bc28ed3471c" type="System.Int32">
           <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -295,10 +319,13 @@
       </orm:class>
       <orm:class name="SezioneCollegio" use-default-mapping="true" uniqueId="607fd559-978a-43f9-808f-fb86d4838fc6">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_sezioneId" property="SezioneId" uniqueId="3ee55f05-cad2-4765-9e62-c259a71045b9" type="System.Int32">
           <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -319,10 +346,13 @@
       </orm:class>
       <orm:class name="Rilevamento" use-default-mapping="true" uniqueId="177895d1-8561-4b42-bcfc-8d7e34040f37">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="eef73701-2805-440b-a859-3d7460e567af" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_uomini" property="Uomini" uniqueId="da4739be-2849-4a86-8ffa-212f5bc4062a" type="System.Int32">
           <orm:column name="Uomini" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -352,10 +382,13 @@
       </orm:class>
       <orm:class name="ScrutinioCapoCoalizione" use-default-mapping="true" uniqueId="dc0a239d-0eaf-4920-ad03-532f6418e9a7">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="2eee3233-5544-47b5-a839-b6c9793a9dc3" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_capoCoalizioneId" property="CapoCoalizioneId" uniqueId="6b785903-d587-4515-baf9-5dae726e72ba" type="System.Int32">
           <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -382,10 +415,13 @@
       </orm:class>
       <orm:class name="Scrutinio" use-default-mapping="true" uniqueId="c588b2a0-b947-4b62-8b0c-98cb52867525">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="c60198a6-5855-4c7c-821d-c24f87a68e1f" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_validi" property="Validi" uniqueId="99ccd31b-6502-44bc-97f3-3a9810fd9228" type="System.Int32">
           <orm:column name="Validi" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -418,10 +454,13 @@
       </orm:class>
       <orm:class name="ScrutinioLista" use-default-mapping="true" uniqueId="87b1ad79-b425-4da6-8877-cac88fe79cea">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_voti" property="Voti" uniqueId="c002b333-135b-4ce9-ba03-57000c720c90" type="System.Int32">
           <orm:column name="Voti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -448,10 +487,13 @@
       </orm:class>
       <orm:class name="ScrutinioCandidato" use-default-mapping="true" uniqueId="9fddce83-c8ee-4330-aa60-24ccce44652c">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="33c43df3-52d0-40c1-89af-bb3308859249" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_voti" property="Voti" uniqueId="e1acbbec-d37c-4166-a535-a227b9b277ef" type="System.Int32">
           <orm:column name="Voti" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -478,10 +520,13 @@
       </orm:class>
       <orm:class name="Operatore" use-default-mapping="true" uniqueId="dfcfe140-9f9c-4e52-b812-1f3ba39026af">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="159cea98-bf00-45f4-a738-a3c6a7c500b1" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_username" property="Username" uniqueId="c22cdbfc-2595-4536-af3c-20e4566ed4a2" type="System.String">
           <orm:column name="Username" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
@@ -535,7 +580,7 @@
   </orm:orm>
   <ModelSettings xmlns="">
     <AppConfigConnectionPropertyName>ESElezioniConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=ESElezioni;Integrated Security=True</AppConfigConnectionString>
+    <AppConfigConnectionString>data source=localhost;initial catalog=ESElezioni;integrated security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -613,7 +658,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="bae68634-ceea-44a4-960e-6d3bd2fabda7" name="CapoCoalizione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="bae68634-ceea-44a4-960e-6d3bd2fabda7" name="CapoCoalizione" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="14e3c336-a4e8-4da1-9c84-bd563a19eb19" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="1f1b255b-08d1-4e4b-8b86-28e7e363e15b" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
       <Property Id="ebb05eeb-7f73-49f3-8934-3e39e5ce108e" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
@@ -646,7 +691,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="89eee56e-8fff-482f-809e-8ab849bf8d08" name="Lista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="89eee56e-8fff-482f-809e-8ab849bf8d08" name="Lista" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="473c3b42-9c0a-4f8b-a274-63e81960fae9" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="2703e76a-c06b-40c3-ab28-b9a1157ce0bd" name="CapoCoalizioneId" type="System.Int32" label="CapoCoalizioneId : System.Int32" fieldName="_capoCoalizioneId" />
       <Property Id="6095da69-afe5-4602-bec3-3f34cffdeaa1" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
@@ -679,7 +724,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="2cc8dd6f-2997-44e5-95a4-016f7834dc2d" name="Candidato" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="2cc8dd6f-2997-44e5-95a4-016f7834dc2d" name="Candidato" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="0b46f691-bb4a-46e1-9257-87639bf8c5c2" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="648875a4-e035-414e-b7f1-a5fa295b6cce" name="ListaId" type="System.Int32" label="ListaId : System.Int32" fieldName="_listaId" />
       <Property Id="f173cd45-40d3-4817-b6c1-81201468491e" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
@@ -709,7 +754,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="b44b289f-f74c-4b78-a651-0112ed4d0b73" name="SedeElettorale" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="b44b289f-f74c-4b78-a651-0112ed4d0b73" name="SedeElettorale" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="a3d13fa4-82b4-4c53-8115-4e9c4a38108c" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="db063f4f-c5a1-4a22-8ec0-74e0b00b9ae1" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
       <Property Id="d5db6eb8-bdb5-466a-99a9-a98d7e8a67f3" name="Mappa" label="Mappa : String" fieldName="_mappa" />
@@ -741,7 +786,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="41a82040-5d63-4ad5-8715-a87b2d7b659c" name="Sezione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="41a82040-5d63-4ad5-8715-a87b2d7b659c" name="Sezione" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="a1130688-488b-485b-88ce-e4824a68dd7a" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="ac59e4a2-66e2-41f1-97a0-d6f1cfe0d7d2" name="SedeElettoraleId" type="System.Int32" label="SedeElettoraleId : System.Int32" fieldName="_sedeElettoraleId" />
       <Property Id="336c67c7-38eb-4285-a8dd-d9556d497766" name="VotantiMaschi" type="System.Int32" label="VotantiMaschi : System.Int32" fieldName="_votantiMaschi" />
@@ -803,7 +848,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="07d03bc4-3da8-4a67-bd14-b4d07a33f782" name="Affluenza" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="07d03bc4-3da8-4a67-bd14-b4d07a33f782" name="Affluenza" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="821035f1-b422-42ec-8bf4-b58f96d7ef6a" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="dbbb2cb5-7798-4fa0-8e7b-f79b59dac491" name="ConsultazioneId" type="System.Int32" label="ConsultazioneId : System.Int32" fieldName="_consultazioneId" />
       <Property Id="8b1de822-f693-45ea-b38e-a00296bbbdac" name="Orario" type="DateTime" label="Orario : DateTime" fieldName="_orario" />
@@ -831,7 +876,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="029237c8-5488-4de9-bea0-c5f00a2bd163" name="Comune" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="029237c8-5488-4de9-bea0-c5f00a2bd163" name="Comune" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="821e3ea6-b8d1-4d78-b408-53551b208287" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="7747255d-51cb-40fb-9dee-ef294fa7fd61" name="Nome" label="Nome : String" fieldName="_nome" />
       <Property Id="0983258a-374f-4a81-a6c5-27751ca7eb37" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
@@ -844,7 +889,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279" name="Collegio" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="1f7a8e27-f483-4b3f-a91b-8e8bfe0f4279" name="Collegio" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="ca2915f3-1629-4f53-bfa4-415c32fdd691" name="Id" type="Int32" label="Id : Int32" identity="true" fieldName="_id" />
       <Property Id="58b7037a-3071-43b3-a334-3bc28ed3471c" name="ConsultazioneId" type="System.Int32" label="ConsultazioneId : System.Int32" fieldName="_consultazioneId" />
       <Property Id="45a0f580-1486-48dd-831f-e77c3952c963" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
@@ -873,7 +918,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="607fd559-978a-43f9-808f-fb86d4838fc6" name="SezioneCollegio" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="607fd559-978a-43f9-808f-fb86d4838fc6" name="SezioneCollegio" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="8d9a159f-5ebc-48dd-9d8e-9ccb9e80ff30" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="3ee55f05-cad2-4765-9e62-c259a71045b9" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
       <Property Id="070259a4-5536-432e-9373-0ec832665e11" name="CollegioId" type="Int32" label="CollegioId : Int32" fieldName="_collegioId" />
@@ -914,7 +959,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="177895d1-8561-4b42-bcfc-8d7e34040f37" name="Rilevamento" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="177895d1-8561-4b42-bcfc-8d7e34040f37" name="Rilevamento" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="eef73701-2805-440b-a859-3d7460e567af" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="da4739be-2849-4a86-8ffa-212f5bc4062a" name="Uomini" type="System.Int32" label="Uomini : System.Int32" fieldName="_uomini" />
       <Property Id="a7a766d6-626c-41c7-ab6b-800d08ad7585" name="Donne" type="System.Int32" label="Donne : System.Int32" fieldName="_donne" />
@@ -958,7 +1003,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="dc0a239d-0eaf-4920-ad03-532f6418e9a7" name="ScrutinioCapoCoalizione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="dc0a239d-0eaf-4920-ad03-532f6418e9a7" name="ScrutinioCapoCoalizione" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="2eee3233-5544-47b5-a839-b6c9793a9dc3" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="6b785903-d587-4515-baf9-5dae726e72ba" name="CapoCoalizioneId" type="Int32" label="CapoCoalizioneId : Int32" fieldName="_capoCoalizioneId" />
       <Property Id="eeb7782c-49ed-4fdc-87ba-d0be598066f5" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
@@ -1001,7 +1046,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="c588b2a0-b947-4b62-8b0c-98cb52867525" name="Scrutinio" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="c588b2a0-b947-4b62-8b0c-98cb52867525" name="Scrutinio" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="c60198a6-5855-4c7c-821d-c24f87a68e1f" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="99ccd31b-6502-44bc-97f3-3a9810fd9228" name="Validi" type="Int32" label="Validi : Int32" fieldName="_validi" />
       <Property Id="21b46aa5-73d4-449a-9d69-e7da713c22f7" name="Nulle" type="Int32" label="Nulle : Int32" fieldName="_nulle" />
@@ -1046,7 +1091,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="87b1ad79-b425-4da6-8877-cac88fe79cea" name="ScrutinioLista" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="87b1ad79-b425-4da6-8877-cac88fe79cea" name="ScrutinioLista" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="f91593cc-a71b-4ea4-b8ae-2e2c4fa6169b" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="c002b333-135b-4ce9-ba03-57000c720c90" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
       <Property Id="d5efab42-8ae6-4e93-a3a6-1a45aafd5a0a" name="ListaId" type="Int32" label="ListaId : Int32" fieldName="_listaId" />
@@ -1089,7 +1134,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="9fddce83-c8ee-4330-aa60-24ccce44652c" name="ScrutinioCandidato" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="9fddce83-c8ee-4330-aa60-24ccce44652c" name="ScrutinioCandidato" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="33c43df3-52d0-40c1-89af-bb3308859249" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="e1acbbec-d37c-4166-a535-a227b9b277ef" name="Voti" type="Int32" label="Voti : Int32" fieldName="_voti" />
       <Property Id="c415c05c-c305-415b-b4a1-5e627a879922" name="SezioneId" type="Int32" label="SezioneId : Int32" fieldName="_sezioneId" />
@@ -1132,7 +1177,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="dfcfe140-9f9c-4e52-b812-1f3ba39026af" name="Operatore" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="dfcfe140-9f9c-4e52-b812-1f3ba39026af" name="Operatore" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="159cea98-bf00-45f4-a738-a3c6a7c500b1" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="c22cdbfc-2595-4536-af3c-20e4566ed4a2" name="Username" label="Username : String" fieldName="_username" />
       <Property Id="36e75f85-e60c-4d60-aab2-b670b4a68c2e" name="Password" label="Password : String" fieldName="_password" />
