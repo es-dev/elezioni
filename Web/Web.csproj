@@ -297,6 +297,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Comune\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Images\" />

@@ -92,6 +92,55 @@ namespace WcfService
         }
         #endregion
         #region Custom
+        public IEnumerable<Dto.ComuneDto> LoadComuni(int skip, int take, string search=null)
+        {
+            try
+            {
+                var comuni = QueryComuni(search);
+                comuni = (from q in comuni select q).Skip(skip).Take(take);
+                var engine = new Assemblers.ComuneAssembler();
+                var comuniDto= engine.Assemble(comuni);
+                return comuniDto;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public int CountComuni(string search=null)
+        {
+            try
+            {
+                var comuni = QueryComuni(search);
+                var count = comuni.Count();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return 0;
+        }
+
+        private IQueryable<DataLayer.Comune> QueryComuni(string search)
+        {
+            try
+            {
+                var ef = new DataLayer.EntitiesModel();
+                var comuni = (from q in ef.Comunes select q);
+                if (search != null)
+                    comuni = (from q in comuni where q.Nome.StartsWith(search) select q);
+                comuni = (from q in comuni orderby q.Nome select q);
+                return comuni;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
         #endregion
         #endregion
 
@@ -174,6 +223,56 @@ namespace WcfService
         }
         #endregion
         #region Custom
+        public IEnumerable<Dto.ConsultazioneDto> LoadConsultazioni(int skip, int take, string search = null)
+        {
+            try
+            {
+                var consultazioni = QueryConsultazioni(search);
+                consultazioni = (from q in consultazioni select q).Skip(skip).Take(take);
+                var engine = new Assemblers.ConsultazioneAssembler();
+                var consultazioniDto = engine.Assemble(consultazioni);
+                return consultazioniDto;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public int CountConsultazioni(string search = null)
+        {
+            try
+            {
+                var consultazioni = QueryConsultazioni(search);
+                var count = consultazioni.Count();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return 0;
+        }
+
+        private IQueryable<DataLayer.Consultazione> QueryConsultazioni(string search)
+        {
+            try
+            {
+                var ef = new DataLayer.EntitiesModel();
+                var consultazioni = (from q in ef.Consultaziones select q);
+                if (search != null)
+                    consultazioni = (from q in consultazioni where q.Descrizione.StartsWith(search) select q);
+                consultazioni = (from q in consultazioni orderby q.Descrizione select q);
+                return consultazioni;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         #endregion
         #endregion
 
@@ -255,7 +354,58 @@ namespace WcfService
             return 0;
         }
         #endregion
+
         #region Custom
+        public IEnumerable<Dto.OperatoreDto> LoadOperatori(int skip, int take, string search = null)
+        {
+            try
+            {
+                var operatori = QueryOperatori(search);
+                operatori = (from q in operatori select q).Skip(skip).Take(take);
+                var engine = new Assemblers.OperatoreAssembler();
+                var operatoriDto = engine.Assemble(operatori);
+                return operatoriDto;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public int CountOperatori(string search = null)
+        {
+            try
+            {
+                var operatori = QueryOperatori(search);
+                var count = operatori.Count();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return 0;
+        }
+
+        private IQueryable<DataLayer.Operatore> QueryOperatori(string search)
+        {
+            try
+            {
+                var ef = new DataLayer.EntitiesModel();
+                var operatori = (from q in ef.Operatores select q);
+                if (search != null)
+                    operatori = (from q in operatori where (q.Cognome.StartsWith(search) || q.Nome.StartsWith(search)) select q);
+                operatori = (from q in operatori orderby q.Cognome select q);
+                return operatori;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+        
         #endregion
         #endregion
 
@@ -337,7 +487,58 @@ namespace WcfService
             return 0;
         }
         #endregion
+
         #region Custom
+        public IEnumerable<Dto.SedeElettoraleDto> LoadSediElettorali(int skip, int take, string search = null)
+        {
+            try
+            {
+                var sediElettorali = QuerySediElettorali(search);
+                sediElettorali = (from q in sediElettorali select q).Skip(skip).Take(take);
+                var engine = new Assemblers.SedeElettoraleAssembler();
+                var sediElettoraliDto = engine.Assemble(sediElettorali);
+                return sediElettoraliDto;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public int CountSediElettorali(string search = null)
+        {
+            try
+            {
+                var sediElettorali = QuerySediElettorali(search);
+                var count = sediElettorali.Count();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return 0;
+        }
+
+        private IQueryable<DataLayer.SedeElettorale> QuerySediElettorali(string search)
+        {
+            try
+            {
+                var ef = new DataLayer.EntitiesModel();
+                var sediElettorali = (from q in ef.SedeElettorales select q);
+                if (search != null)
+                    sediElettorali = (from q in sediElettorali where (q.Indirizzo.StartsWith(search)) select q);
+                sediElettorali = (from q in sediElettorali orderby q.Indirizzo select q);
+                return sediElettorali;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         #endregion
         #endregion
 

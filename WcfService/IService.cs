@@ -29,7 +29,13 @@ namespace WcfService
         [OperationContract]
         int CountComuni();
         #endregion
+
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ComuneDto> LoadComuni(int skip, int take, string search=null);
+        
+        [OperationContract]
+        int CountComuni(string search=null);
         #endregion
         #endregion
 
@@ -50,7 +56,13 @@ namespace WcfService
         [OperationContract]
         int CountConsultazioni();
         #endregion
+
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ConsultazioneDto> LoadConsultazioni(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountConsultazioni(string search = null);
         #endregion
         #endregion
 
@@ -71,7 +83,13 @@ namespace WcfService
         [OperationContract]
         int CountOperatori();
         #endregion
+
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.OperatoreDto> LoadOperatori(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountOperatori(string search = null);
         #endregion
         #endregion
 
@@ -92,7 +110,13 @@ namespace WcfService
         [OperationContract]
         int CountSediElettorali();
         #endregion
+
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.SedeElettoraleDto> LoadSediElettorali(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountSediElettorali(string search = null);
         #endregion
         #endregion
 
