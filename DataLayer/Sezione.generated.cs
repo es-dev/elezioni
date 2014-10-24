@@ -102,6 +102,19 @@ namespace DataLayer
 			}
 		}
 		
+		private string _numero;
+		public virtual string Numero
+		{
+			get
+			{
+				return this._numero;
+			}
+			set
+			{
+				this._numero = value;
+			}
+		}
+		
 		private SedeElettorale _sedeElettorale;
 		public virtual SedeElettorale SedeElettorale
 		{

@@ -138,6 +138,11 @@ namespace WcfService
         int CountSezioni();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.SezioneDto> LoadSezioni(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountSezioni(string search = null);
         #endregion
         #endregion
 
@@ -159,6 +164,11 @@ namespace WcfService
         int CountCollegi();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.CollegioDto> LoadCollegi(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountCollegi(string search = null);
         #endregion
         #endregion
 
@@ -180,6 +190,11 @@ namespace WcfService
         int CountSezioniCollegio();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.SezioneCollegioDto> LoadSezioniCollegi(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountSezioniCollegi(string search = null);
         #endregion
         #endregion
 
@@ -201,6 +216,11 @@ namespace WcfService
         int CountAffluenze();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.AffluenzaDto> LoadAffluenze(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountAffluenze(string search = null);
         #endregion
         #endregion
 
@@ -222,6 +242,11 @@ namespace WcfService
         int CountRilevamenti();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.RilevamentoDto> LoadRilevamenti(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountRilevamenti(string search = null);
         #endregion
         #endregion
 
@@ -243,6 +268,11 @@ namespace WcfService
         int CountScrutini();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ScrutinioDto> LoadScrutini(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountScrutini(string search = null);
         #endregion
         #endregion
 
@@ -264,6 +294,11 @@ namespace WcfService
         int CountCapiCoalizioni();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.CapoCoalizioneDto> LoadCapiCoalizioni(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountCapiCoalizioni(string search = null);
         #endregion
         #endregion
 
@@ -285,6 +320,11 @@ namespace WcfService
         int CountScrutiniCapoCoalizione();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ScrutinioCapoCoalizioneDto> LoadScrutiniCapoCoalizione(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountScrutiniCapoCoalizione(string search = null);
         #endregion
         #endregion
 
@@ -306,6 +346,11 @@ namespace WcfService
         int CountListe();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ListaDto> LoadListe(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountListe(string search = null);
         #endregion
         #endregion
 
@@ -327,6 +372,11 @@ namespace WcfService
         int CountScrutiniLista();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ScrutinioListaDto> LoadScrutiniLista(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountScrutiniLista(string search = null);
         #endregion
         #endregion
 
@@ -349,6 +399,11 @@ namespace WcfService
         int CountCandidati();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.CandidatoDto> LoadCandidati(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountCandidati(string search = null);
         #endregion
         #endregion
 
@@ -370,6 +425,11 @@ namespace WcfService
         int CountScrutiniCandidato();
         #endregion
         #region Custom
+        [OperationContract]
+        IEnumerable<Dto.ScrutinioCandidatoDto> LoadScrutiniCandidato(int skip, int take, string search = null);
+
+        [OperationContract]
+        int CountScrutiniCandidato(string search = null);
         #endregion
         #endregion
 
