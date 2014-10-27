@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Web.GUI.Comune;
 
 namespace Web.GUI.Dashboard
 {
@@ -64,7 +65,7 @@ namespace Web.GUI.Dashboard
             try
             {
                 var dashboards = new List<Dashboard>();
-                var dashboardComune = new Dashboard("Comune", "ELE", "Visualizza le informazioni sul comune...", "Images.comune.png", "", null);
+                var dashboardComune = new Dashboard("Comune", "ELE", "Visualizza le informazioni sul comune...", "Images.comune.png", "", typeof(ComuneView));
                 dashboards.Add(dashboardComune);
 
                 var query = dashboards.AsQueryable();
