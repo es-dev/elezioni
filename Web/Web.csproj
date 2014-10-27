@@ -557,6 +557,44 @@
       <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Dashboard\DashboardViewModel.cs" />
+    <Compile Include="GUI\Operatore\OperatoreItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreItem.designer.cs">
+      <DependentUpon>OperatoreItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreModel.designer.cs">
+      <DependentUpon>OperatoreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreView.designer.cs">
+      <DependentUpon>OperatoreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreViewModel.cs" />
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleItem.designer.cs">
+      <DependentUpon>SedeElettoraleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleModel.designer.cs">
+      <DependentUpon>SedeElettoraleModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleView.designer.cs">
+      <DependentUpon>SedeElettoraleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleViewModel.cs" />
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -586,6 +624,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dashboard\DashboardView.resx">
       <DependentUpon>DashboardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Operatore\OperatoreItem.resx">
+      <DependentUpon>OperatoreItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Operatore\OperatoreModel.resx">
+      <DependentUpon>OperatoreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Operatore\OperatoreView.resx">
+      <DependentUpon>OperatoreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SedeElettorale\SedeElettoraleItem.resx">
+      <DependentUpon>SedeElettoraleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SedeElettorale\SedeElettoraleModel.resx">
+      <DependentUpon>SedeElettoraleModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SedeElettorale\SedeElettoraleView.resx">
+      <DependentUpon>SedeElettoraleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
