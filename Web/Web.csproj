@@ -505,6 +505,25 @@
   <ItemGroup>
     <Compile Include="Code\SessionManager.cs" />
     <Compile Include="Code\ESDApplication.cs" />
+    <Compile Include="GUI\Collegio\CollegioItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioItem.designer.cs">
+      <DependentUpon>CollegioItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioModel.designer.cs">
+      <DependentUpon>CollegioModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioView.designer.cs">
+      <DependentUpon>CollegioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Collegio\CollegioViewModel.cs" />
     <Compile Include="GUI\Comune\ComuneItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -524,6 +543,44 @@
       <DependentUpon>ComuneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Comune\ComuneViewModel.cs" />
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.designer.cs">
+      <DependentUpon>SezioneCollegioItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioModel.designer.cs">
+      <DependentUpon>SezioneCollegioModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioView.designer.cs">
+      <DependentUpon>SezioneCollegioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioViewModel.cs" />
+    <Compile Include="GUI\Sezione\SezioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneItem.designer.cs">
+      <DependentUpon>SezioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneModel.designer.cs">
+      <DependentUpon>SezioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneView.designer.cs">
+      <DependentUpon>SezioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sezione\SezioneViewModel.cs" />
     <Compile Include="GUI\Consultazione\ConsultazioneItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -601,6 +658,15 @@
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Collegio\CollegioItem.resx">
+      <DependentUpon>CollegioItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Collegio\CollegioModel.resx">
+      <DependentUpon>CollegioModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Collegio\CollegioView.resx">
+      <DependentUpon>CollegioView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Comune\ComuneItem.resx">
       <DependentUpon>ComuneItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,6 +675,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Comune\ComuneView.resx">
       <DependentUpon>ComuneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SezioneCollegio\SezioneCollegioItem.resx">
+      <DependentUpon>SezioneCollegioItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SezioneCollegio\SezioneCollegioModel.resx">
+      <DependentUpon>SezioneCollegioModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SezioneCollegio\SezioneCollegioView.resx">
+      <DependentUpon>SezioneCollegioView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sezione\SezioneItem.resx">
+      <DependentUpon>SezioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sezione\SezioneModel.resx">
+      <DependentUpon>SezioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sezione\SezioneView.resx">
+      <DependentUpon>SezioneView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Consultazione\ConsultazioneItem.resx">
       <DependentUpon>ConsultazioneItem.cs</DependentUpon>
