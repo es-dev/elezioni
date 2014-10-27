@@ -524,6 +524,25 @@
       <DependentUpon>ComuneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Comune\ComuneViewModel.cs" />
+    <Compile Include="GUI\Consultazione\ConsultazioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneItem.designer.cs">
+      <DependentUpon>ConsultazioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneModel.designer.cs">
+      <DependentUpon>ConsultazioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneView.designer.cs">
+      <DependentUpon>ConsultazioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneViewModel.cs" />
     <Compile Include="GUI\Dashboard\Dashboard.cs" />
     <Compile Include="GUI\Dashboard\DashboardItem.cs">
       <SubType>UserControl</SubType>
@@ -552,6 +571,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Comune\ComuneView.resx">
       <DependentUpon>ComuneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Consultazione\ConsultazioneItem.resx">
+      <DependentUpon>ConsultazioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Consultazione\ConsultazioneModel.resx">
+      <DependentUpon>ConsultazioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Consultazione\ConsultazioneView.resx">
+      <DependentUpon>ConsultazioneView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dashboard\DashboardItem.resx">
       <DependentUpon>DashboardItem.cs</DependentUpon>

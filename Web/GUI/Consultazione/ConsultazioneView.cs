@@ -7,11 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 
-namespace Web.GUI.Comune
+namespace Web.GUI.Consultazione
 {
-	public partial class ComuneView : TemplateView
+	public partial class ConsultazioneView : TemplateView
 	{
-        public ComuneView()
+        public ConsultazioneView()
 		{ 
 			InitializeComponent();
 		}
@@ -21,9 +21,9 @@ namespace Web.GUI.Comune
             try
             {
                 Take = 10;
-                ViewModel = new ComuneViewModel(this);
+                ViewModel = new ConsultazioneViewModel(this);
                 TitleSpace = "ENTERPRISE MANAGER - ESD";
-                Title = "COMUNI";
+                Title = "CONSULTAZIONI";
             }
             catch (Exception ex)
             {
@@ -35,9 +35,9 @@ namespace Web.GUI.Comune
         {
             try
             {
-                var space = new ComuneModel();
-                space.Title = "NUOVO COMUNE";
-                space.Model = new WcfService.Dto.ComuneDto() ;
+                var space = new ConsultazioneModel();
+                space.Title = "NUOVA CONSULTAZIONE";
+                space.Model = new WcfService.Dto.ConsultazioneDto();
                 AddSpace(space);
             }
             catch (Exception ex)

@@ -380,7 +380,6 @@ namespace WcfService
         #endregion
         #endregion
 
-
         #region Candidato
         #region CRUD
         [OperationContract]
@@ -434,6 +433,4 @@ namespace WcfService
         #endregion
 
     }
-
-
 }
