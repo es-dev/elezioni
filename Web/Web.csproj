@@ -275,17 +275,76 @@
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="Code\ESDApplication.cs" />
+    <Compile Include="GUI\Comune\ComuneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneItem.designer.cs">
+      <DependentUpon>ComuneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneModel.designer.cs">
+      <DependentUpon>ComuneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneView.designer.cs">
+      <DependentUpon>ComuneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comune\ComuneViewModel.cs" />
+    <Compile Include="GUI\Dashboard\Dashboard.cs" />
+    <Compile Include="GUI\Dashboard\DashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardItem.designer.cs">
+      <DependentUpon>DashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardView.designer.cs">
+      <DependentUpon>DashboardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardViewModel.cs" />
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Comune\ComuneItem.resx">
+      <DependentUpon>ComuneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comune\ComuneModel.resx">
+      <DependentUpon>ComuneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comune\ComuneView.resx">
+      <DependentUpon>ComuneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\DashboardItem.resx">
+      <DependentUpon>DashboardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\DashboardView.resx">
+      <DependentUpon>DashboardView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.config" />
@@ -297,11 +356,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Comune\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
+      <HintPath>C:\Progetti\Progetti Web\ES.Elezioni\Web\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfService\WcfService.csproj">
+      <Project>{1f172fe8-814a-46d0-a71e-4036505c442e}</Project>
+      <Name>WcfService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
