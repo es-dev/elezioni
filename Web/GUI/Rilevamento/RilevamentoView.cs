@@ -7,11 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 
-namespace Web.GUI.SezioneCollegio
+namespace Web.GUI.Rilevamento
 {
-	public partial class SezioneCollegioView : TemplateView
+	public partial class RilevamentoView : TemplateView
 	{
-        public SezioneCollegioView()
+        public RilevamentoView()
 		{ 
 			InitializeComponent();
 		}
@@ -21,9 +21,9 @@ namespace Web.GUI.SezioneCollegio
             try
             {
                 Take = 10;
-                ViewModel = new SezioneCollegioViewModel(this);
+                ViewModel = new RilevamentoViewModel(this);
                 TitleSpace = "ENTERPRISE MANAGER - ESD";
-                Title = "SEZIONI COLLEGI";
+                Title = "RILEVAMENTI";
             }
             catch (Exception ex)
             {
@@ -35,9 +35,9 @@ namespace Web.GUI.SezioneCollegio
         {
             try
             {
-                var space = new SezioneCollegioModel();
-                space.Title = "NUOVA SEZIONE COLLEGIO";
-                space.Model = new WcfService.Dto.SezioneCollegioDto() ;
+                var space = new RilevamentoModel();
+                space.Title = "NUOVO RILEVAMENTO";
+                space.Model = new WcfService.Dto.RilevamentoDto() ;
                 AddSpace(space);
             }
             catch (Exception ex)

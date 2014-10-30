@@ -505,6 +505,25 @@
   <ItemGroup>
     <Compile Include="Code\SessionManager.cs" />
     <Compile Include="Code\ESDApplication.cs" />
+    <Compile Include="GUI\Affluenza\AffluenzaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaItem.designer.cs">
+      <DependentUpon>AffluenzaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaModel.designer.cs">
+      <DependentUpon>AffluenzaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaView.designer.cs">
+      <DependentUpon>AffluenzaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaViewModel.cs" />
     <Compile Include="GUI\Collegio\CollegioItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -543,6 +562,44 @@
       <DependentUpon>ComuneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Comune\ComuneViewModel.cs" />
+    <Compile Include="GUI\Rilevamento\RilevamentoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoItem.designer.cs">
+      <DependentUpon>RilevamentoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoModel.designer.cs">
+      <DependentUpon>RilevamentoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoView.designer.cs">
+      <DependentUpon>RilevamentoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoViewModel.cs" />
+    <Compile Include="GUI\Scrutinio\ScrutinioItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioItem.designer.cs">
+      <DependentUpon>ScrutinioItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioModel.designer.cs">
+      <DependentUpon>ScrutinioModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioView.designer.cs">
+      <DependentUpon>ScrutinioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioViewModel.cs" />
     <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -658,6 +715,15 @@
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Affluenza\AffluenzaItem.resx">
+      <DependentUpon>AffluenzaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Affluenza\AffluenzaModel.resx">
+      <DependentUpon>AffluenzaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Affluenza\AffluenzaView.resx">
+      <DependentUpon>AffluenzaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Collegio\CollegioItem.resx">
       <DependentUpon>CollegioItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -675,6 +741,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Comune\ComuneView.resx">
       <DependentUpon>ComuneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Rilevamento\RilevamentoItem.resx">
+      <DependentUpon>RilevamentoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Rilevamento\RilevamentoModel.resx">
+      <DependentUpon>RilevamentoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Rilevamento\RilevamentoView.resx">
+      <DependentUpon>RilevamentoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Scrutinio\ScrutinioItem.resx">
+      <DependentUpon>ScrutinioItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Scrutinio\ScrutinioModel.resx">
+      <DependentUpon>ScrutinioModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Scrutinio\ScrutinioView.resx">
+      <DependentUpon>ScrutinioView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SezioneCollegio\SezioneCollegioItem.resx">
       <DependentUpon>SezioneCollegioItem.cs</DependentUpon>

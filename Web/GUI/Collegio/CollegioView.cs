@@ -37,7 +37,7 @@ namespace Web.GUI.Collegio
             {
                 var space = new CollegioModel();
                 space.Title = "NUOVO COLLEGIO";
-                space.Model = new WcfService.Dto.ComuneDto() ;
+                space.Model = new WcfService.Dto.CollegioDto() ;
                 AddSpace(space);
             }
             catch (Exception ex)
