@@ -524,6 +524,44 @@
       <DependentUpon>AffluenzaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Affluenza\AffluenzaViewModel.cs" />
+    <Compile Include="GUI\Candidato\CandidatoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoItem.designer.cs">
+      <DependentUpon>CandidatoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoModel.designer.cs">
+      <DependentUpon>CandidatoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoView.designer.cs">
+      <DependentUpon>CandidatoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoViewModel.cs" />
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneItem.designer.cs">
+      <DependentUpon>CapoCoalizioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneModel.designer.cs">
+      <DependentUpon>CapoCoalizioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneView.designer.cs">
+      <DependentUpon>CapoCoalizioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneViewModel.cs" />
     <Compile Include="GUI\Collegio\CollegioItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -562,6 +600,25 @@
       <DependentUpon>ComuneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Comune\ComuneViewModel.cs" />
+    <Compile Include="GUI\Lista\ListaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaItem.designer.cs">
+      <DependentUpon>ListaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaModel.designer.cs">
+      <DependentUpon>ListaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaView.designer.cs">
+      <DependentUpon>ListaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Lista\ListaViewModel.cs" />
     <Compile Include="GUI\Rilevamento\RilevamentoItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -581,6 +638,63 @@
       <DependentUpon>RilevamentoView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Rilevamento\RilevamentoViewModel.cs" />
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.designer.cs">
+      <DependentUpon>ScrutinioCandidatoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.designer.cs">
+      <DependentUpon>ScrutinioCandidatoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.designer.cs">
+      <DependentUpon>ScrutinioCandidatoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoViewModel.cs" />
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.designer.cs">
+      <DependentUpon>ScrutinioCapoCoalizioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.designer.cs">
+      <DependentUpon>ScrutinioCapoCoalizioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.designer.cs">
+      <DependentUpon>ScrutinioCapoCoalizioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneViewModel.cs" />
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaItem.designer.cs">
+      <DependentUpon>ScrutinioListaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaModel.designer.cs">
+      <DependentUpon>ScrutinioListaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaView.designer.cs">
+      <DependentUpon>ScrutinioListaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaViewModel.cs" />
     <Compile Include="GUI\Scrutinio\ScrutinioItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -724,6 +838,24 @@
     <EmbeddedResource Include="GUI\Affluenza\AffluenzaView.resx">
       <DependentUpon>AffluenzaView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Candidato\CandidatoItem.resx">
+      <DependentUpon>CandidatoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Candidato\CandidatoModel.resx">
+      <DependentUpon>CandidatoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Candidato\CandidatoView.resx">
+      <DependentUpon>CandidatoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CapoCoalizione\CapoCoalizioneItem.resx">
+      <DependentUpon>CapoCoalizioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CapoCoalizione\CapoCoalizioneModel.resx">
+      <DependentUpon>CapoCoalizioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CapoCoalizione\CapoCoalizioneView.resx">
+      <DependentUpon>CapoCoalizioneView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Collegio\CollegioItem.resx">
       <DependentUpon>CollegioItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,6 +874,15 @@
     <EmbeddedResource Include="GUI\Comune\ComuneView.resx">
       <DependentUpon>ComuneView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Lista\ListaItem.resx">
+      <DependentUpon>ListaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Lista\ListaModel.resx">
+      <DependentUpon>ListaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Lista\ListaView.resx">
+      <DependentUpon>ListaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Rilevamento\RilevamentoItem.resx">
       <DependentUpon>RilevamentoItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -750,6 +891,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Rilevamento\RilevamentoView.resx">
       <DependentUpon>RilevamentoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.resx">
+      <DependentUpon>ScrutinioCandidatoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.resx">
+      <DependentUpon>ScrutinioCandidatoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.resx">
+      <DependentUpon>ScrutinioCandidatoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.resx">
+      <DependentUpon>ScrutinioCapoCoalizioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.resx">
+      <DependentUpon>ScrutinioCapoCoalizioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.resx">
+      <DependentUpon>ScrutinioCapoCoalizioneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioLista\ScrutinioListaItem.resx">
+      <DependentUpon>ScrutinioListaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioLista\ScrutinioListaModel.resx">
+      <DependentUpon>ScrutinioListaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ScrutinioLista\ScrutinioListaView.resx">
+      <DependentUpon>ScrutinioListaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Scrutinio\ScrutinioItem.resx">
       <DependentUpon>ScrutinioItem.cs</DependentUpon>
