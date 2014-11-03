@@ -35,7 +35,12 @@ namespace Web.GUI.Comune
             {
                 if (model != null)
                 {
-                    
+                    var objDto = (DataLayer.Comune)model;
+                    editNome.Value = objDto.Nome;
+                    editDescrizione.Value = objDto.Descrizione;
+                    editCodiceISTAT.Value = objDto.CodiceISTAT;
+                    editNumeroSezioni.Value = objDto.NumeroSezioni;
+                    editProvincia.Value = objDto.Provincia;
                 }
             }
             catch (Exception ex)
@@ -48,7 +53,12 @@ namespace Web.GUI.Comune
         {
             try
             {
-               
+                var objDto = (DataLayer.Comune)model;
+                objDto.Nome = (string)editNome.Value;
+                objDto.Descrizione= (string)editDescrizione.Value;
+                objDto.CodiceISTAT=(string)editCodiceISTAT.Value;
+                objDto.NumeroSezioni=(int)editNumeroSezioni.Value;
+                objDto.Provincia= (string)editProvincia.Value;
             }
             catch (Exception ex)
             {
