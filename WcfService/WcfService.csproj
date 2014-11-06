@@ -139,6 +139,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{1660341d-659e-4cc4-911f-61046068d2c7}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{245310f3-d666-40be-92e6-9fef95a19461}</Project>
       <Name>DataLayer</Name>
