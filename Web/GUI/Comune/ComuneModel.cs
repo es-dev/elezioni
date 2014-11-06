@@ -35,7 +35,7 @@ namespace Web.GUI.Comune
             {
                 if (model != null)
                 {
-                    var objDto = (DataLayer.Comune)model;
+                    var objDto = (WcfService.Dto.ComuneDto)model;
                     editNome.Value = objDto.Nome;
                     editDescrizione.Value = objDto.Descrizione;
                     editCodiceISTAT.Value = objDto.CodiceISTAT;
@@ -53,7 +53,7 @@ namespace Web.GUI.Comune
         {
             try
             {
-                var objDto = (DataLayer.Comune)model;
+                var objDto = (WcfService.Dto.ComuneDto)model;
                 objDto.Nome = (string)editNome.Value;
                 objDto.Descrizione= (string)editDescrizione.Value;
                 objDto.CodiceISTAT=(string)editCodiceISTAT.Value;

@@ -24,7 +24,8 @@ namespace Web.GUI.Comune
             {
                 if (model != null)
                 {
-                    
+                    var objDto = (WcfService.Dto.ComuneDto)model;
+
                 }
             }
             catch (Exception ex)

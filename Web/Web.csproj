@@ -1024,10 +1024,6 @@
     </CustomReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{245310f3-d666-40be-92e6-9fef95a19461}</Project>
-      <Name>DataLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WcfService\WcfService.csproj">
       <Project>{1f172fe8-814a-46d0-a71e-4036505c442e}</Project>
       <Name>WcfService</Name>
