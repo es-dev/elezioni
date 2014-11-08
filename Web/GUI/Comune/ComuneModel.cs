@@ -35,12 +35,12 @@ namespace Web.GUI.Comune
             {
                 if (model != null)
                 {
-                    var objDto = (WcfService.Dto.ComuneDto)model;
-                    editNome.Value = objDto.Nome;
-                    editDescrizione.Value = objDto.Descrizione;
-                    editCodiceISTAT.Value = objDto.CodiceISTAT;
-                    editNumeroSezioni.Value = objDto.NumeroSezioni;
-                    editProvincia.Value = objDto.Provincia;
+                    var obj = (WcfService.Dto.ComuneDto)model;
+                    editNome.Value = obj.Nome;
+                    editDescrizione.Value = obj.Descrizione;
+                    editCodiceISTAT.Value = obj.CodiceISTAT;
+                    editNumeroSezioni.Value = obj.NumeroSezioni;
+                    editProvincia.Value = obj.Provincia;
                 }
             }
             catch (Exception ex)
@@ -53,12 +53,12 @@ namespace Web.GUI.Comune
         {
             try
             {
-                var objDto = (WcfService.Dto.ComuneDto)model;
-                objDto.Nome = editNome.Value;
-                objDto.Descrizione= editDescrizione.Value;
-                objDto.CodiceISTAT=editCodiceISTAT.Value;
-                objDto.NumeroSezioni=(int)editNumeroSezioni.Value;
-                objDto.Provincia= editProvincia.Value;
+                var obj = (WcfService.Dto.ComuneDto)model;
+                obj.Nome = editNome.Value;
+                obj.Descrizione= editDescrizione.Value;
+                obj.CodiceISTAT=editCodiceISTAT.Value;
+                obj.NumeroSezioni=(int)editNumeroSezioni.Value;
+                obj.Provincia= editProvincia.Value;
             }
             catch (Exception ex)
             {
