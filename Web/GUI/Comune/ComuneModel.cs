@@ -57,8 +57,8 @@ namespace Web.GUI.Comune
                 objDto.Nome = (string)editNome.Value;
                 objDto.Descrizione= (string)editDescrizione.Value;
                 objDto.CodiceISTAT=(string)editCodiceISTAT.Value;
-                objDto.NumeroSezioni=(int)editNumeroSezioni.Value;
                 objDto.Provincia= (string)editProvincia.Value;
+                objDto.NumeroSezioni=(int)editNumeroSezioni.Value;
             }
             catch (Exception ex)
             {
