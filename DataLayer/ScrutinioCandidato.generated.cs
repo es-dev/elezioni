@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _candidatoId;
-		public virtual int CandidatoId
+		private int? _candidatoId;
+		public virtual int? CandidatoId
 		{
 			get
 			{
@@ -76,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _votiAnnullati;
-		public virtual int VotiAnnullati
+		private int? _votiAnnullati;
+		public virtual int? VotiAnnullati
 		{
 			get
 			{

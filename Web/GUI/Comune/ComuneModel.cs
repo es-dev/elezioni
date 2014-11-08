@@ -57,7 +57,7 @@ namespace Web.GUI.Comune
                 obj.Nome = editNome.Value;
                 obj.Descrizione= editDescrizione.Value;
                 obj.CodiceISTAT=editCodiceISTAT.Value;
-                obj.NumeroSezioni=(int)editNumeroSezioni.Value;
+                obj.NumeroSezioni= editNumeroSezioni.Value;
                 obj.Provincia= editProvincia.Value;
             }
             catch (Exception ex)

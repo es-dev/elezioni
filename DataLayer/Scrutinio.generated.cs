@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _validi;
-		public virtual int Validi
+		private int? _validi;
+		public virtual int? Validi
 		{
 			get
 			{
@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _nulle;
-		public virtual int Nulle
+		private int? _nulle;
+		public virtual int? Nulle
 		{
 			get
 			{
@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _bianche;
-		public virtual int Bianche
+		private int? _bianche;
+		public virtual int? Bianche
 		{
 			get
 			{
@@ -76,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _contestate;
-		public virtual int Contestate
+		private int? _contestate;
+		public virtual int? Contestate
 		{
 			get
 			{
@@ -89,8 +89,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _sezioneId;
-		public virtual int SezioneId
+		private int? _sezioneId;
+		public virtual int? SezioneId
 		{
 			get
 			{
@@ -102,8 +102,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _consultazioneId;
-		public virtual int ConsultazioneId
+		private int? _consultazioneId;
+		public virtual int? ConsultazioneId
 		{
 			get
 			{

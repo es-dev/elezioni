@@ -103,7 +103,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public CapoCoalizioneDto(int _id, int _numero, string _descrizione, string _simbolo, int _consultazioneId, ConsultazioneDto _consultazione, IList<ListaDto> _listas, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
+		public CapoCoalizioneDto(int _id, int? _numero, string _descrizione, string _simbolo, int _consultazioneId, ConsultazioneDto _consultazione, IList<ListaDto> _listas, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
 		{
 			this.Id = _id;
 			this.Numero = _numero;
@@ -122,7 +122,7 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int Numero { get;set; }
+		public virtual int? Numero { get;set; }
 
 		[DataMember]
 		public virtual string Descrizione { get;set; }
@@ -154,7 +154,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ListaDto(int _id, int _capoCoalizioneId, int _numero, string _descrizione, string _simbolo, CapoCoalizioneDto _capoCoalizione, IList<CandidatoDto> _candidatos, IList<ScrutinioListaDto> _scrutinioListas)
+		public ListaDto(int _id, int _capoCoalizioneId, int? _numero, string _descrizione, string _simbolo, CapoCoalizioneDto _capoCoalizione, IList<CandidatoDto> _candidatos, IList<ScrutinioListaDto> _scrutinioListas)
 		{
 			this.Id = _id;
 			this.CapoCoalizioneId = _capoCoalizioneId;
@@ -176,7 +176,7 @@ namespace WcfService.Dto
 		public virtual int CapoCoalizioneId { get;set; }
 
 		[DataMember]
-		public virtual int Numero { get;set; }
+		public virtual int? Numero { get;set; }
 
 		[DataMember]
 		public virtual string Descrizione { get;set; }
@@ -204,7 +204,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public CandidatoDto(int _id, int _listaId, int _numero, string _cognome, string _nome, ListaDto _lista, IList<ScrutinioCandidatoDto> _scrutinioCandidatos)
+		public CandidatoDto(int _id, int _listaId, int? _numero, string _cognome, string _nome, ListaDto _lista, IList<ScrutinioCandidatoDto> _scrutinioCandidatos)
 		{
 			this.Id = _id;
 			this.ListaId = _listaId;
@@ -225,7 +225,7 @@ namespace WcfService.Dto
 		public virtual int ListaId { get;set; }
 
 		[DataMember]
-		public virtual int Numero { get;set; }
+		public virtual int? Numero { get;set; }
 
 		[DataMember]
 		public virtual string Cognome { get;set; }
@@ -310,7 +310,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public SezioneDto(int _id, int _votantiMaschi, int _votantiFemmine, int _totaleVotanti, int _sedeElettoraleId, int _operatoreId, SedeElettoraleDto _sedeElettorale, OperatoreDto _operatore, IList<SezioneCollegioDto> _sezioneCollegios, IList<RilevamentoDto> _rilevamentos, IList<ScrutinioDto> _scrutinios, IList<ScrutinioListaDto> _scrutinioListas, IList<ScrutinioCandidatoDto> _scrutinioCandidatos, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
+		public SezioneDto(int _id, int? _votantiMaschi, int? _votantiFemmine, int? _totaleVotanti, int _sedeElettoraleId, int _operatoreId, string _numero, SedeElettoraleDto _sedeElettorale, OperatoreDto _operatore, IList<SezioneCollegioDto> _sezioneCollegios, IList<RilevamentoDto> _rilevamentos, IList<ScrutinioDto> _scrutinios, IList<ScrutinioListaDto> _scrutinioListas, IList<ScrutinioCandidatoDto> _scrutinioCandidatos, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
 		{
 			this.Id = _id;
 			this.VotantiMaschi = _votantiMaschi;
@@ -318,6 +318,7 @@ namespace WcfService.Dto
 			this.TotaleVotanti = _totaleVotanti;
 			this.SedeElettoraleId = _sedeElettoraleId;
 			this.OperatoreId = _operatoreId;
+			this.Numero = _numero;
 			this.SedeElettorale = _sedeElettorale;
 			this.Operatore = _operatore;
 			this.SezioneCollegios = _sezioneCollegios;
@@ -335,19 +336,22 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int VotantiMaschi { get;set; }
+		public virtual int? VotantiMaschi { get;set; }
 
 		[DataMember]
-		public virtual int VotantiFemmine { get;set; }
+		public virtual int? VotantiFemmine { get;set; }
 
 		[DataMember]
-		public virtual int TotaleVotanti { get;set; }
+		public virtual int? TotaleVotanti { get;set; }
 
 		[DataMember]
 		public virtual int SedeElettoraleId { get;set; }
 
 		[DataMember]
 		public virtual int OperatoreId { get;set; }
+
+		[DataMember]
+		public virtual string Numero { get;set; }
 
 		[DataMember]
 		public virtual SedeElettoraleDto SedeElettorale { get;set; }
@@ -421,7 +425,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ComuneDto(int _id, string _descrizione, string _nome, string _provincia, string _codiceISTAT, int _numeroSezioni, IList<ConsultazioneDto> _consultaziones)
+		public ComuneDto(int _id, string _descrizione, string _nome, string _provincia, string _codiceISTAT, int? _numeroSezioni, IList<ConsultazioneDto> _consultaziones)
 		{
 			this.Id = _id;
 			this.Descrizione = _descrizione;
@@ -451,7 +455,7 @@ namespace WcfService.Dto
 		public virtual string CodiceISTAT { get;set; }
 
 		[DataMember]
-		public virtual int NumeroSezioni { get;set; }
+		public virtual int? NumeroSezioni { get;set; }
 
 		[DataMember]
 		public virtual IList<ConsultazioneDto> Consultaziones { get;set; }
@@ -467,7 +471,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public CollegioDto(int _id, int _consultazioneId, int _numero, string _descrizione, ConsultazioneDto _consultazione, IList<SezioneCollegioDto> _sezioneCollegios)
+		public CollegioDto(int _id, int _consultazioneId, int? _numero, string _descrizione, ConsultazioneDto _consultazione, IList<SezioneCollegioDto> _sezioneCollegios)
 		{
 			this.Id = _id;
 			this.ConsultazioneId = _consultazioneId;
@@ -487,7 +491,7 @@ namespace WcfService.Dto
 		public virtual int ConsultazioneId { get;set; }
 
 		[DataMember]
-		public virtual int Numero { get;set; }
+		public virtual int? Numero { get;set; }
 
 		[DataMember]
 		public virtual string Descrizione { get;set; }
@@ -547,7 +551,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public RilevamentoDto(int _id, int _uomini, int _donne, int _totale, int _affluenzaId, int _sezioneId, SezioneDto _sezione, AffluenzaDto _affluenza)
+		public RilevamentoDto(int _id, int? _uomini, int? _donne, int? _totale, int _affluenzaId, int _sezioneId, SezioneDto _sezione, AffluenzaDto _affluenza)
 		{
 			this.Id = _id;
 			this.Uomini = _uomini;
@@ -566,13 +570,13 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int Uomini { get;set; }
+		public virtual int? Uomini { get;set; }
 
 		[DataMember]
-		public virtual int Donne { get;set; }
+		public virtual int? Donne { get;set; }
 
 		[DataMember]
-		public virtual int Totale { get;set; }
+		public virtual int? Totale { get;set; }
 
 		[DataMember]
 		public virtual int AffluenzaId { get;set; }
@@ -597,7 +601,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ScrutinioCapoCoalizioneDto(int _id, int _capoCoalizioneId, int _sezioneId, int _voti, int _votiAnnullati, CapoCoalizioneDto _capoCoalizione, SezioneDto _sezione)
+		public ScrutinioCapoCoalizioneDto(int _id, int _capoCoalizioneId, int _sezioneId, int? _voti, int? _votiAnnullati, CapoCoalizioneDto _capoCoalizione, SezioneDto _sezione)
 		{
 			this.Id = _id;
 			this.CapoCoalizioneId = _capoCoalizioneId;
@@ -621,10 +625,10 @@ namespace WcfService.Dto
 		public virtual int SezioneId { get;set; }
 
 		[DataMember]
-		public virtual int Voti { get;set; }
+		public virtual int? Voti { get;set; }
 
 		[DataMember]
-		public virtual int VotiAnnullati { get;set; }
+		public virtual int? VotiAnnullati { get;set; }
 
 		[DataMember]
 		public virtual CapoCoalizioneDto CapoCoalizione { get;set; }
@@ -643,7 +647,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ScrutinioDto(int _id, int _validi, int _nulle, int _bianche, int _contestate, int _sezioneId, int _consultazioneId, SezioneDto _sezione, ConsultazioneDto _consultazione)
+		public ScrutinioDto(int _id, int? _validi, int? _nulle, int? _bianche, int? _contestate, int? _sezioneId, int? _consultazioneId, SezioneDto _sezione, ConsultazioneDto _consultazione)
 		{
 			this.Id = _id;
 			this.Validi = _validi;
@@ -663,22 +667,22 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int Validi { get;set; }
+		public virtual int? Validi { get;set; }
 
 		[DataMember]
-		public virtual int Nulle { get;set; }
+		public virtual int? Nulle { get;set; }
 
 		[DataMember]
-		public virtual int Bianche { get;set; }
+		public virtual int? Bianche { get;set; }
 
 		[DataMember]
-		public virtual int Contestate { get;set; }
+		public virtual int? Contestate { get;set; }
 
 		[DataMember]
-		public virtual int SezioneId { get;set; }
+		public virtual int? SezioneId { get;set; }
 
 		[DataMember]
-		public virtual int ConsultazioneId { get;set; }
+		public virtual int? ConsultazioneId { get;set; }
 
 		[DataMember]
 		public virtual SezioneDto Sezione { get;set; }
@@ -697,7 +701,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ScrutinioListaDto(int _id, int _voti, int _listaId, int _sezioneId, int _votiAnnullati, SezioneDto _sezione, ListaDto _lista)
+		public ScrutinioListaDto(int _id, int? _voti, int _listaId, int _sezioneId, int? _votiAnnullati, SezioneDto _sezione, ListaDto _lista)
 		{
 			this.Id = _id;
 			this.Voti = _voti;
@@ -715,7 +719,7 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int Voti { get;set; }
+		public virtual int? Voti { get;set; }
 
 		[DataMember]
 		public virtual int ListaId { get;set; }
@@ -724,7 +728,7 @@ namespace WcfService.Dto
 		public virtual int SezioneId { get;set; }
 
 		[DataMember]
-		public virtual int VotiAnnullati { get;set; }
+		public virtual int? VotiAnnullati { get;set; }
 
 		[DataMember]
 		public virtual SezioneDto Sezione { get;set; }
@@ -743,7 +747,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ScrutinioCandidatoDto(int _id, int _voti, int _sezioneId, int _candidatoId, int _votiAnnullati, SezioneDto _sezione, CandidatoDto _candidato)
+		public ScrutinioCandidatoDto(int _id, int _voti, int _sezioneId, int? _candidatoId, int? _votiAnnullati, SezioneDto _sezione, CandidatoDto _candidato)
 		{
 			this.Id = _id;
 			this.Voti = _voti;
@@ -767,10 +771,10 @@ namespace WcfService.Dto
 		public virtual int SezioneId { get;set; }
 
 		[DataMember]
-		public virtual int CandidatoId { get;set; }
+		public virtual int? CandidatoId { get;set; }
 
 		[DataMember]
-		public virtual int VotiAnnullati { get;set; }
+		public virtual int? VotiAnnullati { get;set; }
 
 		[DataMember]
 		public virtual SezioneDto Sezione { get;set; }
