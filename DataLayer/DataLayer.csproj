@@ -153,6 +153,7 @@
     <Content Include="ESElezioniConnection%282014-10-20 22-48-19%29.rlinq.sql" />
     <Content Include="ESElezioniConnection%282014-10-24 21-54-25%29.rlinq.sql" />
     <Content Include="ESElezioniConnection%282014-10-24 21-58-24%29.rlinq.sql" />
+    <Content Include="ESElezioniConnection%282014-11-08 12-16-18%29.rlinq.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
