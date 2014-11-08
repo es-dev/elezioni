@@ -54,11 +54,11 @@ namespace Web.GUI.Comune
             try
             {
                 var objDto = (WcfService.Dto.ComuneDto)model;
-                objDto.Nome = (string)editNome.Value;
-                objDto.Descrizione= (string)editDescrizione.Value;
-                objDto.CodiceISTAT=(string)editCodiceISTAT.Value;
-                objDto.Provincia= (string)editProvincia.Value;
+                objDto.Nome = editNome.Value;
+                objDto.Descrizione= editDescrizione.Value;
+                objDto.CodiceISTAT=editCodiceISTAT.Value;
                 objDto.NumeroSezioni=(int)editNumeroSezioni.Value;
+                objDto.Provincia= editProvincia.Value;
             }
             catch (Exception ex)
             {

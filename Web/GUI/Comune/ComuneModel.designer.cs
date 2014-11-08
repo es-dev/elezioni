@@ -34,7 +34,7 @@ namespace Web.GUI.Comune
             this.editDescrizione = new Library.Template.Controls.TemplateEditText();
             this.editProvincia = new Library.Template.Controls.TemplateEditText();
             this.editCodiceISTAT = new Library.Template.Controls.TemplateEditText();
-            this.editNumeroSezioni = new Library.Template.Controls.TemplateEditText();
+            this.editNumeroSezioni = new Library.Template.Controls.TemplateEditNumeric();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.SuspendLayout();
@@ -169,14 +169,12 @@ namespace Web.GUI.Comune
             this.editNumeroSezioni.Label = "Numero Sezioni";
             this.editNumeroSezioni.LabelWidth = 175;
             this.editNumeroSezioni.Location = new System.Drawing.Point(20, 275);
-            this.editNumeroSezioni.Multiline = false;
             this.editNumeroSezioni.Name = "editNumeroSezioni";
             this.editNumeroSezioni.ReadOnly = false;
             this.editNumeroSezioni.Required = false;
             this.editNumeroSezioni.Size = new System.Drawing.Size(800, 30);
             this.editNumeroSezioni.TabIndex = 6;
             this.editNumeroSezioni.Text = "EditControl";
-            this.editNumeroSezioni.Value = "";
             this.Controls.SetChildIndex(this.container, 0);
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
@@ -187,7 +185,7 @@ namespace Web.GUI.Comune
 		#endregion
 
         private Library.Template.Controls.TemplateEditCombo editNome;
-        private Library.Template.Controls.TemplateEditText editNumeroSezioni;
+        private Library.Template.Controls.TemplateEditNumeric editNumeroSezioni;
         private Library.Template.Controls.TemplateEditText editCodiceISTAT;
         private Library.Template.Controls.TemplateEditText editProvincia;
         private Library.Template.Controls.TemplateEditText editDescrizione;

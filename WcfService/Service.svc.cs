@@ -51,7 +51,7 @@ namespace WcfService
             try
             {
                 var wcf = new EntitiesModelService();
-                wcf.UpdateComune(comune);
+                wcf.UpdateComune(comune); 
                 return true;
             }
             catch (Exception ex)
@@ -99,8 +99,8 @@ namespace WcfService
                 var comuni = QueryComuni(search);
                 comuni = (from q in comuni select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ComuneAssembler();
-                var comuniDto= engine.Assemble(comuni);
-                return comuniDto;
+                var _comuni= engine.Assemble(comuni);
+                return _comuni;
             }
             catch (Exception ex)
             {
@@ -122,6 +122,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.ComuneDto ReadComune(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var comune = wcf.ReadComune("Id=" + Id);
+                return comune;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Comune> QueryComuni(string search)
@@ -2122,5 +2137,9 @@ namespace WcfService
         #endregion
 
 
+
+
+
+        
     }
 }
