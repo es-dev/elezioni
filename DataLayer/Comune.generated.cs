@@ -89,8 +89,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numeroSezioni;
-		public virtual int NumeroSezioni
+		private int? _numeroSezioni;
+		public virtual int? NumeroSezioni
 		{
 			get
 			{

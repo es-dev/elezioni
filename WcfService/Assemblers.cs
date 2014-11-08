@@ -569,6 +569,7 @@ namespace WcfService.Assemblers
 			entity.TotaleVotanti = dto.TotaleVotanti;
 			entity.SedeElettoraleId = dto.SedeElettoraleId;
 			entity.OperatoreId = dto.OperatoreId;
+			entity.Numero = dto.Numero;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -585,6 +586,7 @@ namespace WcfService.Assemblers
 			dto.TotaleVotanti = entity.TotaleVotanti;
 			dto.SedeElettoraleId = entity.SedeElettoraleId;
 			dto.OperatoreId = entity.OperatoreId;
+			dto.Numero = entity.Numero;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }

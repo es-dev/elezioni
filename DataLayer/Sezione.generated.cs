@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _votantiMaschi;
-		public virtual int VotantiMaschi
+		private int? _votantiMaschi;
+		public virtual int? VotantiMaschi
 		{
 			get
 			{
@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _votantiFemmine;
-		public virtual int VotantiFemmine
+		private int? _votantiFemmine;
+		public virtual int? VotantiFemmine
 		{
 			get
 			{
@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _totaleVotanti;
-		public virtual int TotaleVotanti
+		private int? _totaleVotanti;
+		public virtual int? TotaleVotanti
 		{
 			get
 			{

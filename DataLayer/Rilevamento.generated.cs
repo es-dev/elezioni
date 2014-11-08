@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _uomini;
-		public virtual int Uomini
+		private int? _uomini;
+		public virtual int? Uomini
 		{
 			get
 			{
@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _donne;
-		public virtual int Donne
+		private int? _donne;
+		public virtual int? Donne
 		{
 			get
 			{
@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _totale;
-		public virtual int Totale
+		private int? _totale;
+		public virtual int? Totale
 		{
 			get
 			{

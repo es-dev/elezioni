@@ -310,7 +310,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public SezioneDto(int _id, int _votantiMaschi, int _votantiFemmine, int _totaleVotanti, int _sedeElettoraleId, int _operatoreId, SedeElettoraleDto _sedeElettorale, OperatoreDto _operatore, IList<SezioneCollegioDto> _sezioneCollegios, IList<RilevamentoDto> _rilevamentos, IList<ScrutinioDto> _scrutinios, IList<ScrutinioListaDto> _scrutinioListas, IList<ScrutinioCandidatoDto> _scrutinioCandidatos, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
+		public SezioneDto(int _id, int _votantiMaschi, int _votantiFemmine, int _totaleVotanti, int _sedeElettoraleId, int _operatoreId, string _numero, SedeElettoraleDto _sedeElettorale, OperatoreDto _operatore, IList<SezioneCollegioDto> _sezioneCollegios, IList<RilevamentoDto> _rilevamentos, IList<ScrutinioDto> _scrutinios, IList<ScrutinioListaDto> _scrutinioListas, IList<ScrutinioCandidatoDto> _scrutinioCandidatos, IList<ScrutinioCapoCoalizioneDto> _scrutinioCapoCoaliziones)
 		{
 			this.Id = _id;
 			this.VotantiMaschi = _votantiMaschi;
@@ -318,6 +318,7 @@ namespace WcfService.Dto
 			this.TotaleVotanti = _totaleVotanti;
 			this.SedeElettoraleId = _sedeElettoraleId;
 			this.OperatoreId = _operatoreId;
+			this.Numero = _numero;
 			this.SedeElettorale = _sedeElettorale;
 			this.Operatore = _operatore;
 			this.SezioneCollegios = _sezioneCollegios;
@@ -348,6 +349,9 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual int OperatoreId { get;set; }
+
+		[DataMember]
+		public virtual string Numero { get;set; }
 
 		[DataMember]
 		public virtual SedeElettoraleDto SedeElettorale { get;set; }
@@ -421,7 +425,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ComuneDto(int _id, string _descrizione, string _nome, string _provincia, string _codiceISTAT, int _numeroSezioni, IList<ConsultazioneDto> _consultaziones)
+		public ComuneDto(int _id, string _descrizione, string _nome, string _provincia, string _codiceISTAT, int? _numeroSezioni, IList<ConsultazioneDto> _consultaziones)
 		{
 			this.Id = _id;
 			this.Descrizione = _descrizione;
@@ -451,7 +455,7 @@ namespace WcfService.Dto
 		public virtual string CodiceISTAT { get;set; }
 
 		[DataMember]
-		public virtual int NumeroSezioni { get;set; }
+		public virtual int? NumeroSezioni { get;set; }
 
 		[DataMember]
 		public virtual IList<ConsultazioneDto> Consultaziones { get;set; }
