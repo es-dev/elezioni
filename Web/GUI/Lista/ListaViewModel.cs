@@ -29,8 +29,8 @@ namespace Web.GUI.Lista
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadListe(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadListe(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Lista
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ListaDto)model;
+                    var obj = (ListaDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateLista(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateLista(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateLista(objDto);
+                        performed = wcf.UpdateLista(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Lista
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ListaDto)model;
-                    bool performed = wcf.DeleteLista(objDto);
+                    var obj = (ListaDto)model;
+                    bool performed = wcf.DeleteLista(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.Lista
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (ListaDto)model;
-                    //var objFkDto = wcf.ReadLista(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadLista(Id);
+                return obj;
             }
             catch (Exception ex)
             {

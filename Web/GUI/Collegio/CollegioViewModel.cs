@@ -29,8 +29,8 @@ namespace Web.GUI.Collegio
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadCollegi(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadCollegi(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Collegio
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (CollegioDto)model;
+                    var obj = (CollegioDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateCollegio(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateCollegio(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateCollegio(objDto);
+                        performed = wcf.UpdateCollegio(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Collegio
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (CollegioDto)model;
-                    bool performed = wcf.DeleteCollegio(objDto);
+                    var obj = (CollegioDto)model;
+                    bool performed = wcf.DeleteCollegio(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.Collegio
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (CollegioDto)model;
-                    //var objFkDto = wcf.ReadCollegio(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadCollegio(Id);
+                return obj;
             }
             catch (Exception ex)
             {

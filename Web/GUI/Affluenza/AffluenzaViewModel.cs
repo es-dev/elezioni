@@ -100,17 +100,13 @@ namespace Web.GUI.Affluenza
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var obj = (AffluenzaDto)model;
-                    //var objFk = wcf.ReadAffluenza(obj);
-                    //return objFk;
-                }
+                    var wcf = new WcfService.Service();
+                    var obj = wcf.ReadAffluenza(Id);
+                    return obj;
             }
             catch (Exception ex)
             {

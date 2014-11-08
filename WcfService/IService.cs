@@ -36,6 +36,7 @@ namespace WcfService
         
         [OperationContract]
         int CountComuni(string search=null);
+
         #endregion
         #endregion
 

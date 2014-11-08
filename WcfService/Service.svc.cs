@@ -270,6 +270,22 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.ConsultazioneDto ReadConsultazione(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var consultazione = wcf.ReadConsultazione("Id=" + Id);
+                return consultazione;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+
         private IQueryable<DataLayer.Consultazione> QueryConsultazioni(string search)
         {
             try
@@ -401,6 +417,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.OperatoreDto ReadOperatore(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var operatore = wcf.ReadOperatore("Id=" + Id);
+                return operatore;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Operatore> QueryOperatori(string search)
@@ -536,6 +567,21 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.SedeElettoraleDto ReadSedeElettorale(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var sedeElettorale = wcf.ReadSedeElettorale("Id=" + Id);
+                return sedeElettorale;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.SedeElettorale> QuerySediElettorali(string search)
         {
             try
@@ -666,6 +712,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.SezioneDto ReadSezione(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var sezione = wcf.ReadSezione("Id=" + Id);
+                return sezione;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Sezione> QuerySezioni(string search)
@@ -800,6 +861,21 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.CollegioDto ReadCollegio(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var collegio = wcf.ReadCollegio("Id=" + Id);
+                return collegio;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.Collegio> QueryCollegi(string search)
         {
             try
@@ -929,6 +1005,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.SezioneCollegioDto ReadSezioneCollegio(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var sezioneCollegio = wcf.ReadSezioneCollegio("Id=" + Id);
+                return sezioneCollegio;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.SezioneCollegio> QuerySezioniCollegi(string search)
@@ -1063,6 +1154,22 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.AffluenzaDto ReadAffluenza(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var affluenza = wcf.ReadAffluenza("Id=" + Id);
+                return affluenza;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+
         private IQueryable<DataLayer.Affluenza> QueryAffluenze(string search)
         {
             try
@@ -1193,6 +1300,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.RilevamentoDto ReadRilevamento(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var rilevamento = wcf.ReadRilevamento("Id=" + Id);
+                return rilevamento;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Rilevamento> QueryRilevamenti(string search)
@@ -1327,6 +1449,21 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.ScrutinioDto ReadScrutinio(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var scrutinio = wcf.ReadScrutinio("Id=" + Id);
+                return scrutinio;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.Scrutinio> QueryScrutini(string search)
         {
             try
@@ -1456,6 +1593,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.CapoCoalizioneDto ReadCapoCoalizione(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var capoCoalizione = wcf.ReadCapoCoalizione("Id=" + Id);
+                return capoCoalizione;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.CapoCoalizione> QueryCapiCoalizioni(string search)
@@ -1590,6 +1742,21 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.ScrutinioCapoCoalizioneDto ReadScrutinioCapoCoalizione(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var capoCoalizione = wcf.ReadScrutinioCapoCoalizione("Id=" + Id);
+                return capoCoalizione;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.ScrutinioCapoCoalizione> QueryScrutiniCapoCoalizione(string search)
         {
             try
@@ -1719,6 +1886,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.ListaDto ReadLista(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var lista = wcf.ReadLista("Id=" + Id);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Lista> QueryListe(string search)
@@ -1853,6 +2035,21 @@ namespace WcfService
             return 0;
         }
 
+        public Dto.ScrutinioListaDto ReadScrutinioLista(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var scrutinioLista = wcf.ReadScrutinioLista("Id=" + Id);
+                return scrutinioLista;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.ScrutinioLista> QueryScrutiniLista(string search)
         {
             try
@@ -1982,6 +2179,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.CandidatoDto ReadCandidato(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var candidato = wcf.ReadCandidato("Id=" + Id);
+                return candidato;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.Candidato> QueryCandidati(string search)
@@ -2114,6 +2326,21 @@ namespace WcfService
                 UtilityError.Write(ex);
             }
             return 0;
+        }
+
+        public Dto.ScrutinioCandidatoDto ReadScrutinioCandidato(object Id)
+        {
+            try
+            {
+                var wcf = new EntitiesModelService();
+                var comune = wcf.ReadScrutinioCandidato("Id=" + Id);
+                return comune;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
         }
 
         private IQueryable<DataLayer.ScrutinioCandidato> QueryScrutiniCandidato(string search)

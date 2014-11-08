@@ -29,8 +29,8 @@ namespace Web.GUI.Operatore
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadOperatori(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadOperatori(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Operatore
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (OperatoreDto)model;
+                    var obj = (OperatoreDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateOperatore(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateOperatore(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateOperatore(objDto);
+                        performed = wcf.UpdateOperatore(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Operatore
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (OperatoreDto)model;
-                    bool performed = wcf.DeleteOperatore(objDto);
+                    var obj = (OperatoreDto)model;
+                    bool performed = wcf.DeleteOperatore(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.Operatore
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (OperatoreDto)model;
-                    //var objFkDto = wcf.ReadOperatore(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadOperatore(Id);
+                return obj;
             }
             catch (Exception ex)
             {

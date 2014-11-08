@@ -29,8 +29,8 @@ namespace Web.GUI.Rilevamento
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadRilevamenti(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadRilevamenti(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Rilevamento
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (RilevamentoDto)model;
+                    var obj = (RilevamentoDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateRilevamento(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateRilevamento(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateRilevamento(objDto);
+                        performed = wcf.UpdateRilevamento(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Rilevamento
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (RilevamentoDto)model;
-                    bool performed = wcf.DeleteRilevamento(objDto);
+                    var obj = (RilevamentoDto)model;
+                    bool performed = wcf.DeleteRilevamento(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.Rilevamento
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (RilevamentoDto)model;
-                    //var objFkDto = wcf.ReadRilevamento(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadRilevamento(Id);
+                return obj;
             }
             catch (Exception ex)
             {
