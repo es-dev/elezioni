@@ -29,8 +29,8 @@ namespace Web.GUI.ScrutinioLista
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadScrutiniLista(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadScrutiniLista(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.ScrutinioLista
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioListaDto)model;
+                    var obj = (ScrutinioListaDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateScrutinioLista(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateScrutinioLista(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateScrutinioLista(objDto);
+                        performed = wcf.UpdateScrutinioLista(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.ScrutinioLista
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioListaDto)model;
-                    bool performed = wcf.DeleteScrutinioLista(objDto);
+                    var obj = (ScrutinioListaDto)model;
+                    bool performed = wcf.DeleteScrutinioLista(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.ScrutinioLista
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (ScrutinioListaDto)model;
-                    //var objFkDto = wcf.ReadScrutinioLista(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadScrutinioLista(Id);
+                return obj;
             }
             catch (Exception ex)
             {

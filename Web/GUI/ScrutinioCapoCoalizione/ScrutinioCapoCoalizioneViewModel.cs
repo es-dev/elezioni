@@ -29,8 +29,8 @@ namespace Web.GUI.ScrutinioCapoCoalizione
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadScrutiniCapoCoalizione(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadScrutiniCapoCoalizione(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.ScrutinioCapoCoalizione
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioCapoCoalizioneDto)model;
+                    var obj = (ScrutinioCapoCoalizioneDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateScrutinioCapoCoalizione(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateScrutinioCapoCoalizione(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateScrutinioCapoCoalizione(objDto);
+                        performed = wcf.UpdateScrutinioCapoCoalizione(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.ScrutinioCapoCoalizione
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioCapoCoalizioneDto)model;
-                    bool performed = wcf.DeleteScrutinioCapoCoalizione(objDto);
+                    var obj = (ScrutinioCapoCoalizioneDto)model;
+                    bool performed = wcf.DeleteScrutinioCapoCoalizione(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.ScrutinioCapoCoalizione
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (ScrutinioCapoCoalizioneDto)model;
-                    //var objFkDto = wcf.ReadScrutinioCapoCoalizione(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadScrutinioCapoCoalizione(Id);
+                return obj;
             }
             catch (Exception ex)
             {

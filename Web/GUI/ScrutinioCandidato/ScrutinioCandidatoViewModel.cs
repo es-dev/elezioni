@@ -29,8 +29,8 @@ namespace Web.GUI.ScrutinioCandidato
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadScrutiniCandidato(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadScrutiniCandidato(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.ScrutinioCandidato
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioCandidatoDto)model;
+                    var obj = (ScrutinioCandidatoDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateScrutinioCandidato(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateScrutinioCandidato(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateScrutinioCandidato(objDto);
+                        performed = wcf.UpdateScrutinioCandidato(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.ScrutinioCandidato
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (ScrutinioCandidatoDto)model;
-                    bool performed = wcf.DeleteScrutinioCandidato(objDto);
+                    var obj = (ScrutinioCandidatoDto)model;
+                    bool performed = wcf.DeleteScrutinioCandidato(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.ScrutinioCandidato
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (ScrutinioCandidatoDto)model;
-                    //var objFkDto = wcf.ReadScrutinioCandidato(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadScrutinioCandidato(Id);
+                return obj;
             }
             catch (Exception ex)
             {

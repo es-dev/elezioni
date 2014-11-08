@@ -29,8 +29,8 @@ namespace Web.GUI.Sezione
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadSezioni(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadSezioni(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Sezione
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (SezioneDto)model;
+                    var obj = (SezioneDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateSezione(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateSezione(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateSezione(objDto);
+                        performed = wcf.UpdateSezione(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Sezione
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (SezioneDto)model;
-                    bool performed = wcf.DeleteSezione(objDto);
+                    var obj = (SezioneDto)model;
+                    bool performed = wcf.DeleteSezione(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.Sezione
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (SezioneDto)model;
-                    //var objFkDto = wcf.ReadSezione(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadSezione(Id);
+                return obj;
             }
             catch (Exception ex)
             {

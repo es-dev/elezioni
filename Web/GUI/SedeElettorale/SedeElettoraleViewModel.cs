@@ -29,8 +29,8 @@ namespace Web.GUI.SedeElettorale
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadSediElettorali(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadSediElettorali(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.SedeElettorale
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (SedeElettoraleDto)model;
+                    var obj = (SedeElettoraleDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateSedeElettorale(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateSedeElettorale(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateSedeElettorale(objDto);
+                        performed = wcf.UpdateSedeElettorale(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.SedeElettorale
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (SedeElettoraleDto)model;
-                    bool performed = wcf.DeleteSedeElettorale(objDto);
+                    var obj = (SedeElettoraleDto)model;
+                    bool performed = wcf.DeleteSedeElettorale(obj);
                     return performed;
                 }
             }
@@ -100,17 +100,13 @@ namespace Web.GUI.SedeElettorale
             return false;
         }
 
-        public override object Read(object model)
+        public override object Read(object Id)
         {
             try
             {
-                if (model != null)
-                {
-                    //var wcf = new WcfService.Service();
-                    //var objDto = (SedeElettoraleDto)model;
-                    //var objFkDto = wcf.ReadSedeElettorale(objDto);
-                    //return objFkDto;
-                }
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadSedeElettorale(Id);
+                return obj;
             }
             catch (Exception ex)
             {
