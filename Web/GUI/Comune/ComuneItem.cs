@@ -24,7 +24,9 @@ namespace Web.GUI.Comune
             {
                 if (model != null)
                 {
-                    var objDto = (WcfService.Dto.ComuneDto)model;
+                    var obj = (WcfService.Dto.ComuneDto)model;
+                    infoComune.Text = obj.Nome + " (" + obj.Provincia + ")";
+                    infoDescrizione.Text = "Numero Sezioni: " + obj.NumeroSezioni.ToString();
 
                 }
             }
