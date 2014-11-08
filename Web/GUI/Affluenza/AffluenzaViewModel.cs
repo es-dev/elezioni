@@ -29,8 +29,8 @@ namespace Web.GUI.Affluenza
             try
             {
                 var wcf = new WcfService.Service();
-                var objDtos = wcf.LoadAffluenze(skip, take);
-                Load(objDtos);
+                var objs = wcf.LoadAffluenze(skip, take);
+                Load(objs);
             }
             catch (Exception ex)
             {
@@ -60,17 +60,17 @@ namespace Web.GUI.Affluenza
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (AffluenzaDto)model;
+                    var obj = (AffluenzaDto)model;
                     bool performed = false;
                     if (creating)
                     {
-                        object key = wcf.CreateAffluenza(objDto);
-                        performed = (key != null);
+                        var newObj = wcf.CreateAffluenza(obj);
+                        performed = (newObj != null);
                         if (performed)
-                            objDto.Id = (int)key;
+                            obj.Id = newObj.Id;
                     }
                     else //updating
-                        performed = wcf.UpdateAffluenza(objDto);
+                        performed = wcf.UpdateAffluenza(obj);
                     return performed;
                 }
             }
@@ -88,8 +88,8 @@ namespace Web.GUI.Affluenza
                 if (model != null)
                 {
                     var wcf = new WcfService.Service();
-                    var objDto = (AffluenzaDto)model;
-                    bool performed = wcf.DeleteAffluenza(objDto);
+                    var obj = (AffluenzaDto)model;
+                    bool performed = wcf.DeleteAffluenza(obj);
                     return performed;
                 }
             }
@@ -107,9 +107,9 @@ namespace Web.GUI.Affluenza
                 if (model != null)
                 {
                     //var wcf = new WcfService.Service();
-                    //var objDto = (AffluenzaDto)model;
-                    //var objFkDto = wcf.ReadAffluenza(objDto);
-                    //return objFkDto;
+                    //var obj = (AffluenzaDto)model;
+                    //var objFk = wcf.ReadAffluenza(obj);
+                    //return objFk;
                 }
             }
             catch (Exception ex)
