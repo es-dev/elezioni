@@ -147,18 +147,6 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="ESElezioniConnection%282014-10-19 15-30-06%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-10-20 22-46-51%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-10-20 22-48-19%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-10-24 21-54-25%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-10-24 21-58-24%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-11-08 12-16-18%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-11-08 15-05-54%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-11-08 15-28-40%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-11-09 15-03-37%29.rlinq.sql" />
-    <Content Include="ESElezioniConnection%282014-11-09 19-12-01%29.rlinq.sql" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
