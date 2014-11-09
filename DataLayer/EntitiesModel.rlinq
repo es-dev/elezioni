@@ -53,11 +53,6 @@
         <orm:field name="_capoCoaliziones" property="CapoCoaliziones" behavior="readwrite" uniqueId="8f3903d5-6221-4e85-9fbb-a57923e62536" type="DataLayer.CapoCoalizione">
           <orm:collection element-class="DataLayer.CapoCoalizione" inverse-field="_consultazione" order-by="" uniqueId="c8a0bf6a-4f80-46bf-b3b9-e298d1e1cc92" />
         </orm:field>
-        <orm:index name="idx_Consultazione_ComuneId">
-          <orm:columnMapping>
-            <orm:column name="ComuneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="CapoCoalizione" use-default-mapping="true" uniqueId="bae68634-ceea-44a4-960e-6d3bd2fabda7">
         <orm:identity>
