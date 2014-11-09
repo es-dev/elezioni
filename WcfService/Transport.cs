@@ -36,13 +36,15 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ConsultazioneDto(int _id, int _numero, string _descrizione, string _tipo, int _comuneId, ComuneDto _comune, IList<CollegioDto> _collegios, IList<AffluenzaDto> _affluenzas, IList<ScrutinioDto> _scrutinios, IList<SedeElettoraleDto> _sedeElettorales, IList<OperatoreDto> _operatores, IList<CapoCoalizioneDto> _capoCoaliziones)
+		public ConsultazioneDto(int _id, int? _numero, string _descrizione, string _tipo, int _comuneId, DateTime _dataInizio, DateTime _dataFine, ComuneDto _comune, IList<CollegioDto> _collegios, IList<AffluenzaDto> _affluenzas, IList<ScrutinioDto> _scrutinios, IList<SedeElettoraleDto> _sedeElettorales, IList<OperatoreDto> _operatores, IList<CapoCoalizioneDto> _capoCoaliziones)
 		{
 			this.Id = _id;
 			this.Numero = _numero;
 			this.Descrizione = _descrizione;
 			this.Tipo = _tipo;
 			this.ComuneId = _comuneId;
+			this.DataInizio = _dataInizio;
+			this.DataFine = _dataFine;
 			this.Comune = _comune;
 			this.Collegios = _collegios;
 			this.Affluenzas = _affluenzas;
@@ -59,7 +61,7 @@ namespace WcfService.Dto
 		public virtual int Id { get;set; }
 
 		[DataMember]
-		public virtual int Numero { get;set; }
+		public virtual int? Numero { get;set; }
 
 		[DataMember]
 		public virtual string Descrizione { get;set; }
@@ -69,6 +71,12 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual int ComuneId { get;set; }
+
+		[DataMember]
+		public virtual DateTime DataInizio { get;set; }
+
+		[DataMember]
+		public virtual DateTime DataFine { get;set; }
 
 		[DataMember]
 		public virtual ComuneDto Comune { get;set; }

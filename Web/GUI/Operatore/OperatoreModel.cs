@@ -21,7 +21,6 @@ namespace Web.GUI.Operatore
         {
             try
             {
-                
             }
             catch (Exception ex)
             {
@@ -35,7 +34,10 @@ namespace Web.GUI.Operatore
             {
                 if (model != null)
                 {
-                    
+                    var obj = (WcfService.Dto.OperatoreDto)model;
+                    editAmministratore.Value = obj.Amministratore;
+                    editCognome.Value = obj.Cognome;
+
                 }
             }
             catch (Exception ex)
@@ -48,7 +50,8 @@ namespace Web.GUI.Operatore
         {
             try
             {
-               
+                var obj = (WcfService.Dto.ComuneDto)model;
+
             }
             catch (Exception ex)
             {

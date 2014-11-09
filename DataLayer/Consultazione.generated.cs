@@ -37,8 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private int _numero;
-		public virtual int Numero
+		private int? _numero;
+		public virtual int? Numero
 		{
 			get
 			{
@@ -86,6 +86,32 @@ namespace DataLayer
 			set
 			{
 				this._comuneId = value;
+			}
+		}
+		
+		private DateTime _dataInizio;
+		public virtual DateTime DataInizio
+		{
+			get
+			{
+				return this._dataInizio;
+			}
+			set
+			{
+				this._dataInizio = value;
+			}
+		}
+		
+		private DateTime _dataFine;
+		public virtual DateTime DataFine
+		{
+			get
+			{
+				return this._dataFine;
+			}
+			set
+			{
+				this._dataFine = value;
 			}
 		}
 		

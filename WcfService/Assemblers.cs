@@ -99,6 +99,8 @@ namespace WcfService.Assemblers
 			entity.Descrizione = dto.Descrizione;
 			entity.Tipo = dto.Tipo;
 			entity.ComuneId = dto.ComuneId;
+			entity.DataInizio = dto.DataInizio;
+			entity.DataFine = dto.DataFine;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -114,6 +116,8 @@ namespace WcfService.Assemblers
 			dto.Descrizione = entity.Descrizione;
 			dto.Tipo = entity.Tipo;
 			dto.ComuneId = entity.ComuneId;
+			dto.DataInizio = entity.DataInizio;
+			dto.DataFine = entity.DataFine;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }

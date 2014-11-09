@@ -35,7 +35,18 @@ namespace Web.GUI.Consultazione
             {
                 if (model != null)
                 {
-                    
+                    var obj = (WcfService.Dto.ConsultazioneDto)model;
+                    editDescrizione.Value = obj.Descrizione;
+                    editFine.Value = obj.DataFine;
+                    editNumero.Value = obj.Numero;
+                    editInizio.Value = obj.DataInizio;
+                    editTipo.Value = obj.Tipo;
+                    var comune = obj.Comune;
+                    if (comune != null)
+                    {
+                        editComune.Model = comune;
+                        editComune.Value = comune.Nome;
+                    }
                 }
             }
             catch (Exception ex)
@@ -48,7 +59,42 @@ namespace Web.GUI.Consultazione
         {
             try
             {
-               
+                var obj = (WcfService.Dto.ConsultazioneDto)model;
+                obj.Descrizione = editDescrizione.Value ;
+                obj.DataFine = (DateTime)editFine.Value;
+                obj.Numero = editNumero.Value;
+                obj.DataInizio =(DateTime)editInizio.Value;
+                obj.Tipo = editTipo.Value;
+                obj.ComuneId = (int)editComune.Id;
+                obj.Comune = (WcfService.Dto.ComuneDto)editComune.Model;
+                
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void editComune_ComboClick()
+        {
+            try
+            {
+                var view = new Comune.ComuneView();
+                editComune.Show(view);
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void editComune_ComboConfirm(object model)
+        {
+            try
+            {
+                var comune = (WcfService.Dto.ComuneDto)model;
+                if (comune != null)
+                    editComune.Value = comune.Nome;
             }
             catch (Exception ex)
             {

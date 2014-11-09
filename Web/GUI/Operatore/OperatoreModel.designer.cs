@@ -40,12 +40,14 @@ namespace Web.GUI.Operatore
             this.editAmministratore = new Library.Template.Controls.TemplateEditCheckBox();
             this.editUtente = new Library.Template.Controls.TemplateEditCheckBox();
             this.editSupervisor = new Library.Template.Controls.TemplateEditCheckBox();
+            this.editComune = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.SuspendLayout();
             // 
             // container
             // 
+            this.container.Controls.Add(this.editComune);
             this.container.Controls.Add(this.editSupervisor);
             this.container.Controls.Add(this.editUtente);
             this.container.Controls.Add(this.editAmministratore);
@@ -68,6 +70,7 @@ namespace Web.GUI.Operatore
             this.container.Controls.SetChildIndex(this.editAmministratore, 0);
             this.container.Controls.SetChildIndex(this.editUtente, 0);
             this.container.Controls.SetChildIndex(this.editSupervisor, 0);
+            this.container.Controls.SetChildIndex(this.editComune, 0);
             // 
             // infoSubtitle
             // 
@@ -90,7 +93,7 @@ namespace Web.GUI.Operatore
             this.editEmail.Editing = false;
             this.editEmail.Label = "Email";
             this.editEmail.LabelWidth = 175;
-            this.editEmail.Location = new System.Drawing.Point(20, 330);
+            this.editEmail.Location = new System.Drawing.Point(20, 345);
             this.editEmail.Name = "templateEditEmail1";
             this.editEmail.ReadOnly = false;
             this.editEmail.Required = false;
@@ -112,7 +115,7 @@ namespace Web.GUI.Operatore
             this.editCognome.Editing = false;
             this.editCognome.Label = "Cognome";
             this.editCognome.LabelWidth = 175;
-            this.editCognome.Location = new System.Drawing.Point(20, 75);
+            this.editCognome.Location = new System.Drawing.Point(20, 120);
             this.editCognome.Multiline = false;
             this.editCognome.Name = "editCognome";
             this.editCognome.ReadOnly = false;
@@ -135,7 +138,7 @@ namespace Web.GUI.Operatore
             this.editConfermaPassword.Editing = true;
             this.editConfermaPassword.Label = "Conferma password";
             this.editConfermaPassword.LabelWidth = 175;
-            this.editConfermaPassword.Location = new System.Drawing.Point(20, 279);
+            this.editConfermaPassword.Location = new System.Drawing.Point(20, 300);
             this.editConfermaPassword.Name = "editConfermaPassword";
             this.editConfermaPassword.Password = true;
             this.editConfermaPassword.ReadOnly = false;
@@ -158,7 +161,7 @@ namespace Web.GUI.Operatore
             this.editPassword.Editing = false;
             this.editPassword.Label = "Password";
             this.editPassword.LabelWidth = 175;
-            this.editPassword.Location = new System.Drawing.Point(20, 228);
+            this.editPassword.Location = new System.Drawing.Point(20, 255);
             this.editPassword.Name = "templateEditPassword2";
             this.editPassword.Password = true;
             this.editPassword.ReadOnly = false;
@@ -181,7 +184,7 @@ namespace Web.GUI.Operatore
             this.editNome.Editing = false;
             this.editNome.Label = "Nome";
             this.editNome.LabelWidth = 175;
-            this.editNome.Location = new System.Drawing.Point(20, 126);
+            this.editNome.Location = new System.Drawing.Point(20, 165);
             this.editNome.Multiline = false;
             this.editNome.Name = "editNome";
             this.editNome.ReadOnly = false;
@@ -204,7 +207,7 @@ namespace Web.GUI.Operatore
             this.editNomeUtente.Editing = false;
             this.editNomeUtente.Label = "Nome utente";
             this.editNomeUtente.LabelWidth = 175;
-            this.editNomeUtente.Location = new System.Drawing.Point(20, 177);
+            this.editNomeUtente.Location = new System.Drawing.Point(20, 210);
             this.editNomeUtente.Multiline = false;
             this.editNomeUtente.Name = "editNomeUtente";
             this.editNomeUtente.ReadOnly = false;
@@ -227,7 +230,7 @@ namespace Web.GUI.Operatore
             this.editTelefono.Editing = false;
             this.editTelefono.Label = "Telefono";
             this.editTelefono.LabelWidth = 175;
-            this.editTelefono.Location = new System.Drawing.Point(20, 381);
+            this.editTelefono.Location = new System.Drawing.Point(20, 390);
             this.editTelefono.Multiline = false;
             this.editTelefono.Name = "editTelefono";
             this.editTelefono.ReadOnly = false;
@@ -239,8 +242,6 @@ namespace Web.GUI.Operatore
             // 
             // editAmministratore
             // 
-            this.editAmministratore.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editAmministratore.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editAmministratore.BackColor = System.Drawing.Color.Transparent;
             this.editAmministratore.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -250,11 +251,11 @@ namespace Web.GUI.Operatore
             this.editAmministratore.Editing = false;
             this.editAmministratore.Label = "Amministratore";
             this.editAmministratore.LabelWidth = 175;
-            this.editAmministratore.Location = new System.Drawing.Point(20, 483);
+            this.editAmministratore.Location = new System.Drawing.Point(20, 480);
             this.editAmministratore.Name = "editAmministratore";
             this.editAmministratore.ReadOnly = false;
             this.editAmministratore.Required = false;
-            this.editAmministratore.Size = new System.Drawing.Size(424, 30);
+            this.editAmministratore.Size = new System.Drawing.Size(456, 30);
             this.editAmministratore.TabIndex = 9;
             this.editAmministratore.Text = "TemplateCheckBox";
             this.editAmministratore.TextFalse = "";
@@ -263,8 +264,6 @@ namespace Web.GUI.Operatore
             // 
             // editUtente
             // 
-            this.editUtente.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editUtente.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editUtente.BackColor = System.Drawing.Color.Transparent;
             this.editUtente.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -274,11 +273,11 @@ namespace Web.GUI.Operatore
             this.editUtente.Editing = false;
             this.editUtente.Label = "Utente";
             this.editUtente.LabelWidth = 175;
-            this.editUtente.Location = new System.Drawing.Point(20, 534);
+            this.editUtente.Location = new System.Drawing.Point(20, 525);
             this.editUtente.Name = "editUtente";
             this.editUtente.ReadOnly = false;
             this.editUtente.Required = false;
-            this.editUtente.Size = new System.Drawing.Size(424, 30);
+            this.editUtente.Size = new System.Drawing.Size(456, 30);
             this.editUtente.TabIndex = 10;
             this.editUtente.Text = "TemplateCheckBox";
             this.editUtente.TextFalse = "";
@@ -287,8 +286,6 @@ namespace Web.GUI.Operatore
             // 
             // editSupervisor
             // 
-            this.editSupervisor.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editSupervisor.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editSupervisor.BackColor = System.Drawing.Color.Transparent;
             this.editSupervisor.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -298,16 +295,38 @@ namespace Web.GUI.Operatore
             this.editSupervisor.Editing = false;
             this.editSupervisor.Label = "Supervisor";
             this.editSupervisor.LabelWidth = 175;
-            this.editSupervisor.Location = new System.Drawing.Point(20, 432);
+            this.editSupervisor.Location = new System.Drawing.Point(20, 435);
             this.editSupervisor.Name = "editSupervisor";
             this.editSupervisor.ReadOnly = false;
             this.editSupervisor.Required = false;
-            this.editSupervisor.Size = new System.Drawing.Size(424, 30);
+            this.editSupervisor.Size = new System.Drawing.Size(456, 30);
             this.editSupervisor.TabIndex = 11;
             this.editSupervisor.Text = "TemplateCheckBox";
             this.editSupervisor.TextFalse = "";
             this.editSupervisor.TextTrue = "";
             this.editSupervisor.Value = null;
+            // 
+            // editComune
+            // 
+            this.editComune.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editComune.BackColor = System.Drawing.Color.Transparent;
+            this.editComune.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editComune.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editComune.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editComune.Changed = false;
+            this.editComune.Editing = false;
+            this.editComune.Label = "Comune";
+            this.editComune.LabelWidth = 175;
+            this.editComune.Location = new System.Drawing.Point(20, 75);
+            this.editComune.Model = null;
+            this.editComune.Multiline = false;
+            this.editComune.Name = "editComune";
+            this.editComune.ReadOnly = false;
+            this.editComune.Required = false;
+            this.editComune.Size = new System.Drawing.Size(798, 30);
+            this.editComune.TabIndex = 12;
+            this.editComune.Text = "EditControl";
+            this.editComune.Value = "";
             this.Controls.SetChildIndex(this.container, 0);
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
@@ -319,16 +338,15 @@ namespace Web.GUI.Operatore
 
         private Library.Template.Controls.TemplateEditText editNomeUtente;
         private Library.Template.Controls.TemplateEditText editNome;
-        private Library.Template.Controls.TemplateEditPassword templateEditPassword2;
         private Library.Template.Controls.TemplateEditPassword editConfermaPassword;
         private Library.Template.Controls.TemplateEditText editCognome;
-        private Library.Template.Controls.TemplateEditEmail templateEditEmail1;
         private Library.Template.Controls.TemplateEditText editTelefono;
         private Library.Template.Controls.TemplateEditPassword editPassword;
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditCheckBox editSupervisor;
         private Library.Template.Controls.TemplateEditCheckBox editUtente;
         private Library.Template.Controls.TemplateEditCheckBox editAmministratore;
+        private Library.Template.Controls.TemplateEditCombo editComune;
 
 
     }

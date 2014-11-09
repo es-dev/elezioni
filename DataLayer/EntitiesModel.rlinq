@@ -4,13 +4,16 @@
     <orm:namespace name="DataLayer" default="true">
       <orm:class name="Consultazione" use-default-mapping="true" uniqueId="5dba285d-9168-4b25-86fb-ce3d7f19f599">
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="5824344a-f3df-42e9-a531-332e6ee227a1" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_numero" property="Numero" uniqueId="d4bc5582-0393-4b76-90a8-1d742ff91f5b" type="System.Int32">
-          <orm:column name="Numero" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:field name="_numero" property="Numero" uniqueId="d4bc5582-0393-4b76-90a8-1d742ff91f5b" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Numero" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         </orm:field>
         <orm:field name="_descrizione" property="Descrizione" uniqueId="d28189e4-605c-4017-8bbd-9d91a7fa3e61" type="System.String">
           <orm:column name="Descrizione" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthAnsiStringConverter" ado-type="StringVariableLength" />
@@ -20,6 +23,12 @@
         </orm:field>
         <orm:field name="_comuneId" property="ComuneId" uniqueId="4e53df22-719f-4993-8c14-f5913dc63098" type="System.Int32">
           <orm:column name="ComuneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_dataInizio" property="DataInizio" uniqueId="67d06ba9-fb41-4a7b-9afb-f17f6aba3f12" type="System.DateTime">
+          <orm:column name="DataInizio" sql-type="datetime" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_dataFine" property="DataFine" uniqueId="f0220f68-2942-4940-9e70-17d396886a55" type="System.DateTime">
+          <orm:column name="DataFine" sql-type="datetime" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
         </orm:field>
         <orm:field name="_comune" property="Comune" behavior="readwrite" uniqueId="66ab6c1c-f85c-49bd-8f14-80f366a6df24" type="DataLayer.Comune">
           <orm:reference uniqueId="480d0edd-9ae6-4ebe-8771-06aad6ffe7f3" association-name="ConsultazioneHasComune">
@@ -83,11 +92,6 @@
         <orm:field name="_scrutinioCapoCoaliziones" property="ScrutinioCapoCoaliziones" behavior="readwrite" uniqueId="95b512fa-b9bd-47df-9ca3-a9116fbce7e3" type="DataLayer.ScrutinioCapoCoalizione">
           <orm:collection element-class="DataLayer.ScrutinioCapoCoalizione" inverse-field="_capoCoalizione" order-by="" uniqueId="39b0c1f8-81f0-438b-a0c0-a8f9040cf692" />
         </orm:field>
-        <orm:index name="idx_CpClizione_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Lista" use-default-mapping="true" uniqueId="89eee56e-8fff-482f-809e-8ab849bf8d08">
         <orm:identity>
@@ -122,11 +126,6 @@
         <orm:field name="_scrutinioListas" property="ScrutinioListas" behavior="readwrite" uniqueId="a7258b30-782c-49c4-98fd-1c1a524a8859" type="DataLayer.ScrutinioLista">
           <orm:collection element-class="DataLayer.ScrutinioLista" inverse-field="_lista" order-by="" uniqueId="bba09d76-1a9e-4416-9a88-518c0072f9c3" />
         </orm:field>
-        <orm:index name="idx_Lista_CapoCoalizioneId">
-          <orm:columnMapping>
-            <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Candidato" use-default-mapping="true" uniqueId="2cc8dd6f-2997-44e5-95a4-016f7834dc2d">
         <orm:identity>
@@ -158,11 +157,6 @@
         <orm:field name="_scrutinioCandidatos" property="ScrutinioCandidatos" behavior="readwrite" uniqueId="1770be54-8e03-4b77-a679-70f864ac485d" type="DataLayer.ScrutinioCandidato">
           <orm:collection element-class="DataLayer.ScrutinioCandidato" inverse-field="_candidato" order-by="" uniqueId="66822446-3889-46bc-9276-f9deb2f8dabb" />
         </orm:field>
-        <orm:index name="idx_Candidato_ListaId">
-          <orm:columnMapping>
-            <orm:column name="ListaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="SedeElettorale" use-default-mapping="true" uniqueId="b44b289f-f74c-4b78-a651-0112ed4d0b73">
         <orm:identity>
@@ -200,11 +194,6 @@
         <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="b4f3bbeb-b03a-4c26-aeec-6411129da6a7" type="DataLayer.Sezione">
           <orm:collection element-class="DataLayer.Sezione" inverse-field="_sedeElettorale" order-by="" uniqueId="c2c6608f-7e1b-46a9-a00b-0ce7f5f14e10" />
         </orm:field>
-        <orm:index name="idx_SdElttrale_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Sezione" use-default-mapping="true" uniqueId="41a82040-5d63-4ad5-8715-a87b2d7b659c">
         <orm:identity>
@@ -262,16 +251,6 @@
         <orm:field name="_scrutinioCapoCoaliziones" property="ScrutinioCapoCoaliziones" behavior="readwrite" uniqueId="c56ad212-5ebb-4a37-8592-6de3b7353743" type="DataLayer.ScrutinioCapoCoalizione">
           <orm:collection element-class="DataLayer.ScrutinioCapoCoalizione" inverse-field="_sezione" order-by="" uniqueId="d4d439e8-5c70-42e2-88b3-92734e521eea" />
         </orm:field>
-        <orm:index name="idx_Sezione_OperatoreId">
-          <orm:columnMapping>
-            <orm:column name="OperatoreId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_Sezione_SedeElettoraleId">
-          <orm:columnMapping>
-            <orm:column name="SedeElettoraleId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Affluenza" use-default-mapping="true" uniqueId="07d03bc4-3da8-4a67-bd14-b4d07a33f782">
         <orm:identity>
@@ -297,11 +276,6 @@
         <orm:field name="_rilevamentos" property="Rilevamentos" behavior="readwrite" uniqueId="1527c73a-8aae-45ca-a5d4-5cf3f51b7e03" type="DataLayer.Rilevamento">
           <orm:collection element-class="DataLayer.Rilevamento" inverse-field="_affluenza" order-by="" uniqueId="5608e4e1-4b1b-4b9c-9f9f-505e77115932" />
         </orm:field>
-        <orm:index name="idx_Affluenza_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Comune" use-default-mapping="true" uniqueId="029237c8-5488-4de9-bea0-c5f00a2bd163">
         <orm:identity>
@@ -359,11 +333,6 @@
         <orm:field name="_sezioneCollegios" property="SezioneCollegios" behavior="readwrite" uniqueId="2877ae16-92e8-486b-b7b2-147a5789a10b" type="DataLayer.SezioneCollegio">
           <orm:collection element-class="DataLayer.SezioneCollegio" inverse-field="_collegio" order-by="" uniqueId="f9853b32-7eef-4080-9300-27993278816a" />
         </orm:field>
-        <orm:index name="idx_Collegio_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="SezioneCollegio" use-default-mapping="true" uniqueId="607fd559-978a-43f9-808f-fb86d4838fc6">
         <orm:identity>
@@ -391,16 +360,6 @@
             <orm:sharedfield name="_collegioId" target-class="DataLayer.Collegio" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_SezioneCollegio_CollegioId">
-          <orm:columnMapping>
-            <orm:column name="CollegioId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_SezioneCollegio_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Rilevamento" use-default-mapping="true" uniqueId="177895d1-8561-4b42-bcfc-8d7e34040f37">
         <orm:identity>
@@ -437,16 +396,6 @@
             <orm:sharedfield name="_affluenzaId" target-class="DataLayer.Affluenza" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_Rilevamento_AffluenzaId">
-          <orm:columnMapping>
-            <orm:column name="AffluenzaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_Rilevamento_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="ScrutinioCapoCoalizione" use-default-mapping="true" uniqueId="dc0a239d-0eaf-4920-ad03-532f6418e9a7">
         <orm:identity>
@@ -480,16 +429,6 @@
             <orm:sharedfield name="_sezioneId" target-class="DataLayer.Sezione" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_ScrtnCpCalizione_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_ScrtnCpClzn_CpCoalizioneId">
-          <orm:columnMapping>
-            <orm:column name="CapoCoalizioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Scrutinio" use-default-mapping="true" uniqueId="c588b2a0-b947-4b62-8b0c-98cb52867525">
         <orm:identity>
@@ -529,16 +468,6 @@
             <orm:sharedfield name="_consultazioneId" target-class="DataLayer.Consultazione" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_Scrutinio_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_Scrutinio_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="ScrutinioLista" use-default-mapping="true" uniqueId="87b1ad79-b425-4da6-8877-cac88fe79cea">
         <orm:identity>
@@ -572,16 +501,6 @@
             <orm:sharedfield name="_listaId" target-class="DataLayer.Lista" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_ScrutinioLista_ListaId">
-          <orm:columnMapping>
-            <orm:column name="ListaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_ScrutinioLista_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="ScrutinioCandidato" use-default-mapping="true" uniqueId="9fddce83-c8ee-4330-aa60-24ccce44652c">
         <orm:identity>
@@ -615,16 +534,6 @@
             <orm:sharedfield name="_candidatoId" target-class="DataLayer.Candidato" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:index name="idx_ScrtnCandidato_CandidatoId">
-          <orm:columnMapping>
-            <orm:column name="CandidatoId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
-        <orm:index name="idx_ScrtnioCandidato_SezioneId">
-          <orm:columnMapping>
-            <orm:column name="SezioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Operatore" use-default-mapping="true" uniqueId="dfcfe140-9f9c-4e52-b812-1f3ba39026af">
         <orm:identity>
@@ -677,11 +586,6 @@
         <orm:field name="_seziones" property="Seziones" behavior="readwrite" uniqueId="cd8366e9-b8c7-4862-bf70-c71aee8371ba" type="DataLayer.Sezione">
           <orm:collection element-class="DataLayer.Sezione" inverse-field="_operatore" order-by="" uniqueId="ff3473f8-f2f2-4c8e-845a-443a78a1da63" />
         </orm:field>
-        <orm:index name="idx_Operatore_ConsultazioneId">
-          <orm:columnMapping>
-            <orm:column name="ConsultazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
     </orm:namespace>
     <orm:schema schema="" />
@@ -728,12 +632,14 @@
     </BackendConfigurationSettings>
   </ModelSettings>
   <Types>
-    <DomainClass Id="5dba285d-9168-4b25-86fb-ce3d7f19f599" name="Consultazione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="5dba285d-9168-4b25-86fb-ce3d7f19f599" name="Consultazione" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="5824344a-f3df-42e9-a531-332e6ee227a1" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
-      <Property Id="d4bc5582-0393-4b76-90a8-1d742ff91f5b" name="Numero" type="System.Int32" label="Numero : System.Int32" fieldName="_numero" />
+      <Property Id="4e53df22-719f-4993-8c14-f5913dc63098" name="ComuneId" type="System.Int32" label="ComuneId : System.Int32" fieldName="_comuneId" />
+      <Property Id="d4bc5582-0393-4b76-90a8-1d742ff91f5b" name="Numero" type="System.Int32" label="Numero : System.Int32" nullable="true" fieldName="_numero" />
       <Property Id="d28189e4-605c-4017-8bbd-9d91a7fa3e61" name="Descrizione" label="Descrizione : String" fieldName="_descrizione" />
       <Property Id="7ddb7590-7123-4e9c-bf2f-9e337d6b20ba" name="Tipo" label="Tipo : String" fieldName="_tipo" />
-      <Property Id="4e53df22-719f-4993-8c14-f5913dc63098" name="ComuneId" type="System.Int32" label="ComuneId : System.Int32" fieldName="_comuneId" />
+      <Property Id="67d06ba9-fb41-4a7b-9afb-f17f6aba3f12" name="DataInizio" type="DateTime" label="DataInizio : DateTime" fieldName="_dataInizio" />
+      <Property Id="f0220f68-2942-4940-9e70-17d396886a55" name="DataFine" type="DateTime" label="DataFine : DateTime" fieldName="_dataFine" />
       <AssociationTargets>
         <Association Id="480d0edd-9ae6-4ebe-8771-06aad6ffe7f3" SourceMultiplicity="ZeroOne" name="ConsultazioneHasComune">
           <DomainClassMoniker name="/EntitiesModel/Comune" />
