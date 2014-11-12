@@ -33,18 +33,18 @@ namespace Web.GUI.Consultazione
             this.editComune = new Library.Template.Controls.TemplateEditCombo();
             this.editDescrizione = new Library.Template.Controls.TemplateEditText();
             this.editNumero = new Library.Template.Controls.TemplateEditNumeric();
-            this.editInizio = new Library.Template.Controls.TemplateEditData();
             this.editFine = new Library.Template.Controls.TemplateEditData();
             this.editTipo = new Library.Template.Controls.TemplateEditText();
+            this.editInizio = new Library.Template.Controls.TemplateEditData();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.SuspendLayout();
             // 
             // container
             // 
+            this.container.Controls.Add(this.editInizio);
             this.container.Controls.Add(this.editTipo);
             this.container.Controls.Add(this.editFine);
-            this.container.Controls.Add(this.editInizio);
             this.container.Controls.Add(this.editNumero);
             this.container.Controls.Add(this.editDescrizione);
             this.container.Controls.Add(this.editComune);
@@ -53,9 +53,9 @@ namespace Web.GUI.Consultazione
             this.container.Controls.SetChildIndex(this.editComune, 0);
             this.container.Controls.SetChildIndex(this.editDescrizione, 0);
             this.container.Controls.SetChildIndex(this.editNumero, 0);
-            this.container.Controls.SetChildIndex(this.editInizio, 0);
             this.container.Controls.SetChildIndex(this.editFine, 0);
             this.container.Controls.SetChildIndex(this.editTipo, 0);
+            this.container.Controls.SetChildIndex(this.editInizio, 0);
             // 
             // infoSubtitle
             // 
@@ -130,23 +130,6 @@ namespace Web.GUI.Consultazione
             this.editNumero.Text = "EditControl";
             this.editNumero.Value = 0;
             // 
-            // editInizio
-            // 
-            this.editInizio.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editInizio.BackColor = System.Drawing.Color.Transparent;
-            this.editInizio.Changed = false;
-            this.editInizio.Editing = false;
-            this.editInizio.Label = "Inizio";
-            this.editInizio.LabelWidth = 175;
-            this.editInizio.Location = new System.Drawing.Point(20, 213);
-            this.editInizio.Name = "editInizio";
-            this.editInizio.ReadOnly = false;
-            this.editInizio.Required = false;
-            this.editInizio.Size = new System.Drawing.Size(386, 30);
-            this.editInizio.TabIndex = 8;
-            this.editInizio.Text = "TemplateEditData";
-            this.editInizio.Value = null;
-            // 
             // editFine
             // 
             this.editFine.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
@@ -184,6 +167,23 @@ namespace Web.GUI.Consultazione
             this.editTipo.TabIndex = 10;
             this.editTipo.Text = "EditControl";
             this.editTipo.Value = "";
+            // 
+            // editInizio
+            // 
+            this.editInizio.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editInizio.BackColor = System.Drawing.Color.Transparent;
+            this.editInizio.Changed = false;
+            this.editInizio.Editing = false;
+            this.editInizio.Label = "Inizio";
+            this.editInizio.LabelWidth = 175;
+            this.editInizio.Location = new System.Drawing.Point(20, 210);
+            this.editInizio.Name = "editInizio";
+            this.editInizio.ReadOnly = false;
+            this.editInizio.Required = false;
+            this.editInizio.Size = new System.Drawing.Size(400, 30);
+            this.editInizio.TabIndex = 11;
+            this.editInizio.Text = "TemplateEditData";
+            this.editInizio.Value = null;
             this.Controls.SetChildIndex(this.container, 0);
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
@@ -197,8 +197,8 @@ namespace Web.GUI.Consultazione
         private Library.Template.Controls.TemplateEditText editDescrizione;
         private Library.Template.Controls.TemplateEditCombo editComune;
         private Library.Template.Controls.TemplateEditData editFine;
-        private Library.Template.Controls.TemplateEditData editInizio;
         private Library.Template.Controls.TemplateEditText editTipo;
+        private Library.Template.Controls.TemplateEditData editInizio;
 
 
     }

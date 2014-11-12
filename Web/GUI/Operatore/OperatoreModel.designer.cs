@@ -40,14 +40,14 @@ namespace Web.GUI.Operatore
             this.editAmministratore = new Library.Template.Controls.TemplateEditCheckBox();
             this.editUtente = new Library.Template.Controls.TemplateEditCheckBox();
             this.editSupervisor = new Library.Template.Controls.TemplateEditCheckBox();
-            this.editComune = new Library.Template.Controls.TemplateEditCombo();
+            this.editConsultazione = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.SuspendLayout();
             // 
             // container
             // 
-            this.container.Controls.Add(this.editComune);
+            this.container.Controls.Add(this.editConsultazione);
             this.container.Controls.Add(this.editSupervisor);
             this.container.Controls.Add(this.editUtente);
             this.container.Controls.Add(this.editAmministratore);
@@ -70,7 +70,7 @@ namespace Web.GUI.Operatore
             this.container.Controls.SetChildIndex(this.editAmministratore, 0);
             this.container.Controls.SetChildIndex(this.editUtente, 0);
             this.container.Controls.SetChildIndex(this.editSupervisor, 0);
-            this.container.Controls.SetChildIndex(this.editComune, 0);
+            this.container.Controls.SetChildIndex(this.editConsultazione, 0);
             // 
             // infoSubtitle
             // 
@@ -306,27 +306,31 @@ namespace Web.GUI.Operatore
             this.editSupervisor.TextTrue = "";
             this.editSupervisor.Value = null;
             // 
-            // editComune
+            // editConsultazione
             // 
-            this.editComune.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editComune.BackColor = System.Drawing.Color.Transparent;
-            this.editComune.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editComune.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editComune.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editComune.Changed = false;
-            this.editComune.Editing = false;
-            this.editComune.Label = "Comune";
-            this.editComune.LabelWidth = 175;
-            this.editComune.Location = new System.Drawing.Point(20, 75);
-            this.editComune.Model = null;
-            this.editComune.Multiline = false;
-            this.editComune.Name = "editComune";
-            this.editComune.ReadOnly = false;
-            this.editComune.Required = false;
-            this.editComune.Size = new System.Drawing.Size(798, 30);
-            this.editComune.TabIndex = 12;
-            this.editComune.Text = "EditControl";
-            this.editComune.Value = "";
+            this.editConsultazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.editConsultazione.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editConsultazione.BackColor = System.Drawing.Color.Transparent;
+            this.editConsultazione.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editConsultazione.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editConsultazione.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editConsultazione.Changed = false;
+            this.editConsultazione.Editing = false;
+            this.editConsultazione.Label = "Consultazione";
+            this.editConsultazione.LabelWidth = 175;
+            this.editConsultazione.Location = new System.Drawing.Point(20, 75);
+            this.editConsultazione.Model = null;
+            this.editConsultazione.Multiline = false;
+            this.editConsultazione.Name = "editConsultazione";
+            this.editConsultazione.ReadOnly = false;
+            this.editConsultazione.Required = false;
+            this.editConsultazione.Size = new System.Drawing.Size(798, 30);
+            this.editConsultazione.TabIndex = 12;
+            this.editConsultazione.Text = "EditControl";
+            this.editConsultazione.Value = "";
+            this.editConsultazione.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editConsultazione_ComboConfirm);
+            this.editConsultazione.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editConsultazione_ComboClick);
             this.Controls.SetChildIndex(this.container, 0);
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
@@ -346,7 +350,7 @@ namespace Web.GUI.Operatore
         private Library.Template.Controls.TemplateEditCheckBox editSupervisor;
         private Library.Template.Controls.TemplateEditCheckBox editUtente;
         private Library.Template.Controls.TemplateEditCheckBox editAmministratore;
-        private Library.Template.Controls.TemplateEditCombo editComune;
+        private Library.Template.Controls.TemplateEditCombo editConsultazione;
 
 
     }

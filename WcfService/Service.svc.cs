@@ -284,8 +284,7 @@ namespace WcfService
             }
             return null;
         }
-
-
+        
         private IQueryable<DataLayer.Consultazione> QueryConsultazioni(string search)
         {
             try
