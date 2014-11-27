@@ -118,6 +118,8 @@
       <DependentUpon>EntitiesModelService.svc</DependentUpon>
     </Compile>
     <Compile Include="IEntitiesModelService.cs" />
+    <Compile Include="ItemInfo.cs" />
+    <Compile Include="ItemInfoList.cs" />
     <Compile Include="Repositories.cs" />
     <Compile Include="Service.svc.cs">
       <DependentUpon>Service.svc</DependentUpon>

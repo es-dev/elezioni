@@ -91,6 +91,11 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EAPEntitiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EAPEntitiesModel.rlinq</DependentUpon>
+    </Compile>
     <Compile Include="EntitiesModel.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
       <SubType>Code</SubType>
@@ -143,6 +148,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <OpenAccessDeploy Include="EAPEntitiesModel.rlinq">
+      <Generator>MetaModelCodeGenerator</Generator>
+      <LastGenOutput>EAPEntitiesModel.cs</LastGenOutput>
+    </OpenAccessDeploy>
+    <None Include="EAPEntitiesModel.rlinq.diagram">
+      <DependentUpon>EAPEntitiesModel.rlinq</DependentUpon>
+    </None>
     <None Include="EntitiesModel.rlinq.diagram">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </None>
