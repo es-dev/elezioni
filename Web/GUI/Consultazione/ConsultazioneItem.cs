@@ -24,7 +24,9 @@ namespace Web.GUI.Consultazione
             {
                 if (model != null)
                 {
-                    
+                    var obj = (WcfService.Dto.ConsultazioneDto)model;
+                    infoDescrizione.Text = obj.Descrizione;
+                    infoTipo.Text = obj.Tipo;
                 }
             }
             catch (Exception ex)
