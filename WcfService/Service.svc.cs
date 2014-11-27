@@ -245,7 +245,13 @@ namespace WcfService
                 var consultazioni = QueryConsultazioni(search);
                 consultazioni = (from q in consultazioni select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ConsultazioneAssembler();
-                var consultazioniDto = engine.Assemble(consultazioni);
+                var consultazioniDto = new List<Dto.ConsultazioneDto>();
+                foreach(var consultazione in consultazioni)
+                {
+                    var consultazioneDto = engine.Assemble(consultazione);
+                    engine.AssembleNavigational(consultazione, consultazioneDto);
+                    consultazioniDto.Add(consultazioneDto);
+                }
                 return consultazioniDto;
             }
             catch (Exception ex)
