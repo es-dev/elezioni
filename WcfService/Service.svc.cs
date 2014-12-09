@@ -399,7 +399,13 @@ namespace WcfService
                 var operatori = QueryOperatori(search);
                 operatori = (from q in operatori select q).Skip(skip).Take(take);
                 var engine = new Assemblers.OperatoreAssembler();
-                var operatoriDto = engine.Assemble(operatori);
+                var operatoriDto = new List<Dto.OperatoreDto>();
+                foreach (var operatore in operatori)
+                {
+                    var operatoreDto = engine.Assemble(operatore);
+                    engine.AssembleNavigational(operatore, operatoreDto);
+                    operatoriDto.Add(operatoreDto);
+                }
                 return operatoriDto;
             }
             catch (Exception ex)
@@ -547,7 +553,13 @@ namespace WcfService
                 var sediElettorali = QuerySediElettorali(search);
                 sediElettorali = (from q in sediElettorali select q).Skip(skip).Take(take);
                 var engine = new Assemblers.SedeElettoraleAssembler();
-                var sediElettoraliDto = engine.Assemble(sediElettorali);
+                var sediElettoraliDto = new List<Dto.SedeElettoraleDto>();
+                foreach (var sedeElettorale in sediElettorali)
+                {
+                    var sedeElettoraleDto = engine.Assemble(sedeElettorale);
+                    engine.AssembleNavigational(sedeElettorale, sedeElettoraleDto);
+                    sediElettoraliDto.Add(sedeElettoraleDto);
+                }
                 return sediElettoraliDto;
             }
             catch (Exception ex)
@@ -694,7 +706,13 @@ namespace WcfService
                 var sezioni = QuerySezioni(search);
                 sezioni = (from q in sezioni select q).Skip(skip).Take(take);
                 var engine = new Assemblers.SezioneAssembler();
-                var sezioniDto = engine.Assemble(sezioni);
+                var sezioniDto = new List<Dto.SezioneDto>();
+                foreach (var sezione in sezioni)
+                {
+                    var sezioneDto = engine.Assemble(sezione);
+                    engine.AssembleNavigational(sezione, sezioneDto);
+                    sezioniDto.Add(sezioneDto);
+                }
                 return sezioniDto;
             }
             catch (Exception ex)
@@ -841,7 +859,13 @@ namespace WcfService
                 var collegi = QueryCollegi(search);
                 collegi = (from q in collegi select q).Skip(skip).Take(take);
                 var engine = new Assemblers.CollegioAssembler();
-                var collegiDto = engine.Assemble(collegi);
+                var collegiDto = new List<Dto.CollegioDto>();
+                foreach (var collegio in collegi)
+                {
+                    var collegioDto = engine.Assemble(collegio);
+                    engine.AssembleNavigational(collegio, collegioDto);
+                    collegiDto.Add(collegioDto);
+                }
                 return collegiDto;
             }
             catch (Exception ex)
@@ -987,7 +1011,13 @@ namespace WcfService
                 var sezioniCollegi = QuerySezioniCollegi(search);
                 sezioniCollegi = (from q in sezioniCollegi select q).Skip(skip).Take(take);
                 var engine = new Assemblers.SezioneCollegioAssembler();
-                var sezioniCollegiDto = engine.Assemble(sezioniCollegi);
+                var sezioniCollegiDto = new List<Dto.SezioneCollegioDto>();
+                foreach (var sezioneCollegio in sezioniCollegi)
+                {
+                    var sezioneCollegioDto = engine.Assemble(sezioneCollegio);
+                    engine.AssembleNavigational(sezioneCollegio, sezioneCollegioDto);
+                    sezioniCollegiDto.Add(sezioneCollegioDto);
+                }
                 return sezioniCollegiDto;
             }
             catch (Exception ex)
@@ -1134,7 +1164,13 @@ namespace WcfService
                 var affluenze = QueryAffluenze(search);
                 affluenze = (from q in affluenze select q).Skip(skip).Take(take);
                 var engine = new Assemblers.AffluenzaAssembler();
-                var affluenzeDto = engine.Assemble(affluenze);
+                var affluenzeDto = new List<Dto.AffluenzaDto>();
+                foreach (var affluenza in affluenze)
+                {
+                    var affluenzaDto = engine.Assemble(affluenza);
+                    engine.AssembleNavigational(affluenza, affluenzaDto);
+                    affluenzeDto.Add(affluenzaDto);
+                }
                 return affluenzeDto;
             }
             catch (Exception ex)
@@ -1173,7 +1209,6 @@ namespace WcfService
             }
             return null;
         }
-
 
         private IQueryable<DataLayer.Affluenza> QueryAffluenze(string search)
         {
@@ -1282,7 +1317,13 @@ namespace WcfService
                 var rilevamenti = QueryRilevamenti(search);
                 rilevamenti = (from q in rilevamenti select q).Skip(skip).Take(take);
                 var engine = new Assemblers.RilevamentoAssembler();
-                var rilevamentiDto = engine.Assemble(rilevamenti);
+                var rilevamentiDto = new List<Dto.RilevamentoDto>();
+                foreach (var rilevamento in rilevamenti)
+                {
+                    var rilevamentoDto = engine.Assemble(rilevamento);
+                    engine.AssembleNavigational(rilevamento, rilevamentoDto);
+                    rilevamentiDto.Add(rilevamentoDto);
+                }
                 return rilevamentiDto;
             }
             catch (Exception ex)
@@ -1429,7 +1470,13 @@ namespace WcfService
                 var scrutini = QueryScrutini(search);
                 scrutini = (from q in scrutini select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ScrutinioAssembler();
-                var scrutiniDto = engine.Assemble(scrutini);
+                var scrutiniDto = new List<Dto.ScrutinioDto>();
+                foreach (var scrutinio in scrutini)
+                {
+                    var scrutinioDto = engine.Assemble(scrutinio);
+                    engine.AssembleNavigational(scrutinio, scrutinioDto);
+                    scrutiniDto.Add(scrutinioDto);
+                }
                 return scrutiniDto;
             }
             catch (Exception ex)
@@ -1575,7 +1622,13 @@ namespace WcfService
                 var capiCoalizioni = QueryCapiCoalizioni(search);
                 capiCoalizioni = (from q in capiCoalizioni select q).Skip(skip).Take(take);
                 var engine = new Assemblers.CapoCoalizioneAssembler();
-                var capiCoalizioniDto = engine.Assemble(capiCoalizioni);
+                var capiCoalizioniDto = new List<Dto.CapoCoalizioneDto>();
+                foreach (var capoCoalizione in capiCoalizioni)
+                {
+                    var capoCoalizioneDto = engine.Assemble(capoCoalizione);
+                    engine.AssembleNavigational(capoCoalizione, capoCoalizioneDto);
+                    capiCoalizioniDto.Add(capoCoalizioneDto);
+                } 
                 return capiCoalizioniDto;
             }
             catch (Exception ex)
@@ -1722,7 +1775,13 @@ namespace WcfService
                 var scrutiniCapoCoalizione = QueryScrutiniCapoCoalizione(search);
                 scrutiniCapoCoalizione = (from q in scrutiniCapoCoalizione select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ScrutinioCapoCoalizioneAssembler();
-                var scrutiniCapoCoalizioneDto = engine.Assemble(scrutiniCapoCoalizione);
+                var scrutiniCapoCoalizioneDto = new List<Dto.ScrutinioCapoCoalizioneDto>();
+                foreach (var scrutinioCapoCoalizione in scrutiniCapoCoalizione)
+                {
+                    var scrutinioCapoCoalizioneDto = engine.Assemble(scrutinioCapoCoalizione);
+                    engine.AssembleNavigational(scrutinioCapoCoalizione, scrutinioCapoCoalizioneDto);
+                    scrutiniCapoCoalizioneDto.Add(scrutinioCapoCoalizioneDto);
+                }
                 return scrutiniCapoCoalizioneDto;
             }
             catch (Exception ex)
@@ -1868,7 +1927,13 @@ namespace WcfService
                 var liste = QueryListe(search);
                 liste = (from q in liste select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ListaAssembler();
-                var listeDto = engine.Assemble(liste);
+                var listeDto = new List<Dto.ListaDto>();
+                foreach (var lista in liste)
+                {
+                    var listaDto = engine.Assemble(lista);
+                    engine.AssembleNavigational(lista, listaDto);
+                    listeDto.Add(listaDto);
+                }
                 return listeDto;
             }
             catch (Exception ex)
@@ -2015,7 +2080,13 @@ namespace WcfService
                 var scrutiniLista = QueryScrutiniLista(search);
                 scrutiniLista = (from q in scrutiniLista select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ScrutinioListaAssembler();
-                var scrutiniListaDto = engine.Assemble(scrutiniLista);
+                var scrutiniListaDto = new List<Dto.ScrutinioListaDto>();
+                foreach (var scrutinioLista in scrutiniLista)
+                {
+                    var scrutinioListaDto = engine.Assemble(scrutinioLista);
+                    engine.AssembleNavigational(scrutinioLista, scrutinioListaDto);
+                    scrutiniListaDto.Add(scrutinioListaDto);
+                }
                 return scrutiniListaDto;
             }
             catch (Exception ex)
@@ -2161,7 +2232,13 @@ namespace WcfService
                 var candidati = QueryCandidati(search);
                 candidati = (from q in candidati select q).Skip(skip).Take(take);
                 var engine = new Assemblers.CandidatoAssembler();
-                var candidatiDto = engine.Assemble(candidati);
+                var candidatiDto = new List<Dto.CandidatoDto>();
+                foreach (var candidato in candidati)
+                {
+                    var candidatoDto = engine.Assemble(candidato);
+                    engine.AssembleNavigational(candidato, candidatoDto);
+                    candidatiDto.Add(candidatoDto);
+                }
                 return candidatiDto;
             }
             catch (Exception ex)
@@ -2308,7 +2385,13 @@ namespace WcfService
                 var scrutiniCandidato = QueryScrutiniCandidato(search);
                 scrutiniCandidato = (from q in scrutiniCandidato select q).Skip(skip).Take(take);
                 var engine = new Assemblers.ScrutinioCandidatoAssembler();
-                var scrutiniCandidatoDto = engine.Assemble(scrutiniCandidato);
+                var scrutiniCandidatoDto = new List<Dto.ScrutinioCandidatoDto>();
+                foreach (var scrutinioCandidato in scrutiniCandidato)
+                {
+                    var scrutinioCandidatoDto = engine.Assemble(scrutinioCandidato);
+                    engine.AssembleNavigational(scrutinioCandidato, scrutinioCandidatoDto);
+                    scrutiniCandidatoDto.Add(scrutinioCandidatoDto);
+                }
                 return scrutiniCandidatoDto;
             }
             catch (Exception ex)
@@ -2367,11 +2450,6 @@ namespace WcfService
         }
         #endregion
         #endregion
-
-
-
-
-
-        
+     
     }
 }
