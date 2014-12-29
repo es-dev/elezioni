@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,9 +42,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ES.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>ExternalReferences\ES.Library.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.3rdParty.Assemblies">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.3rdParty.Assemblies.dll</HintPath>
@@ -280,7 +284,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExternalReferences\ES.Library.dll" />
     <Content Include="Readme.txt" />
     <Content Include="Resources\Images\add24.png" />
     <Content Include="Resources\Images\attachment24.png" />
@@ -1004,6 +1007,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1024,6 +1028,10 @@
     </CustomReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ES.Library\ES.Library.csproj">
+      <Project>{67131adf-23de-46cf-888b-9afd6f648405}</Project>
+      <Name>ES.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WcfService\WcfService.csproj">
       <Project>{1f172fe8-814a-46d0-a71e-4036505c442e}</Project>
       <Name>WcfService</Name>
@@ -1055,6 +1063,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
