@@ -78,7 +78,6 @@ namespace Web.GUI.Consultazione
             this.editComune.LabelWidth = 175;
             this.editComune.Location = new System.Drawing.Point(20, 75);
             this.editComune.Model = null;
-            this.editComune.Multiline = false;
             this.editComune.Name = "editComune";
             this.editComune.ReadOnly = false;
             this.editComune.Required = false;
@@ -101,7 +100,6 @@ namespace Web.GUI.Consultazione
             this.editDescrizione.Label = "Descrizione";
             this.editDescrizione.LabelWidth = 175;
             this.editDescrizione.Location = new System.Drawing.Point(20, 167);
-            this.editDescrizione.Multiline = false;
             this.editDescrizione.Name = "editDescrizione";
             this.editDescrizione.ReadOnly = false;
             this.editDescrizione.Required = false;
@@ -159,7 +157,6 @@ namespace Web.GUI.Consultazione
             this.editTipo.Label = "Tipo";
             this.editTipo.LabelWidth = 175;
             this.editTipo.Location = new System.Drawing.Point(20, 121);
-            this.editTipo.Multiline = false;
             this.editTipo.Name = "editTipo";
             this.editTipo.ReadOnly = false;
             this.editTipo.Required = false;

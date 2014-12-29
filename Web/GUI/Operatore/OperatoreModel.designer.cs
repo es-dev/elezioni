@@ -116,7 +116,6 @@ namespace Web.GUI.Operatore
             this.editCognome.Label = "Cognome";
             this.editCognome.LabelWidth = 175;
             this.editCognome.Location = new System.Drawing.Point(20, 120);
-            this.editCognome.Multiline = false;
             this.editCognome.Name = "editCognome";
             this.editCognome.ReadOnly = false;
             this.editCognome.Required = false;
@@ -140,7 +139,6 @@ namespace Web.GUI.Operatore
             this.editConfermaPassword.LabelWidth = 175;
             this.editConfermaPassword.Location = new System.Drawing.Point(20, 300);
             this.editConfermaPassword.Name = "editConfermaPassword";
-            this.editConfermaPassword.Password = true;
             this.editConfermaPassword.ReadOnly = false;
             this.editConfermaPassword.Required = false;
             this.editConfermaPassword.Size = new System.Drawing.Size(800, 30);
@@ -163,7 +161,6 @@ namespace Web.GUI.Operatore
             this.editPassword.LabelWidth = 175;
             this.editPassword.Location = new System.Drawing.Point(20, 255);
             this.editPassword.Name = "templateEditPassword2";
-            this.editPassword.Password = true;
             this.editPassword.ReadOnly = false;
             this.editPassword.Required = false;
             this.editPassword.Size = new System.Drawing.Size(800, 30);
@@ -185,7 +182,6 @@ namespace Web.GUI.Operatore
             this.editNome.Label = "Nome";
             this.editNome.LabelWidth = 175;
             this.editNome.Location = new System.Drawing.Point(20, 165);
-            this.editNome.Multiline = false;
             this.editNome.Name = "editNome";
             this.editNome.ReadOnly = false;
             this.editNome.Required = false;
@@ -208,7 +204,6 @@ namespace Web.GUI.Operatore
             this.editNomeUtente.Label = "Nome utente";
             this.editNomeUtente.LabelWidth = 175;
             this.editNomeUtente.Location = new System.Drawing.Point(20, 210);
-            this.editNomeUtente.Multiline = false;
             this.editNomeUtente.Name = "editNomeUtente";
             this.editNomeUtente.ReadOnly = false;
             this.editNomeUtente.Required = false;
@@ -231,7 +226,6 @@ namespace Web.GUI.Operatore
             this.editTelefono.Label = "Telefono";
             this.editTelefono.LabelWidth = 175;
             this.editTelefono.Location = new System.Drawing.Point(20, 390);
-            this.editTelefono.Multiline = false;
             this.editTelefono.Name = "editTelefono";
             this.editTelefono.ReadOnly = false;
             this.editTelefono.Required = false;
@@ -321,7 +315,6 @@ namespace Web.GUI.Operatore
             this.editConsultazione.LabelWidth = 175;
             this.editConsultazione.Location = new System.Drawing.Point(20, 75);
             this.editConsultazione.Model = null;
-            this.editConsultazione.Multiline = false;
             this.editConsultazione.Name = "editConsultazione";
             this.editConsultazione.ReadOnly = false;
             this.editConsultazione.Required = false;

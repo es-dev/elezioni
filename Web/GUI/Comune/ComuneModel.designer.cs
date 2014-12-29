@@ -77,7 +77,6 @@ namespace Web.GUI.Comune
             this.editNome.LabelWidth = 175;
             this.editNome.Location = new System.Drawing.Point(20, 75);
             this.editNome.Model = null;
-            this.editNome.Multiline = false;
             this.editNome.Name = "editNome";
             this.editNome.ReadOnly = false;
             this.editNome.Required = false;
@@ -100,7 +99,6 @@ namespace Web.GUI.Comune
             this.editDescrizione.Label = "Descrizione";
             this.editDescrizione.LabelWidth = 175;
             this.editDescrizione.Location = new System.Drawing.Point(20, 125);
-            this.editDescrizione.Multiline = false;
             this.editDescrizione.Name = "editDescrizione";
             this.editDescrizione.ReadOnly = false;
             this.editDescrizione.Required = false;
@@ -123,7 +121,6 @@ namespace Web.GUI.Comune
             this.editProvincia.Label = "Provincia";
             this.editProvincia.LabelWidth = 175;
             this.editProvincia.Location = new System.Drawing.Point(20, 175);
-            this.editProvincia.Multiline = false;
             this.editProvincia.Name = "editProvincia";
             this.editProvincia.ReadOnly = false;
             this.editProvincia.Required = false;
@@ -146,7 +143,6 @@ namespace Web.GUI.Comune
             this.editCodiceISTAT.Label = "Codice ISTAT";
             this.editCodiceISTAT.LabelWidth = 175;
             this.editCodiceISTAT.Location = new System.Drawing.Point(20, 225);
-            this.editCodiceISTAT.Multiline = false;
             this.editCodiceISTAT.Name = "editCodiceISTAT";
             this.editCodiceISTAT.ReadOnly = false;
             this.editCodiceISTAT.Required = false;
