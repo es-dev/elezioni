@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,46 +42,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ES.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalReferences\ES.Library.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.3rdParty.Assemblies">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.3rdParty.Assemblies.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Client, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=0fb8f99bd6cd7e23, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Client.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Common, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Common.Design, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=ea5dfe57c8eb7edd, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.Design.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.Design.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Common.Design.Skins, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=82814e180535b402, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.Design.Skins.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Common.Design.Skins.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Converters, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Converters.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Catalog">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Catalog.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Charts, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=f1bb83df6a8597fb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Charts.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.CompanionKit">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.CompanionKit.dll</HintPath>
@@ -91,131 +95,131 @@
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.CompanionKit.WebSocketsSampleAppsVB.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Design, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=dd2a1fd4d120c769, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Design.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Design.resources">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Design.resources.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Extended.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Extended.Design, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=63e79e6cd5280864, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Extended.Design.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Help, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Help.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.KB.Engine">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.KB.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Office.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Office.Design, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=e838c68aaf727726, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Office.Design.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Office.Design.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Phonegap.Integration, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Phonegap.Integration.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Professional, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=6b5c571512bede7c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Professional.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.resources">
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.resources.dll</HintPath>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.SignalR, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=d1d96d1d1f5b7583, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.SignalR.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.References, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.References.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Reporting, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=ff9cb9557af1f587, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Reporting.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Server, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.Server.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.VisualBasic.Compatibility, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.VisualBasic.Compatibility.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WebGUI.VisualBasic.Compatibility.Data, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WebGUI.VisualBasic.Compatibility.Data.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Gizmox.WinForms.VisualBasic.Compatibility, Version=4.5.15701.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Gizmox.WinForms.VisualBasic.Compatibility.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.1.271, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\ICSharpCode.SharpZipLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Itenso.Rtf.Converter.Html, Version=1.3.0.0, Culture=neutral, PublicKeyToken=d7f23b760ed5c748, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Itenso.Rtf.Converter.Html.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Itenso.Rtf.Interpreter, Version=1.3.0.0, Culture=neutral, PublicKeyToken=d7f23b760ed5c748, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Itenso.Rtf.Interpreter.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Itenso.Rtf.Parser, Version=1.3.0.0, Culture=neutral, PublicKeyToken=d7f23b760ed5c748, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Itenso.Rtf.Parser.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Itenso.Sys, Version=2.3.0.0, Culture=neutral, PublicKeyToken=d7f23b760ed5c748, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Itenso.Sys.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Lucene.Net">
-      <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Lucene.Net.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Microsoft.Owin.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Microsoft.Owin.Security.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
       <Private>True</Private>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\Owin.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -265,22 +269,21 @@
     <Reference Include="System.Web.ApplicationServices">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.OpenAccess, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\ZedGraph.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2014.3.1209.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <Private>True</Private>
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.3.1209.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExternalReferences\ES.Library.dll" />
     <Content Include="Readme.txt" />
     <Content Include="Resources\Images\add24.png" />
     <Content Include="Resources\Images\attachment24.png" />
@@ -514,327 +517,225 @@
   <ItemGroup>
     <Compile Include="Code\SessionManager.cs" />
     <Compile Include="Code\ESDApplication.cs" />
-    <Compile Include="GUI\Affluenza\AffluenzaItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaItem.cs" />
     <Compile Include="GUI\Affluenza\AffluenzaItem.designer.cs">
       <DependentUpon>AffluenzaItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Affluenza\AffluenzaModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaModel.cs" />
     <Compile Include="GUI\Affluenza\AffluenzaModel.designer.cs">
       <DependentUpon>AffluenzaModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Affluenza\AffluenzaView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Affluenza\AffluenzaView.cs" />
     <Compile Include="GUI\Affluenza\AffluenzaView.designer.cs">
       <DependentUpon>AffluenzaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Affluenza\AffluenzaViewModel.cs" />
-    <Compile Include="GUI\Candidato\CandidatoItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoItem.cs" />
     <Compile Include="GUI\Candidato\CandidatoItem.designer.cs">
       <DependentUpon>CandidatoItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Candidato\CandidatoModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoModel.cs" />
     <Compile Include="GUI\Candidato\CandidatoModel.designer.cs">
       <DependentUpon>CandidatoModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Candidato\CandidatoView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Candidato\CandidatoView.cs" />
     <Compile Include="GUI\Candidato\CandidatoView.designer.cs">
       <DependentUpon>CandidatoView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Candidato\CandidatoViewModel.cs" />
-    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneItem.cs" />
     <Compile Include="GUI\CapoCoalizione\CapoCoalizioneItem.designer.cs">
       <DependentUpon>CapoCoalizioneItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneModel.cs" />
     <Compile Include="GUI\CapoCoalizione\CapoCoalizioneModel.designer.cs">
       <DependentUpon>CapoCoalizioneModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\CapoCoalizione\CapoCoalizioneView.cs" />
     <Compile Include="GUI\CapoCoalizione\CapoCoalizioneView.designer.cs">
       <DependentUpon>CapoCoalizioneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CapoCoalizione\CapoCoalizioneViewModel.cs" />
-    <Compile Include="GUI\Collegio\CollegioItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Collegio\CollegioItem.cs" />
     <Compile Include="GUI\Collegio\CollegioItem.designer.cs">
       <DependentUpon>CollegioItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Collegio\CollegioModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Collegio\CollegioModel.cs" />
     <Compile Include="GUI\Collegio\CollegioModel.designer.cs">
       <DependentUpon>CollegioModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Collegio\CollegioView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Collegio\CollegioView.cs" />
     <Compile Include="GUI\Collegio\CollegioView.designer.cs">
       <DependentUpon>CollegioView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Collegio\CollegioViewModel.cs" />
-    <Compile Include="GUI\Comune\ComuneItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Comune\ComuneItem.cs" />
     <Compile Include="GUI\Comune\ComuneItem.designer.cs">
       <DependentUpon>ComuneItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Comune\ComuneModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Comune\ComuneModel.cs" />
     <Compile Include="GUI\Comune\ComuneModel.designer.cs">
       <DependentUpon>ComuneModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Comune\ComuneView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Comune\ComuneView.cs" />
     <Compile Include="GUI\Comune\ComuneView.designer.cs">
       <DependentUpon>ComuneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Comune\ComuneViewModel.cs" />
-    <Compile Include="GUI\Lista\ListaItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Lista\ListaItem.cs" />
     <Compile Include="GUI\Lista\ListaItem.designer.cs">
       <DependentUpon>ListaItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lista\ListaModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Lista\ListaModel.cs" />
     <Compile Include="GUI\Lista\ListaModel.designer.cs">
       <DependentUpon>ListaModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Lista\ListaView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Lista\ListaView.cs" />
     <Compile Include="GUI\Lista\ListaView.designer.cs">
       <DependentUpon>ListaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Lista\ListaViewModel.cs" />
-    <Compile Include="GUI\Rilevamento\RilevamentoItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoItem.cs" />
     <Compile Include="GUI\Rilevamento\RilevamentoItem.designer.cs">
       <DependentUpon>RilevamentoItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Rilevamento\RilevamentoModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoModel.cs" />
     <Compile Include="GUI\Rilevamento\RilevamentoModel.designer.cs">
       <DependentUpon>RilevamentoModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Rilevamento\RilevamentoView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Rilevamento\RilevamentoView.cs" />
     <Compile Include="GUI\Rilevamento\RilevamentoView.designer.cs">
       <DependentUpon>RilevamentoView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Rilevamento\RilevamentoViewModel.cs" />
-    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.cs" />
     <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoItem.designer.cs">
       <DependentUpon>ScrutinioCandidatoItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.cs" />
     <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoModel.designer.cs">
       <DependentUpon>ScrutinioCandidatoModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.cs" />
     <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoView.designer.cs">
       <DependentUpon>ScrutinioCandidatoView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ScrutinioCandidato\ScrutinioCandidatoViewModel.cs" />
-    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.cs" />
     <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneItem.designer.cs">
       <DependentUpon>ScrutinioCapoCoalizioneItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.cs" />
     <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneModel.designer.cs">
       <DependentUpon>ScrutinioCapoCoalizioneModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.cs" />
     <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneView.designer.cs">
       <DependentUpon>ScrutinioCapoCoalizioneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ScrutinioCapoCoalizione\ScrutinioCapoCoalizioneViewModel.cs" />
-    <Compile Include="GUI\ScrutinioLista\ScrutinioListaItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaItem.cs" />
     <Compile Include="GUI\ScrutinioLista\ScrutinioListaItem.designer.cs">
       <DependentUpon>ScrutinioListaItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioLista\ScrutinioListaModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaModel.cs" />
     <Compile Include="GUI\ScrutinioLista\ScrutinioListaModel.designer.cs">
       <DependentUpon>ScrutinioListaModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ScrutinioLista\ScrutinioListaView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\ScrutinioLista\ScrutinioListaView.cs" />
     <Compile Include="GUI\ScrutinioLista\ScrutinioListaView.designer.cs">
       <DependentUpon>ScrutinioListaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ScrutinioLista\ScrutinioListaViewModel.cs" />
-    <Compile Include="GUI\Scrutinio\ScrutinioItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioItem.cs" />
     <Compile Include="GUI\Scrutinio\ScrutinioItem.designer.cs">
       <DependentUpon>ScrutinioItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Scrutinio\ScrutinioModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioModel.cs" />
     <Compile Include="GUI\Scrutinio\ScrutinioModel.designer.cs">
       <DependentUpon>ScrutinioModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Scrutinio\ScrutinioView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Scrutinio\ScrutinioView.cs" />
     <Compile Include="GUI\Scrutinio\ScrutinioView.designer.cs">
       <DependentUpon>ScrutinioView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Scrutinio\ScrutinioViewModel.cs" />
-    <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.cs" />
     <Compile Include="GUI\SezioneCollegio\SezioneCollegioItem.designer.cs">
       <DependentUpon>SezioneCollegioItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SezioneCollegio\SezioneCollegioModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioModel.cs" />
     <Compile Include="GUI\SezioneCollegio\SezioneCollegioModel.designer.cs">
       <DependentUpon>SezioneCollegioModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SezioneCollegio\SezioneCollegioView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SezioneCollegio\SezioneCollegioView.cs" />
     <Compile Include="GUI\SezioneCollegio\SezioneCollegioView.designer.cs">
       <DependentUpon>SezioneCollegioView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\SezioneCollegio\SezioneCollegioViewModel.cs" />
-    <Compile Include="GUI\Sezione\SezioneItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Sezione\SezioneItem.cs" />
     <Compile Include="GUI\Sezione\SezioneItem.designer.cs">
       <DependentUpon>SezioneItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Sezione\SezioneModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Sezione\SezioneModel.cs" />
     <Compile Include="GUI\Sezione\SezioneModel.designer.cs">
       <DependentUpon>SezioneModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Sezione\SezioneView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Sezione\SezioneView.cs" />
     <Compile Include="GUI\Sezione\SezioneView.designer.cs">
       <DependentUpon>SezioneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Sezione\SezioneViewModel.cs" />
-    <Compile Include="GUI\Consultazione\ConsultazioneItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneItem.cs" />
     <Compile Include="GUI\Consultazione\ConsultazioneItem.designer.cs">
       <DependentUpon>ConsultazioneItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Consultazione\ConsultazioneModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneModel.cs" />
     <Compile Include="GUI\Consultazione\ConsultazioneModel.designer.cs">
       <DependentUpon>ConsultazioneModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Consultazione\ConsultazioneView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Consultazione\ConsultazioneView.cs" />
     <Compile Include="GUI\Consultazione\ConsultazioneView.designer.cs">
       <DependentUpon>ConsultazioneView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Consultazione\ConsultazioneViewModel.cs" />
     <Compile Include="GUI\Dashboard\Dashboard.cs" />
-    <Compile Include="GUI\Dashboard\DashboardItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardItem.cs" />
     <Compile Include="GUI\Dashboard\DashboardItem.designer.cs">
       <DependentUpon>DashboardItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Dashboard\DashboardView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Dashboard\DashboardView.cs" />
     <Compile Include="GUI\Dashboard\DashboardView.designer.cs">
       <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Dashboard\DashboardViewModel.cs" />
-    <Compile Include="GUI\Operatore\OperatoreItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreItem.cs" />
     <Compile Include="GUI\Operatore\OperatoreItem.designer.cs">
       <DependentUpon>OperatoreItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Operatore\OperatoreModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreModel.cs" />
     <Compile Include="GUI\Operatore\OperatoreModel.designer.cs">
       <DependentUpon>OperatoreModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Operatore\OperatoreView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\Operatore\OperatoreView.cs" />
     <Compile Include="GUI\Operatore\OperatoreView.designer.cs">
       <DependentUpon>OperatoreView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Operatore\OperatoreViewModel.cs" />
-    <Compile Include="GUI\SedeElettorale\SedeElettoraleItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleItem.cs" />
     <Compile Include="GUI\SedeElettorale\SedeElettoraleItem.designer.cs">
       <DependentUpon>SedeElettoraleItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SedeElettorale\SedeElettoraleModel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleModel.cs" />
     <Compile Include="GUI\SedeElettorale\SedeElettoraleModel.designer.cs">
       <DependentUpon>SedeElettoraleModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SedeElettorale\SedeElettoraleView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="GUI\SedeElettorale\SedeElettoraleView.cs" />
     <Compile Include="GUI\SedeElettorale\SedeElettoraleView.designer.cs">
       <DependentUpon>SedeElettoraleView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\SedeElettorale\SedeElettoraleViewModel.cs" />
-    <Compile Include="Homepage.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Homepage.cs" />
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
@@ -992,9 +893,7 @@
       <DependentUpon>Homepage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Login.cs" />
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
@@ -1004,6 +903,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1024,6 +924,10 @@
     </CustomReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ES.Library\ES.Library.csproj">
+      <Project>{67131adf-23de-46cf-888b-9afd6f648405}</Project>
+      <Name>ES.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WcfService\WcfService.csproj">
       <Project>{1f172fe8-814a-46d0-a71e-4036505c442e}</Project>
       <Name>WcfService</Name>
@@ -1055,6 +959,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
